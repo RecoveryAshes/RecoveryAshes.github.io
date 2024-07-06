@@ -220,7 +220,11 @@
     background-image: linear-gradient(90deg, #80808012 1px, transparent 0), linear-gradient(180deg, #80808012 1px, transparent 0);
     background-size: 50px 50px;
     height: 100%;
-    position: relative
+    position: relative;
+    /* 123 */
+    display: block;
+
+
 }
 
 .welcome .slogan {
@@ -272,6 +276,7 @@
 }
 
 .welcome .icp {
+    
     bottom: 10px;
     color: var(--color-font-1);
     font-size: calc(var(--font-size)*.8);
@@ -279,11 +284,14 @@
     position: absolute;
     transform: translateX(-50%);
     z-index: 1999
+   
 }
 
 .archive-container {
-    float: right;
-    width: 50%; /* 使得archive-container占据右边一半的空间 */
+    float: right; 
+    /* flex: 2; */
+    width: 50%; 
+  
   
 
   /* .welcome {
@@ -298,3 +306,5 @@
     display: table;
     clear: both; */ 
 }
+/* .weatherwe {
+    /* flex: 1; */
