@@ -197,13 +197,13 @@
           <!-- 文章标题 -->
           <h1 class="post-title">nacos</h1>
           <div class="last-updated">
-            上次更新: 2024-07-06 20:37:15
+            上次更新: 2024-07-06 20:43:55
           </div>
           <!-- 文章 -->
           <h1 id="1-nacos"><a href="#1-nacos" class="headerlink" title="1.nacos"></a>1.nacos</h1><h2 id="1-CVE-2021-29441"><a href="#1-CVE-2021-29441" class="headerlink" title="1.CVE-2021-29441"></a>1.CVE-2021-29441</h2><h3 id="1-影响版本"><a href="#1-影响版本" class="headerlink" title="1.影响版本"></a>1.影响版本</h3><p>Nacos &lt;&#x3D; 2.0.0-ALPHA.1</p>
 <h2 id="5-CNVD-2023-45001（hessian反序列化漏洞）"><a href="#5-CNVD-2023-45001（hessian反序列化漏洞）" class="headerlink" title="5.CNVD-2023-45001（hessian反序列化漏洞）"></a>5.CNVD-2023-45001（hessian反序列化漏洞）</h2><h3 id="1-影响版本-1"><a href="#1-影响版本-1" class="headerlink" title="1.影响版本"></a>1.影响版本</h3><p>1.4.0 &lt;&#x3D; Nacos &lt; 1.4.6 使用cluster集群模式运行<br>2.0.0 &lt;&#x3D; Nacos &lt; 2.2.3 任意模式启动均受到影响</p>
 <h4 id="2-漏洞原理"><a href="#2-漏洞原理" class="headerlink" title="2.漏洞原理"></a>2.漏洞原理</h4><h5 id="1-hessian简介"><a href="#1-hessian简介" class="headerlink" title="1.hessian简介"></a>1.hessian简介</h5><p>Hessian是一个轻量级的remoting onhttp工具，是一个轻量级的Java序列化&#x2F;反序列化框架，使用简单的方法提供了RMI的功能。 相比WebService，Hessian更简单、快捷。采用的是二进制RPC协议，因为采用的是二进制协议，所以它很适合于发送二进制数据。</p>
-<h5 id="2-白盒漏洞分析"><a href="#2-白盒漏洞分析" class="headerlink" title="2.白盒漏洞分析"></a>2.白盒漏洞分析</h5><p>Hessian序列化&#x2F;反序列化机制的基本概念图<br><img src="./nacos/Hessian%E5%BA%8F%E5%88%97%E5%8C%96:%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%9C%BA%E5%88%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%9B%BE.png" alt="Hessian序列化/反序列化机制的基本概念图"></p>
+<h5 id="2-白盒漏洞分析"><a href="#2-白盒漏洞分析" class="headerlink" title="2.白盒漏洞分析"></a>2.白盒漏洞分析</h5><p>Hessian序列化&#x2F;反序列化机制的基本概念图<br><img src="./Hessian%E5%BA%8F%E5%88%97%E5%8C%96:%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%9C%BA%E5%88%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%9B%BE.png" alt="Hessian序列化/反序列化机制的基本概念图"></p>
 <ul>
 <li>AbstractSerializerFactory：抽象序列化器工厂，是管理和维护对应序列化&#x2F;反序列化机制的工厂，拥有getSerializer()和getDeserializer()方法。默认的几种实现如下：<ul>
 <li>SerializerFactory：标准的实现。</li>
