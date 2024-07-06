@@ -5,12 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    redis
+    nacos
   </title>
   <meta name="description" content="1">
   <meta name="keywords" content="">
   <meta name="author" content="RecoveryAshes">
-  <link rel="canonical" href="https://blog.finalline.net/2024/07/06/redis1/">
+  <link rel="canonical" href="https://blog.finalline.net/2024/07/06/nacos/">
   
   
   <link rel="icon" type="image/svg" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 10l7.383 7.418c.823.82.823 2.148 0 2.967a2.11 2.11 0 0 1-2.976 0L10 13"></path><path d="M6.293 15.293l-2.586-2.586a1 1 0 0 1 0-1.414l7.586-7.586a1 1 0 0 1 1.414 0l2.586 2.586a1 1 0 0 1 0 1.414l-7.586 7.586a1 1 0 0 1-1.414 0z"></path></g></svg>'>
@@ -94,14 +94,7 @@
           <div class="ellipsis">简历</div>
         </a>
       </li></ul>
-  <ul><li class="active">
-        <a href="../../../../categories/Diary1/">
-          
-          <div class="ellipsis">
-            <span>Diary1</span>
-          </div>
-        </a>
-      </li><li class="">
+  <ul><li class="">
         <a href="../../../../categories/%E6%9D%82/">
           
           <div class="ellipsis">
@@ -165,19 +158,8 @@
         <path d="M7.733 4.207a.75.75 0 0 1 1.06.026l5.001 5.25a.75.75 0 0 1 0 1.035l-5 5.25a.75.75 0 1 1-1.087-1.034L12.216 10l-4.51-4.734a.75.75 0 0 1 .027-1.06z" fill="currentColor"></path>
       </g>
     </svg>
-    <a class="ellipsis" href="../../../../categories/Diary1/">
-      Diary1
-    </a>
-    
-    
-    
-    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
-      <g fill="none">
-        <path d="M7.733 4.207a.75.75 0 0 1 1.06.026l5.001 5.25a.75.75 0 0 1 0 1.035l-5 5.25a.75.75 0 1 1-1.087-1.034L12.216 10l-4.51-4.734a.75.75 0 0 1 .027-1.06z" fill="currentColor"></path>
-      </g>
-    </svg>
     <span class="ellipsis">
-      redis
+      nacos
     </span>
     
   </section>
@@ -189,6 +171,22 @@
     </div>
     <div class="right">
       
+        <cosy-tooltip id="toc-show-button" placement="left">
+          <span slot="content">
+            <span>显示 / 隐藏 文章目录</span>
+            <cosy-short-key>]</cosy-short-key>
+          </span>
+          <cosy-icon>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+              <g fill="none">
+                <path
+                  d="M4 4c-1.104-.019-2 .896-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4zM3 6a1 1 0 0 1 1-1h2.995v10H4a1 1 0 0 1-1-1V6zm4.995 9V5h8.004a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H7.995z"
+                  fill="currentColor"></path>
+              </g>
+            </svg>
+          </cosy-icon>
+        </cosy-tooltip>
+        
     </div>
   </header>
   <div class="content">
@@ -197,19 +195,54 @@
         <!-- 渲染文章内容 -->
         <article>
           <!-- 文章标题 -->
-          <h1 class="post-title">redis</h1>
+          <h1 class="post-title">nacos</h1>
           <div class="last-updated">
-            上次更新: 2024-07-06 20:02:43
+            上次更新: 2024-07-06 20:37:15
           </div>
           <!-- 文章 -->
-          
+          <h1 id="1-nacos"><a href="#1-nacos" class="headerlink" title="1.nacos"></a>1.nacos</h1><h2 id="1-CVE-2021-29441"><a href="#1-CVE-2021-29441" class="headerlink" title="1.CVE-2021-29441"></a>1.CVE-2021-29441</h2><h3 id="1-影响版本"><a href="#1-影响版本" class="headerlink" title="1.影响版本"></a>1.影响版本</h3><p>Nacos &lt;&#x3D; 2.0.0-ALPHA.1</p>
+<h2 id="5-CNVD-2023-45001（hessian反序列化漏洞）"><a href="#5-CNVD-2023-45001（hessian反序列化漏洞）" class="headerlink" title="5.CNVD-2023-45001（hessian反序列化漏洞）"></a>5.CNVD-2023-45001（hessian反序列化漏洞）</h2><h3 id="1-影响版本-1"><a href="#1-影响版本-1" class="headerlink" title="1.影响版本"></a>1.影响版本</h3><p>1.4.0 &lt;&#x3D; Nacos &lt; 1.4.6 使用cluster集群模式运行<br>2.0.0 &lt;&#x3D; Nacos &lt; 2.2.3 任意模式启动均受到影响</p>
+<h4 id="2-漏洞原理"><a href="#2-漏洞原理" class="headerlink" title="2.漏洞原理"></a>2.漏洞原理</h4><h5 id="1-hessian简介"><a href="#1-hessian简介" class="headerlink" title="1.hessian简介"></a>1.hessian简介</h5><p>Hessian是一个轻量级的remoting onhttp工具，是一个轻量级的Java序列化&#x2F;反序列化框架，使用简单的方法提供了RMI的功能。 相比WebService，Hessian更简单、快捷。采用的是二进制RPC协议，因为采用的是二进制协议，所以它很适合于发送二进制数据。</p>
+<h5 id="2-白盒漏洞分析"><a href="#2-白盒漏洞分析" class="headerlink" title="2.白盒漏洞分析"></a>2.白盒漏洞分析</h5><p>Hessian序列化&#x2F;反序列化机制的基本概念图<br><img src="./nacos/Hessian%E5%BA%8F%E5%88%97%E5%8C%96:%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%9C%BA%E5%88%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%9B%BE.png" alt="Hessian序列化/反序列化机制的基本概念图"></p>
+<ul>
+<li>AbstractSerializerFactory：抽象序列化器工厂，是管理和维护对应序列化&#x2F;反序列化机制的工厂，拥有getSerializer()和getDeserializer()方法。默认的几种实现如下：<ul>
+<li>SerializerFactory：标准的实现。</li>
+<li>ExtSerializerFactory：可以设置自定义的序列化机制，通过该Factory可以进行扩展。</li>
+<li>BeanSerializerFactory：对SerializerFactory的默认Object的序列化机制进行强制指定，指定为BeanSerializer。</li>
+</ul>
+</li>
+<li>Serializer：序列化的接口，拥有writeObject()方法。</li>
+<li>Deserializer：反序列化的接口，拥有readObject()、resdMap()、readList()方法。</li>
+<li>AbstractHessianInput：Hessian自定义的输入流，提供对应的read各种类型的方法。</li>
+<li>AbstractHessianOutput：Hessian自定义的输出流，提供对应的write各种类型的方法。</li>
+</ul>
+<p>在Hessian的Deserializer中，有以下几种默认实现的反序列化器<br><img src="./image/%E9%BB%98%E8%AE%A4%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%99%A8.png" alt="默认实现的反序列化器图"></p>
+<h6 id="1-寻找反序列化的触发点"><a href="#1-寻找反序列化的触发点" class="headerlink" title="1.寻找反序列化的触发点"></a>1.寻找反序列化的触发点</h6><p>全局搜索Hessian找到<a href="./nacos-2.2.2/consistency/src/main/java/com/alibaba/nacos/consistency/SerializeFactory.java">hessian工厂类</a><br><img src="./image/serializer%E5%B7%A5%E5%8E%82%E7%B1%BB.png" alt="serializer工厂类"><br>并没有调用deserializer接口，那么再别的地方需调用该接口应该会获取默认的Serializer实例或特定的Serializer实例。<br>例如</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 获取默认的Serializer实例</span>
+<span class="token class-name">Serializer</span> defaultSerializer <span class="token operator">=</span> <span class="token class-name">SerializeFactory</span><span class="token punctuation">.</span><span class="token function">getDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 使用默认的Serializer实例进行反序列化</span>
+<span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> data <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span> <span class="token comment">// 假设这是你要反序列化的字节数据</span>
+<span class="token class-name">Object</span> obj <span class="token operator">=</span> defaultSerializer<span class="token punctuation">.</span><span class="token function">deserialize</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 获取特定类型的Serializer实例</span>
+<span class="token class-name">String</span> type <span class="token operator">=</span> <span class="token string">"Hessian"</span><span class="token punctuation">;</span>
+<span class="token class-name">Serializer</span> serializer <span class="token operator">=</span> <span class="token class-name">SerializeFactory</span><span class="token punctuation">.</span><span class="token function">getSerializer</span><span class="token punctuation">(</span>type<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 使用特定类型的Serializer实例进行反序列化</span>
+<span class="token class-name">Object</span> obj <span class="token operator">=</span> serializer<span class="token punctuation">.</span><span class="token function">deserialize</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>所有全局搜索SerializeFactory.getDefault()或SerializeFactory.getSerializer<br>再找到deserialize，发现主要就是在onApply、onRequest方法会触发serializer.deserialize反序列化<br><img src="./image/onApply.jpg" alt="onApply"><br><img src="./image/onRequest.jpg" alt="onRequest"></p>
+<p><strong><a target="_blank" rel="noopener" href="https://www.sofastack.tech/projects/sofa-jraft/jraft-user-guide/">JRaft 用户指南</a></strong><br>通过该用户指南可知，客户端的通讯层都依赖 Bolt 的 RpcClient，封装在 CliClientService 接口中，实现类就是 BoltCliClientService 。 可以通过 BoltCliClientService 的 getRpcClient 方法获取底层的 bolt RpcClient 实例，用于其他通讯用途，做到资源复用。</p>
+<p>提交的任务最终将会复制应用到所有 raft 节点上的状态机，状态机通过 StateMachine 接口表示，它的主要方法包括：</p>
+<p>void onApply(Iterator iter) 最核心的方法，应用任务列表到状态机，任务将按照提交顺序应用。</p>
+<p>也就是说会到StateMachine<br><img src="./image/StateMachine.jpg" alt="StateMachine"></p>
+<p>查看processor的实现类可以看到确实调用了Impl。<br><img src="./image/%E8%B0%83%E7%94%A8%E5%B1%82%E6%AC%A1.jpg" alt="processor的实现类"></p>
+<p>这里也有个明显的反序列化<br><img src="./image/ser.jpg"></p>
+
             <div class="post-tags">
               <!-- 文章tags -->
               
-                
-                  <cosy-label href="../../../../tags/ai/" size="sm"># ai</cosy-label>
-                  
-                    
             </div>
             <p class="motto">重拾纯粹的写作</p>
         </article>
@@ -220,6 +253,31 @@
     </main>
     <!-- toc -->
     
+      <cosy-drag-box id="toc-drag-box" trigger="left" min-width="220" uid="toc-box">
+        <div class="meta-container">
+          <div class="toc-wrapper cosy-scrollbar">
+            <cosy-tooltip placement="right">
+              <p class="catalog">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+                  <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6h16"></path>
+                    <path d="M4 12h16"></path>
+                    <path d="M4 18h12"></path>
+                  </g>
+                </svg>
+                <span>目录</span>
+              </p>
+              <span slot="content">
+                <span>隐藏目录</span>
+                <cosy-short-key>]</cosy-short-key>
+              </span>
+            </cosy-tooltip>
+            <!-- 文章toc -->
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-nacos"><span class="toc-number">1.</span> <span class="toc-text">1.nacos</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-CVE-2021-29441"><span class="toc-number">1.1.</span> <span class="toc-text">1.CVE-2021-29441</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%BD%B1%E5%93%8D%E7%89%88%E6%9C%AC"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.影响版本</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-CNVD-2023-45001%EF%BC%88hessian%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">5.CNVD-2023-45001（hessian反序列化漏洞）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%BD%B1%E5%93%8D%E7%89%88%E6%9C%AC-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.影响版本</span></a></li></ol></li></ol></li></ol>
+          </div>
+        </div>
+      </cosy-drag-box>
+      
   </div>
 
 </div>
