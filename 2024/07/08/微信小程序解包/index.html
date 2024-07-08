@@ -5,12 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    nacos
+    微信小程序反编译 for Mac
   </title>
   <meta name="description" content="1">
   <meta name="keywords" content="">
   <meta name="author" content="RecoveryAshes">
-  <link rel="canonical" href="https://blog.finalline.net/2024/07/06/nacos/">
+  <link rel="canonical" href="https://blog.finalline.net/2024/07/08/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%A7%A3%E5%8C%85/">
   
   
   <link rel="icon" type="image/svg" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 10l7.383 7.418c.823.82.823 2.148 0 2.967a2.11 2.11 0 0 1-2.976 0L10 13"></path><path d="M6.293 15.293l-2.586-2.586a1 1 0 0 1 0-1.414l7.586-7.586a1 1 0 0 1 1.414 0l2.586 2.586a1 1 0 0 1 0 1.414l-7.586 7.586a1 1 0 0 1-1.414 0z"></path></g></svg>'>
@@ -101,14 +101,14 @@
             <span>Hexo</span>
           </div>
         </a>
-      </li><li class="">
+      </li><li class="active">
         <a href="../../../../categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
           
           <div class="ellipsis">
             <span>微信小程序</span>
           </div>
         </a>
-      </li><li class="active">
+      </li><li class="">
         <a href="../../../../categories/%E6%9D%82/">
           
           <div class="ellipsis">
@@ -172,8 +172,8 @@
         <path d="M7.733 4.207a.75.75 0 0 1 1.06.026l5.001 5.25a.75.75 0 0 1 0 1.035l-5 5.25a.75.75 0 1 1-1.087-1.034L12.216 10l-4.51-4.734a.75.75 0 0 1 .027-1.06z" fill="currentColor"></path>
       </g>
     </svg>
-    <a class="ellipsis" href="../../../../categories/%E6%9D%82/">
-      杂
+    <a class="ellipsis" href="../../../../categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+      微信小程序
     </a>
     
     
@@ -184,7 +184,7 @@
       </g>
     </svg>
     <span class="ellipsis">
-      nacos
+      微信小程序反编译 for Mac
     </span>
     
   </section>
@@ -220,56 +220,171 @@
         <!-- 渲染文章内容 -->
         <article>
           <!-- 文章标题 -->
-          <h1 class="post-title">nacos</h1>
+          <h1 class="post-title">微信小程序反编译 for Mac</h1>
           <div class="last-updated">
-            上次更新: 2024-07-06 23:12:00
+            上次更新: 2024-07-08 23:45:32
           </div>
           <!-- 文章 -->
-          <h1 id="1-nacos"><a href="#1-nacos" class="headerlink" title="1.nacos"></a>1.nacos</h1><h2 id="1-CVE-2021-29441"><a href="#1-CVE-2021-29441" class="headerlink" title="1.CVE-2021-29441"></a>1.CVE-2021-29441</h2><h3 id="1-影响版本"><a href="#1-影响版本" class="headerlink" title="1.影响版本"></a>1.影响版本</h3><p>Nacos &lt;&#x3D; 2.0.0-ALPHA.1</p>
-<h2 id="5-CNVD-2023-45001（hessian反序列化漏洞）"><a href="#5-CNVD-2023-45001（hessian反序列化漏洞）" class="headerlink" title="5.CNVD-2023-45001（hessian反序列化漏洞）"></a>5.CNVD-2023-45001（hessian反序列化漏洞）</h2><h3 id="1-影响版本-1"><a href="#1-影响版本-1" class="headerlink" title="1.影响版本"></a>1.影响版本</h3><p>1.4.0 &lt;&#x3D; Nacos &lt; 1.4.6 使用cluster集群模式运行<br>2.0.0 &lt;&#x3D; Nacos &lt; 2.2.3 任意模式启动均受到影响</p>
-<h4 id="2-漏洞原理"><a href="#2-漏洞原理" class="headerlink" title="2.漏洞原理"></a>2.漏洞原理</h4><h5 id="1-hessian简介"><a href="#1-hessian简介" class="headerlink" title="1.hessian简介"></a>1.hessian简介</h5><p>Hessian是一个轻量级的remoting onhttp工具，是一个轻量级的Java序列化&#x2F;反序列化框架，使用简单的方法提供了RMI的功能。 相比WebService，Hessian更简单、快捷。采用的是二进制RPC协议，因为采用的是二进制协议，所以它很适合于发送二进制数据。</p>
-<h5 id="2-白盒漏洞分析"><a href="#2-白盒漏洞分析" class="headerlink" title="2.白盒漏洞分析"></a>2.白盒漏洞分析</h5><p>Hessian序列化&#x2F;反序列化机制的基本概念图<br><img src="./Hessian%E5%BA%8F%E5%88%97%E5%8C%96:%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%9C%BA%E5%88%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%9B%BE.png" alt="Hessian序列化/反序列化机制的基本概念图"></p>
-<ul>
-<li>AbstractSerializerFactory：抽象序列化器工厂，是管理和维护对应序列化&#x2F;反序列化机制的工厂，拥有getSerializer()和getDeserializer()方法。默认的几种实现如下：<ul>
-<li>SerializerFactory：标准的实现。</li>
-<li>ExtSerializerFactory：可以设置自定义的序列化机制，通过该Factory可以进行扩展。</li>
-<li>BeanSerializerFactory：对SerializerFactory的默认Object的序列化机制进行强制指定，指定为BeanSerializer。</li>
+          <h1 id="微信小程序解包-for-Mac"><a href="#微信小程序解包-for-Mac" class="headerlink" title="微信小程序解包 for Mac"></a>微信小程序解包 for Mac</h1><h2 id="1-工具"><a href="#1-工具" class="headerlink" title="1.工具"></a>1.工具</h2><p><a target="_blank" rel="noopener" href="https://github.com/RecoveryAshes/unveilr">解包工具</a></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#微信版本>3.8.0</span>
+<span class="token comment">#小程序包路径</span>
+/Users/<span class="token operator">&lt;</span>你的用户名<span class="token operator">></span>/Library/Containers/com.tencent.xinWeChat/Data/.wxapplet/packages/
+
+<span class="token comment">#解包工具</span>
+<span class="token function">git</span> clone https://gitclone.com/github.com/RecoveryAshes/unveilr.git
+
+<span class="token comment">#个人目前版本</span>
+<span class="token assign-left variable">node</span><span class="token operator">=</span>v22.4.0
+<span class="token assign-left variable">yarn</span><span class="token operator">=</span><span class="token number">1.22</span>.22
+<span class="token assign-left variable">npm</span><span class="token operator">=</span><span class="token number">10.8</span>.1
+
+<span class="token function">npm</span> list 
+unveilr@2.0.0-beta.1 /Users/lehaoxu/Desktop/temp/unveilr
+├── @babel/core@7.21.4
+├── @rollup/plugin-commonjs@24.0.1
+├── @rollup/plugin-json@6.0.0
+├── @rollup/plugin-node-resolve@15.0.1
+├── @types/babel__core@7.20.0
+├── @types/babel__traverse@7.18.3
+├── @types/crypto-js@4.1.1
+├── @types/css-tree@2.3.1
+├── @types/node@18.15.5
+├── @types/prettier@2.7.2
+├── @types/shelljs@0.8.11
+├── @typescript-eslint/eslint-plugin@5.57.0
+├── @typescript-eslint/parser@5.57.1
+├── chalk@4.1.2
+├── commander@10.0.0
+├── compressing@1.8.0
+├── crypto-js@4.1.1
+├── css-tree@2.3.1
+├── eslint@8.22.0
+├── observable-fns@0.6.1
+├── pkg@5.8.1
+├── prettier@2.8.7
+├── punycode@2.3.1
+├── rollup-plugin-clear@2.0.7
+├── rollup-plugin-license@3.0.1
+├── rollup-plugin-terser@7.0.2
+├── rollup-plugin-typescript2@0.34.1
+├── rollup@2.79.1
+├── shelljs@0.8.5
+├── threads@1.7.0
+├── ts-node-dev@2.0.0
+├── tsconfig-paths@4.2.0
+├── typescript@5.0.2
+└── winston@3.8.2
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="2-工具编译"><a href="#2-工具编译" class="headerlink" title="2.工具编译"></a>2.工具编译</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">
+brew <span class="token function">install</span> <span class="token function">node</span>
+brew <span class="token function">install</span> <span class="token function">yarn</span>
+
+<span class="token builtin class-name">cd</span> unveilr/scripts
+<span class="token function">npm</span> <span class="token function">install</span> rollup@<span class="token string">'^2.0.0'</span>
+<span class="token function">npm</span> <span class="token function">install</span> pkg
+<span class="token function">npm</span> <span class="token function">install</span> punycode
+<span class="token function">node</span> pkg.js<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>等待结束<br><img src="661720449666_.pic.jpg" alt="编译中"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> release 
+
+<span class="token comment">#解压</span>
+<span class="token function">tar</span> <span class="token parameter variable">-xzvf</span> <span class="token operator">&lt;</span>需要的压缩包<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="3-unveilr使用"><a href="#3-unveilr使用" class="headerlink" title="3.unveilr使用"></a>3.unveilr使用</h2><h3 id="1-📝参数详解"><a href="#1-📝参数详解" class="headerlink" title="1.📝参数详解"></a>1.📝参数详解</h3><ul>
+<li>子命令是为了后续集成别的平台小程序解包功能 <strong>(<a target="_blank" rel="noopener" href="https://github.com/r3x5ur/unveilr/discussions/24">其他小程序反编译方案收集</a>)</strong></li>
+<li>子命令默认为 <code>wx</code></li>
 </ul>
-</li>
-<li>Serializer：序列化的接口，拥有writeObject()方法。</li>
-<li>Deserializer：反序列化的接口，拥有readObject()、resdMap()、readList()方法。</li>
-<li>AbstractHessianInput：Hessian自定义的输入流，提供对应的read各种类型的方法。</li>
-<li>AbstractHessianOutput：Hessian自定义的输出流，提供对应的write各种类型的方法。</li>
-</ul>
-<p>在Hessian的Deserializer中，有以下几种默认实现的反序列化器<br><img src="./image/%E9%BB%98%E8%AE%A4%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%99%A8.png" alt="默认实现的反序列化器图"></p>
-<h6 id="1-寻找反序列化的触发点"><a href="#1-寻找反序列化的触发点" class="headerlink" title="1.寻找反序列化的触发点"></a>1.寻找反序列化的触发点</h6><p>全局搜索Hessian找到<a href="./nacos-2.2.2/consistency/src/main/java/com/alibaba/nacos/consistency/SerializeFactory.java">hessian工厂类</a><br><img src="./image/serializer%E5%B7%A5%E5%8E%82%E7%B1%BB.png" alt="serializer工厂类"><br>并没有调用deserializer接口，那么再别的地方需调用该接口应该会获取默认的Serializer实例或特定的Serializer实例。<br>例如</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 获取默认的Serializer实例</span>
-<span class="token class-name">Serializer</span> defaultSerializer <span class="token operator">=</span> <span class="token class-name">SerializeFactory</span><span class="token punctuation">.</span><span class="token function">getDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<table>
+<thead>
+<tr>
+<th>子命令</th>
+<th>参数</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>global</code></td>
+<td><code>-l, --log-level &lt;level&gt;</code></td>
+<td>设置日志等级 <code>debug</code>，<code>info</code>，<code>warn</code>，<code>error</code> 默认 <code>info</code></td>
+</tr>
+<tr>
+<td><code>wx</code></td>
+<td><code>&lt;packages...&gt;</code></td>
+<td><code>wxapkg</code>的路径，可以是多个，也可以是一个目录</td>
+</tr>
+<tr>
+<td><code>wx</code></td>
+<td><code>-i, --appid &lt;appid&gt;</code></td>
+<td>解密<code>windows</code>上的 <code>wxapkg</code>时需要提供<strong>🔥已经支持自动从路径中提取</strong></td>
+</tr>
+<tr>
+<td><code>wx</code></td>
+<td><code>-f, --format</code></td>
+<td>是否需要格式化解析出来的代码</td>
+</tr>
+<tr>
+<td><code>wx</code></td>
+<td><code>--no-clear-decompile</code></td>
+<td>不清除反编译时的残留文件</td>
+</tr>
+<tr>
+<td><code>wx</code></td>
+<td><code>--no-clear-save</code></td>
+<td>不清除之前的编译结果</td>
+</tr>
+<tr>
+<td><code>wx</code></td>
+<td><code>--no-parse</code></td>
+<td>只提取<code>wxapkg</code>中的文件，不进行反编译</td>
+</tr>
+<tr>
+<td><code>wx</code></td>
+<td><code>-d, --depth &lt;depth&gt;</code></td>
+<td>设置从目录中查找<code>wxapkg</code>的深度默认: <code>1</code> 设置为<code>0</code>时不限制深度</td>
+</tr>
+<tr>
+<td><code>wx</code></td>
+<td><code> -o, --output &lt;path&gt;</code></td>
+<td>设置反编译输出路径</td>
+</tr>
+</tbody></table>
+<h3 id="2-💡使用示例"><a href="#2-💡使用示例" class="headerlink" title="2.💡使用示例"></a>2.💡使用示例</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 直接解包整个目录</span>
+$ unveilr /path/to/wxapkg/dir/
+<span class="token comment"># 解包多个包</span>
+$ unveilr /path/to/1.wxapkg /path/to/2.wxapkg <span class="token punctuation">..</span>.
+<span class="token comment"># 指定子命令并指定微信AppId</span>
+$ unveilr wx /path/to/wxapkg/dir/ <span class="token parameter variable">-i</span> wx11aa22bb33cc44dd
+<span class="token comment"># 格式化解析出来的代码</span>
+$ unveilr wx /path/to/wxapkg/dir/ <span class="token parameter variable">-f</span>
+<span class="token comment"># 只提取源文件不解析进行反编译</span>
+$ unveilr wx /path/to/wxapkg/dir/ --no-parse<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<span class="token comment">// 使用默认的Serializer实例进行反序列化</span>
-<span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> data <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span> <span class="token comment">// 假设这是你要反序列化的字节数据</span>
-<span class="token class-name">Object</span> obj <span class="token operator">=</span> defaultSerializer<span class="token punctuation">.</span><span class="token function">deserialize</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h2 id="4-反编译小程序"><a href="#4-反编译小程序" class="headerlink" title="4.反编译小程序"></a>4.反编译小程序</h2><h3 id="1-小程序包路径"><a href="#1-小程序包路径" class="headerlink" title="1.小程序包路径"></a>1.小程序包路径</h3><p>找到小程序AppID(只能手机看)<br><img src="701720450277_.pic.jpg" alt="流程1"><br><img src="711720450484_.pic.jpg" alt="流程2"></p>
+<p><strong>AppID</strong><br><img src="721720450565_.pic.jpg" alt="流程3"></p>
+<p>到该目录<br><img src="731720450746_.pic.jpg" alt="appid"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /Users/<span class="token operator">&lt;</span>用户名<span class="token operator">></span>/Library/Containers/com.tencent.xinWeChat/Data/.wxapplet/packages/
+<span class="token builtin class-name">cd</span> wxe1713fc9d51ea049/24 <span class="token comment">#进入小程序包目录</span>
+<span class="token function">ls</span> 
+__APP__                 _pages_common_.wxapkg   _pages_template_.wxapkg
+__APP__.wxapkg          _pages_one_.wxapkg
+<span class="token builtin class-name">pwd</span>
+/Users/<span class="token operator">&lt;</span>用户名<span class="token operator">></span>/Library/Containers/com.tencent.xinWeChat/Data/.wxapplet/packages/wxe1713fc9d51ea049/24<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<span class="token comment">// 获取特定类型的Serializer实例</span>
-<span class="token class-name">String</span> type <span class="token operator">=</span> <span class="token string">"Hessian"</span><span class="token punctuation">;</span>
-<span class="token class-name">Serializer</span> serializer <span class="token operator">=</span> <span class="token class-name">SerializeFactory</span><span class="token punctuation">.</span><span class="token function">getSerializer</span><span class="token punctuation">(</span>type<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h3 id="2-反编译"><a href="#2-反编译" class="headerlink" title="2.反编译"></a>2.反编译</h3><p>使用刚编译解压的脚本</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">./unveilr@2.0.0-beta.1-macos-x64 /Users/<span class="token operator">&lt;</span>用户名<span class="token operator">></span>/Library/Containers/com.tencent.xinWeChat/Data/.wxapplet/packages/wxe1713fc9d51ea049/24/__APP__.wxapkg
 
-<span class="token comment">// 使用特定类型的Serializer实例进行反序列化</span>
-<span class="token class-name">Object</span> obj <span class="token operator">=</span> serializer<span class="token punctuation">.</span><span class="token function">deserialize</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>所有全局搜索SerializeFactory.getDefault()或SerializeFactory.getSerializer<br>再找到deserialize，发现主要就是在onApply、onRequest方法会触发serializer.deserialize反序列化<br><img src="./image/onApply.jpg" alt="onApply"><br><img src="./image/onRequest.jpg" alt="onRequest"></p>
-<p><strong><a target="_blank" rel="noopener" href="https://www.sofastack.tech/projects/sofa-jraft/jraft-user-guide/">JRaft 用户指南</a></strong><br>通过该用户指南可知，客户端的通讯层都依赖 Bolt 的 RpcClient，封装在 CliClientService 接口中，实现类就是 BoltCliClientService 。 可以通过 BoltCliClientService 的 getRpcClient 方法获取底层的 bolt RpcClient 实例，用于其他通讯用途，做到资源复用。</p>
-<p>提交的任务最终将会复制应用到所有 raft 节点上的状态机，状态机通过 StateMachine 接口表示，它的主要方法包括：</p>
-<p>void onApply(Iterator iter) 最核心的方法，应用任务列表到状态机，任务将按照提交顺序应用。</p>
-<p>也就是说会到StateMachine<br><img src="./image/StateMachine.jpg" alt="StateMachine"></p>
-<p>查看processor的实现类可以看到确实调用了Impl。<br><img src="./image/%E8%B0%83%E7%94%A8%E5%B1%82%E6%AC%A1.jpg" alt="processor的实现类"></p>
-<p>这里也有个明显的反序列化<br><img src="./image/ser.jpg"></p>
+<span class="token comment">#反编译后的文件默认位置在</span>
+<span class="token comment"># /Users/&lt;用户名>/Library/Containers/com.tencent.xinWeChat/Data/.wxapplet/packages/wxe1713fc9d51ea049/24/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="5-问题"><a href="#5-问题" class="headerlink" title="5.问题"></a>5.问题</h2><h3 id="1-微信开发者工具运行反编译代码报错"><a href="#1-微信开发者工具运行反编译代码报错" class="headerlink" title="1.微信开发者工具运行反编译代码报错"></a>1.微信开发者工具运行反编译代码报错</h3><p>格式化问题<br>加上 <strong>-f</strong> 参数可初步格式化代码，如果还有报错想办法格式化代码，或根据报错信息手动格式化代码。</p>
 
             <div class="post-tags">
               <!-- 文章tags -->
               
                 
-                  <cosy-label href="../../../../tags/nacos/" size="sm"># nacos</cosy-label>
+                  <cosy-label href="../../../../tags/wx/" size="sm"># wx</cosy-label>
                   
                     
             </div>
@@ -302,7 +417,7 @@
               </span>
             </cosy-tooltip>
             <!-- 文章toc -->
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-nacos"><span class="toc-number">1.</span> <span class="toc-text">1.nacos</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-CVE-2021-29441"><span class="toc-number">1.1.</span> <span class="toc-text">1.CVE-2021-29441</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%BD%B1%E5%93%8D%E7%89%88%E6%9C%AC"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.影响版本</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-CNVD-2023-45001%EF%BC%88hessian%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">5.CNVD-2023-45001（hessian反序列化漏洞）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%BD%B1%E5%93%8D%E7%89%88%E6%9C%AC-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.影响版本</span></a></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%A7%A3%E5%8C%85-for-Mac"><span class="toc-number">1.</span> <span class="toc-text">微信小程序解包 for Mac</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%B7%A5%E5%85%B7"><span class="toc-number">1.1.</span> <span class="toc-text">1.工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%B7%A5%E5%85%B7%E7%BC%96%E8%AF%91"><span class="toc-number">1.2.</span> <span class="toc-text">2.工具编译</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-unveilr%E4%BD%BF%E7%94%A8"><span class="toc-number">1.3.</span> <span class="toc-text">3.unveilr使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%F0%9F%93%9D%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.📝参数详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%F0%9F%92%A1%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.💡使用示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%8F%8D%E7%BC%96%E8%AF%91%E5%B0%8F%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.4.</span> <span class="toc-text">4.反编译小程序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8C%85%E8%B7%AF%E5%BE%84"><span class="toc-number">1.4.1.</span> <span class="toc-text">1.小程序包路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%8F%8D%E7%BC%96%E8%AF%91"><span class="toc-number">1.4.2.</span> <span class="toc-text">2.反编译</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E9%97%AE%E9%A2%98"><span class="toc-number">1.5.</span> <span class="toc-text">5.问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7%E8%BF%90%E8%A1%8C%E5%8F%8D%E7%BC%96%E8%AF%91%E4%BB%A3%E7%A0%81%E6%8A%A5%E9%94%99"><span class="toc-number">1.5.1.</span> <span class="toc-text">1.微信开发者工具运行反编译代码报错</span></a></li></ol></li></ol></li></ol>
           </div>
         </div>
       </cosy-drag-box>
