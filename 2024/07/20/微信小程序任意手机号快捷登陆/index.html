@@ -229,7 +229,7 @@
           <!-- 文章标题 -->
           <h1 class="post-title">微信小程序任意手机号快捷登陆</h1>
           <div class="last-updated">
-            上次更新: 2024-07-22 11:05:23
+            上次更新: 2024-07-22 11:11:37
           </div>
           <!-- 文章 -->
           <h1 id="微信小程序任意手机号快捷登陆"><a href="#微信小程序任意手机号快捷登陆" class="headerlink" title="微信小程序任意手机号快捷登陆"></a>微信小程序任意手机号快捷登陆</h1><h2 id="SessionKey-iv-泄漏"><a href="#SessionKey-iv-泄漏" class="headerlink" title="SessionKey&amp;&amp;iv 泄漏"></a>SessionKey&amp;&amp;iv 泄漏</h2><p>在手机号授权登录时可能存在 SessionKey&amp;&amp;iv 泄漏<br><img src="671721613843_.pic.jpg" alt="SessionKey&amp;&amp;iv泄漏"></p>
@@ -294,7 +294,7 @@
 <h3 id="微信小程序登录流程官方指南"><a href="#微信小程序登录流程官方指南" class="headerlink" title="微信小程序登录流程官方指南"></a><strong><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/login.html">微信小程序登录流程官方指南</a></strong></h3><p>调用 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/api/open-api/login/wx.login.html">wx.login()api 接口</a> 获取 临时登录凭证 code ，并回传到开发者服务器。<br>调用 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/user-login/code2Session.html">auth.code2Session api 接口</a>，换取 用户唯一标识 OpenID 、 用户在微信开放平台账号下的唯一标识 UnionID（若当前小程序已绑定到微信开放平台账号） 和 会话密钥 session_key。<br>之后开发者服务器可以根据用户标识来生成自定义登录态，用于后续业务逻辑中前后端交互时识别用户身份。</p>
 <p><strong>如图</strong></p>
 <p><img src="api-login.2fcc9f35.jpg" alt="登录流程"></p>
-<p>该漏洞造成原因:<br>调用 auth.code2Session api 接口后，开发为自定义登录态与 session_key，OpenID 关联直接返回原本的 session_key，OpenID。</p>
+<p>该漏洞造成原因:<br>调用 auth.code2Session api 接口后，开发未自定义登录态与 session_key，OpenID 关联，直接返回原本的 session_key，OpenID。</p>
 <p><img src="1011721617229_.pic.jpg" alt="漏洞造成原因"></p>
 <h3 id="加解密"><a href="#加解密" class="headerlink" title="加解密"></a>加解密</h3><p>微信使用的是 AES 加密，CBC 模式采用 PKCS7 填充，数据块长度为 128 位，输出使用 base64 编码。AES 是用于替代 DES 加密的对称加密算法，对称加密算法最大的特性便是加、解密使用的同是一串密钥，只要获取到 key 便可加解自如（CBC 加密模式下还需要 iv 偏移量参数，一般固定不变或作为变量内容传输）</p>
 <p>iv:CBC 加密模式下的偏移量参数<br>session_key:会话密钥</p>
@@ -303,13 +303,13 @@
               <!-- 文章tags -->
               
                 
-                  <cosy-label href="../../../../tags/Mac/" size="sm"># Mac</cosy-label>
-                  
                   <cosy-label href="../../../../tags/wx/" size="sm"># wx</cosy-label>
+                  
+                  <cosy-label href="../../../../tags/SessionKey/" size="sm"># SessionKey</cosy-label>
                   
                   <cosy-label href="../../../../tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" size="sm"># 微信小程序</cosy-label>
                   
-                  <cosy-label href="../../../../tags/SessionKey/" size="sm"># SessionKey</cosy-label>
+                  <cosy-label href="../../../../tags/Mac/" size="sm"># Mac</cosy-label>
                   
                   <cosy-label href="../../../../tags/%E4%BB%BB%E6%84%8F%E7%94%A8%E6%88%B7%E7%99%BB%E9%99%86/" size="sm"># 任意用户登陆</cosy-label>
                   
