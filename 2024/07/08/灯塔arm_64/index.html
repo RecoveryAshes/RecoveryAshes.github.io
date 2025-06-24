@@ -5,12 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    微信小程序任意手机号快捷登陆
+    微信小程序反编译 for Mac
   </title>
   <meta name="description" content="1">
   <meta name="keywords" content="">
   <meta name="author" content="RecoveryAshes">
-  <link rel="canonical" href="https://blog.finalline.net/2024/07/20/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BB%BB%E6%84%8F%E6%89%8B%E6%9C%BA%E5%8F%B7%E5%BF%AB%E6%8D%B7%E7%99%BB%E9%99%86/">
+  <link rel="canonical" href="https://blog.finalline.net/2024/07/08/%E7%81%AF%E5%A1%94arm_64/">
   
   
   <link rel="icon" type="image/svg" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 10l7.383 7.418c.823.82.823 2.148 0 2.967a2.11 2.11 0 0 1-2.976 0L10 13"></path><path d="M6.293 15.293l-2.586-2.586a1 1 0 0 1 0-1.414l7.586-7.586a1 1 0 0 1 1.414 0l2.586 2.586a1 1 0 0 1 0 1.414l-7.586 7.586a1 1 0 0 1-1.414 0z"></path></g></svg>'>
@@ -198,7 +198,7 @@
       </g>
     </svg>
     <span class="ellipsis">
-      微信小程序任意手机号快捷登陆
+      微信小程序反编译 for Mac
     </span>
     
   </section>
@@ -234,78 +234,34 @@
         <!-- 渲染文章内容 -->
         <article>
           <!-- 文章标题 -->
-          <h1 class="post-title">微信小程序任意手机号快捷登陆</h1>
+          <h1 class="post-title">微信小程序反编译 for Mac</h1>
           <div class="last-updated">
-            上次更新: 2024-07-22 11:11:37
+            上次更新: 2025-06-24 10:54:58
           </div>
           <!-- 文章 -->
-          <h1 id="微信小程序任意手机号快捷登陆"><a href="#微信小程序任意手机号快捷登陆" class="headerlink" title="微信小程序任意手机号快捷登陆"></a>微信小程序任意手机号快捷登陆</h1><h2 id="SessionKey-iv-泄漏"><a href="#SessionKey-iv-泄漏" class="headerlink" title="SessionKey&amp;&amp;iv 泄漏"></a>SessionKey&amp;&amp;iv 泄漏</h2><p>在手机号授权登录时可能存在 SessionKey&amp;&amp;iv 泄漏<br><img src="671721613843_.pic.jpg" alt="SessionKey&amp;&amp;iv泄漏"></p>
-<p>可使用脚本对其解密后手机号信息再进行加密<br><strong>解密</strong></p>
-<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
-<span class="token keyword">echo</span> <span class="token string double-quoted-string">"请输入SessionKey: "</span><span class="token punctuation">;</span>
-<span class="token variable">$sessionKey</span> <span class="token operator">=</span> <span class="token function">trim</span><span class="token punctuation">(</span><span class="token function">fgets</span><span class="token punctuation">(</span><span class="token constant">STDIN</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">echo</span> <span class="token string double-quoted-string">"请输入本次加密IV: "</span><span class="token punctuation">;</span>
-<span class="token variable">$iv</span> <span class="token operator">=</span> <span class="token function">trim</span><span class="token punctuation">(</span><span class="token function">fgets</span><span class="token punctuation">(</span><span class="token constant">STDIN</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">echo</span> <span class="token string double-quoted-string">"请输入待解密内容: "</span><span class="token punctuation">;</span>
-<span class="token variable">$encryptedData</span> <span class="token operator">=</span> <span class="token function">trim</span><span class="token punctuation">(</span><span class="token function">fgets</span><span class="token punctuation">(</span><span class="token constant">STDIN</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <h1 id="灯塔Arm-64-centos8"><a href="#灯塔Arm-64-centos8" class="headerlink" title="灯塔Arm_64_centos8"></a>灯塔Arm_64_centos8</h1><p>arm64 架构的 centos8 灯塔，可用于 mac 电脑使用  centos8 虚拟机本地搭建，本地已通过测试</p>
+<p>账户密码admin&#x2F;arlpass</p>
+<h2 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h2><ul>
+<li>修复长时间任务一直扫描卡死问题</li>
+<li>修复 fileleak 报错问题</li>
+</ul>
+<h2 id="源码安装"><a href="#源码安装" class="headerlink" title="源码安装"></a>源码安装</h2><p>centos8,iso文件,随意虚拟机软件安装</p>
+<pre class="line-numbers language-none"><code class="language-none">https:&#x2F;&#x2F;www.123865.com&#x2F;s&#x2F;iYG0Vv-IApD3?提取码:AbSC<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<span class="token keyword">function</span> <span class="token function-definition function">decryptData</span><span class="token punctuation">(</span> <span class="token variable">$encryptedData</span><span class="token punctuation">,</span><span class="token variable">$iv</span><span class="token punctuation">,</span> <span class="token variable">$sessionKey</span> <span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token variable">$aesIV</span> <span class="token operator">=</span> <span class="token function">base64_decode</span><span class="token punctuation">(</span><span class="token variable">$iv</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token variable">$aesCipher</span> <span class="token operator">=</span> <span class="token function">base64_decode</span><span class="token punctuation">(</span><span class="token variable">$encryptedData</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token variable">$aesKey</span> <span class="token operator">=</span> <span class="token function">base64_decode</span><span class="token punctuation">(</span><span class="token variable">$sessionKey</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<p>源码编译文件在 <strong>build&#x2F;arl.sh</strong><br>可国内一键安装</p>
+<p>注意需要 git 到&#x2F;opt 下</p>
+<pre class="line-numbers language-none"><code class="language-none">cd &#x2F;opt
+git clone https:&#x2F;&#x2F;github.com&#x2F;RecoveryAshes&#x2F;ARL-ARM64-CentOS8.git
+.&#x2F;ARL-ARM64-CentOS8&#x2F;build&#x2F;arl.sh
 
-    <span class="token variable">$result</span> <span class="token operator">=</span> <span class="token function">openssl_decrypt</span><span class="token punctuation">(</span><span class="token variable">$aesCipher</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"AES-128-CBC"</span><span class="token punctuation">,</span> <span class="token variable">$aesKey</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token variable">$aesIV</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+#记得关闭防火墙，或自己做策略
+systemctl stop firewalld
+systemctl disable firewalld<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$result</span> <span class="token operator">===</span> <span class="token constant boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">// 解密失败，可以处理错误</span>
-        <span class="token keyword">return</span> <span class="token string double-quoted-string">"解密失败: "</span> <span class="token operator">.</span> <span class="token function">openssl_error_string</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-
-    <span class="token comment">// 尝试解析 JSON，并检查是否成功</span>
-    <span class="token variable">$dataObj</span> <span class="token operator">=</span> <span class="token function">json_decode</span><span class="token punctuation">(</span><span class="token variable">$result</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">json_last_error</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token constant">JSON_ERROR_NONE</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">// 解析 JSON 失败</span>
-        <span class="token keyword">return</span> <span class="token string double-quoted-string">"JSON 解析失败: "</span> <span class="token operator">.</span> <span class="token function">json_last_error_msg</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-
-    <span class="token keyword">return</span> <span class="token variable">$result</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token variable">$result</span> <span class="token operator">=</span> <span class="token function">decryptData</span><span class="token punctuation">(</span><span class="token variable">$encryptedData</span><span class="token punctuation">,</span> <span class="token variable">$iv</span><span class="token punctuation">,</span><span class="token variable">$sessionKey</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">echo</span> <span class="token function">sprintf</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"最终的解密结果为: %s\n"</span><span class="token punctuation">,</span> <span class="token variable">$result</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="691721614869_.pic.jpg" alt="解密"></p>
-<p>修改值后再进行加密</p>
-<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
-<span class="token keyword">echo</span> <span class="token string double-quoted-string">"请输入SessionKey: "</span><span class="token punctuation">;</span>
-<span class="token variable">$sessionKey</span> <span class="token operator">=</span> <span class="token function">fgets</span><span class="token punctuation">(</span><span class="token constant">STDIN</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">echo</span> <span class="token string double-quoted-string">"请输入本次解密IV: "</span><span class="token punctuation">;</span>
-<span class="token variable">$iv</span> <span class="token operator">=</span> <span class="token function">fgets</span><span class="token punctuation">(</span><span class="token constant">STDIN</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">echo</span> <span class="token string double-quoted-string">"请输入待加密内容: "</span><span class="token punctuation">;</span>
-<span class="token variable">$decryptedData</span> <span class="token operator">=</span> <span class="token function">fgets</span><span class="token punctuation">(</span><span class="token constant">STDIN</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">function</span> <span class="token function-definition function">encryptData</span><span class="token punctuation">(</span> <span class="token variable">$decryptedData</span><span class="token punctuation">,</span> <span class="token variable">$iv</span><span class="token punctuation">,</span> <span class="token variable">$sessionKey</span> <span class="token punctuation">)</span>
-    <span class="token punctuation">&#123;</span>
-        <span class="token variable">$aesIV</span> <span class="token operator">=</span> <span class="token function">base64_decode</span><span class="token punctuation">(</span><span class="token variable">$iv</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token variable">$aesCipher</span> <span class="token operator">=</span> <span class="token variable">$decryptedData</span><span class="token punctuation">;</span>
-        <span class="token variable">$aesKey</span> <span class="token operator">=</span> <span class="token function">base64_decode</span><span class="token punctuation">(</span><span class="token variable">$sessionKey</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token variable">$result</span> <span class="token operator">=</span> <span class="token function">openssl_encrypt</span><span class="token punctuation">(</span><span class="token variable">$aesCipher</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"AES-128-CBC"</span><span class="token punctuation">,</span> <span class="token variable">$aesKey</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token variable">$aesIV</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token variable">$dataObj</span> <span class="token operator">=</span> <span class="token function">json_decode</span><span class="token punctuation">(</span><span class="token variable">$result</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token variable">$result</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token variable">$result</span> <span class="token operator">=</span> <span class="token function">encryptData</span><span class="token punctuation">(</span><span class="token variable">$decryptedData</span><span class="token punctuation">,</span> <span class="token variable">$iv</span><span class="token punctuation">,</span> <span class="token variable">$sessionKey</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">echo</span> <span class="token function">sprintf</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"最终的加密结果为: %s\n"</span><span class="token punctuation">,</span> <span class="token variable">$result</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="701721615023_.pic.jpg" alt="加密"></p>
-<p>把加密后的结果进行替换发包<br><img src="711721615096_.pic.jpg" alt="发包"></p>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>一些微信小程序有 <strong>微信手机号快捷登录</strong> 的功能，无需接收验证码即可实现一键登录已经经过微信验证的手机号。<br><img src="661721613027_.pic.jpg" alt="微信手机号快捷登录"></p>
-<h3 id="微信小程序登录流程官方指南"><a href="#微信小程序登录流程官方指南" class="headerlink" title="微信小程序登录流程官方指南"></a><strong><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/login.html">微信小程序登录流程官方指南</a></strong></h3><p>调用 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/api/open-api/login/wx.login.html">wx.login()api 接口</a> 获取 临时登录凭证 code ，并回传到开发者服务器。<br>调用 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/user-login/code2Session.html">auth.code2Session api 接口</a>，换取 用户唯一标识 OpenID 、 用户在微信开放平台账号下的唯一标识 UnionID（若当前小程序已绑定到微信开放平台账号） 和 会话密钥 session_key。<br>之后开发者服务器可以根据用户标识来生成自定义登录态，用于后续业务逻辑中前后端交互时识别用户身份。</p>
-<p><strong>如图</strong></p>
-<p><img src="api-login.2fcc9f35.jpg" alt="登录流程"></p>
-<p>该漏洞造成原因:<br>调用 auth.code2Session api 接口后，开发未自定义登录态与 session_key，OpenID 关联，直接返回原本的 session_key，OpenID。</p>
-<p><img src="1011721617229_.pic.jpg" alt="漏洞造成原因"></p>
-<h3 id="加解密"><a href="#加解密" class="headerlink" title="加解密"></a>加解密</h3><p>微信使用的是 AES 加密，CBC 模式采用 PKCS7 填充，数据块长度为 128 位，输出使用 base64 编码。AES 是用于替代 DES 加密的对称加密算法，对称加密算法最大的特性便是加、解密使用的同是一串密钥，只要获取到 key 便可加解自如（CBC 加密模式下还需要 iv 偏移量参数，一般固定不变或作为变量内容传输）</p>
-<p>iv:CBC 加密模式下的偏移量参数<br>session_key:会话密钥</p>
-
+<h2 id="docker（无法使用）"><a href="#docker（无法使用）" class="headerlink" title="docker（无法使用）"></a>docker（无法使用）</h2><p>macos的docker在大批量端口扫描时，docker到mac的端口流量会有阻塞，属于docker本身限制，暂时不知道如何解决</p>
+<pre class="line-numbers language-none"><code class="language-none">docker pull finalhades&#x2F;arl_arm64:latest
+#docker cpus几核，memory内存
+docker run --privileged --cpus&#x3D;&quot;6.0&quot; --memory&#x3D;&quot;8g&quot; -it -d -p 5003:5003 --name&#x3D;arl --restart&#x3D;always  finalhades&#x2F;arl_arm64 &#x2F;usr&#x2F;sbin&#x2F;init<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
             <div class="post-tags">
               <!-- 文章tags -->
               
@@ -314,11 +270,9 @@
                   
                   <cosy-label href="../../../../tags/wx/" size="sm"># wx</cosy-label>
                   
+                  <cosy-label href="../../../../tags/%E5%8F%8D%E7%BC%96%E8%AF%91/" size="sm"># 反编译</cosy-label>
+                  
                   <cosy-label href="../../../../tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" size="sm"># 微信小程序</cosy-label>
-                  
-                  <cosy-label href="../../../../tags/SessionKey/" size="sm"># SessionKey</cosy-label>
-                  
-                  <cosy-label href="../../../../tags/%E4%BB%BB%E6%84%8F%E7%94%A8%E6%88%B7%E7%99%BB%E9%99%86/" size="sm"># 任意用户登陆</cosy-label>
                   
                     
             </div>
@@ -351,7 +305,7 @@
               </span>
             </cosy-tooltip>
             <!-- 文章toc -->
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BB%BB%E6%84%8F%E6%89%8B%E6%9C%BA%E5%8F%B7%E5%BF%AB%E6%8D%B7%E7%99%BB%E9%99%86"><span class="toc-number">1.</span> <span class="toc-text">微信小程序任意手机号快捷登陆</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#SessionKey-iv-%E6%B3%84%E6%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text">SessionKey&amp;&amp;iv 泄漏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.</span> <span class="toc-text">原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95%E6%B5%81%E7%A8%8B%E5%AE%98%E6%96%B9%E6%8C%87%E5%8D%97"><span class="toc-number">1.2.1.</span> <span class="toc-text">微信小程序登录流程官方指南</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E8%A7%A3%E5%AF%86"><span class="toc-number">1.2.2.</span> <span class="toc-text">加解密</span></a></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%81%AF%E5%A1%94Arm-64-centos8"><span class="toc-number">1.</span> <span class="toc-text">灯塔Arm_64_centos8</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9"><span class="toc-number">1.1.</span> <span class="toc-text">修改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85"><span class="toc-number">1.2.</span> <span class="toc-text">源码安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker%EF%BC%88%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%EF%BC%89"><span class="toc-number">1.3.</span> <span class="toc-text">docker（无法使用）</span></a></li></ol></li></ol>
           </div>
         </div>
       </cosy-drag-box>
