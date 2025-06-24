@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Github自动编译上传s3发布Release
+  </title>
+  <meta name="description" content="1">
+  <meta name="keywords" content="">
+  <meta name="author" content="RecoveryAshes">
+  <link rel="canonical" href="https://blog.finalline.net/2025/06/24/Github%E8%87%AA%E5%8A%A8%E7%BC%96%E8%AF%91%E4%B8%8A%E4%BC%A0s3%E5%8F%91%E5%B8%83Release/">
+  
+  
+  <link rel="icon" type="image/svg" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 10l7.383 7.418c.823.82.823 2.148 0 2.967a2.11 2.11 0 0 1-2.976 0L10 13"></path><path d="M6.293 15.293l-2.586-2.586a1 1 0 0 1 0-1.414l7.586-7.586a1 1 0 0 1 1.414 0l2.586 2.586a1 1 0 0 1 0 1.414l-7.586 7.586a1 1 0 0 1-1.414 0z"></path></g></svg>'>
+  
+  
+  
+<link rel="stylesheet" href="../../../../css/b4c95347.css">
+
+  <script>window.i18n = {"tip-status-done":"完成","tip-status-default":"全部","tip-status-todo":"计划","tip-status-doing":"进行","tip-status-other":"其他","text-select":"选择","text-move":"移动","text-esc":"退出","January":"一月","February":"二月","March":"三月","April":"四月","May":"五月","June":"六月","July":"七月","August":"八月","September":"九月","October":"十月","November":"十一月","December":"十二月"}</script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body id="app">
+  <aside id="aside-box" class="left-aside">
+    <div class="header">
+      
+<link rel="stylesheet" href="../../../../css/61875ce9.css">
+
+<div class="profile">
+  <a class="badge" href="/">
+    <span>Hi</span>
+    <span>RecoveryAshes</span>
+  </a>
+  <cosy-tooltip id="left-aside-button" placement="right">
+    <span slot="content">
+      <span>显示 / 隐藏 左侧导航</span>
+      <cosy-short-key>[</cosy-short-key>
+    </span>
+    <cosy-icon>
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+        <g fill="none">
+          <path d="M16 4c1.104-.019 2 .896 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12zm1 2a1 1 0 0 0-1-1h-2.995v10H16a1 1 0 0 0 1-1V6zm-4.995 9V5H4.001a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8.004z" fill="currentColor"></path>
+        </g>
+      </svg>
+    </cosy-icon>
+  </cosy-tooltip>
+</div>
+
+<script src="../../../../js/69622cae.js"></script>
+
+      
+
+
+<cosy-search id="post-search" placeholder="搜索">
+  <div slot="short-key">
+    <cosy-short-key>⌘</cosy-short-key>
+    <cosy-short-key>K</cosy-short-key>
+  </div>
+</cosy-search>
+
+
+<script>
+  window.algolia = {
+    appId: "85XAZQSJU5",
+    SearchOnlyAPIKey: "fea1d34f90f6dcce741f922a0c0f368a"
+  }
+</script>
+
+
+<script src="../../../../js/0a6f193b.js"></script>
+
+    </div>
+    <div class="aside-category">
+      
+<link rel="stylesheet" href="../../../../css/db04a759.css">
+
+
+<nav class="category-nav cosy-scrollbar">
+  <ul><li data-path="archives">
+        <a href="/archives">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20"><g fill="none"><path d="M3.5 3A1.5 1.5 0 0 0 2 4.5v4A1.5 1.5 0 0 0 3.5 10h9A1.5 1.5 0 0 0 14 8.5v-4A1.5 1.5 0 0 0 12.5 3h-9zM3 4.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-4zm.5 6.5A1.5 1.5 0 0 0 2 12.5v4A1.5 1.5 0 0 0 3.5 18h9a1.5 1.5 0 0 0 1.5-1.5v-4a1.5 1.5 0 0 0-1.5-1.5h-9zM3 12.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-4zm14-.063a2.003 2.003 0 0 1-2.5-1.937A2 2 0 0 1 16 8.563a2.005 2.005 0 0 1 1 0a2 2 0 0 1 0 3.874zM16.5 3a.5.5 0 0 1 .5.5v4.041a3.02 3.02 0 0 0-1 0V3.5a.5.5 0 0 1 .5-.5zm0 10.5c-.17 0-.337-.014-.5-.041V17.5a.5.5 0 0 0 1 0v-4.041c-.163.027-.33.041-.5.041z" fill="currentColor"></path></g></svg>
+          <div class="ellipsis">归档</div>
+        </a>
+      </li><li data-path="cosy-roadmap">
+        <a href="/cosy-roadmap">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20"><g fill="none"><path d="M9.384 2a1 1 0 0 0-.966.742L4.616 17H2.5a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1h-2.116L11.582 2.742A1 1 0 0 0 10.616 2H9.384zM5.651 17l.8-3H11.5a.5.5 0 0 0 0-1H6.717l.534-2H10.5a.5.5 0 0 0 0-1H7.517l1.867-7h1.232l3.733 14H5.651z" fill="currentColor"></path></g></svg>
+          <div class="ellipsis">路线图</div>
+        </a>
+      </li><li data-path="cosy-resume">
+        <a href="/cosy-resume">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20"><g fill="none"><path d="M8.5 4.498a1.5 1.5 0 1 1 3 0a1.5 1.5 0 0 1-3 0zm1.5-2.5a2.5 2.5 0 0 0-2.43 3.086L5.471 4.15a1.761 1.761 0 0 0-2.317.88c-.4.882-.008 1.917.877 2.31L7 8.662v2.287l-1.877 4.645a1.75 1.75 0 0 0 3.245 1.311l1.556-3.849a.073.073 0 0 1 .028-.038a.086.086 0 0 1 .046-.012c.02 0 .035.005.046.012a.074.074 0 0 1 .028.038l1.555 3.849a1.75 1.75 0 0 0 3.245-1.311L13 10.96V8.662l2.968-1.322a1.74 1.74 0 0 0 .877-2.31a1.761 1.761 0 0 0-2.317-.88l-2.097.934a2.5 2.5 0 0 0-2.43-3.086zM4.065 5.444a.761.761 0 0 1 1-.38l3.918 1.744a2.5 2.5 0 0 0 2.034 0l3.918-1.744a.761.761 0 0 1 1 .38a.739.739 0 0 1-.373.983l-2.969 1.321a1 1 0 0 0-.593.914v2.298a1 1 0 0 0 .073.375l1.872 4.633a.75.75 0 0 1-1.39.562l-1.556-3.849c-.364-.9-1.639-.9-2.003 0l-1.555 3.85a.75.75 0 1 1-1.39-.562l1.876-4.646A1 1 0 0 0 8 10.95V8.662a1 1 0 0 0-.593-.914L4.438 6.427a.739.739 0 0 1-.373-.983z" fill="currentColor"></path></g></svg>
+          <div class="ellipsis">简历</div>
+        </a>
+      </li></ul>
+  <ul><li class="">
+        <a href="../../../../categories/Hexo/">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 576 512"><path d="M542.22 32.05c-54.8 3.11-163.72 14.43-230.96 55.59c-4.64 2.84-7.27 7.89-7.27 13.17v363.87c0 11.55 12.63 18.85 23.28 13.49c69.18-34.82 169.23-44.32 218.7-46.92c16.89-.89 30.02-14.43 30.02-30.66V62.75c.01-17.71-15.35-31.74-33.77-30.7zM264.73 87.64C197.5 46.48 88.58 35.17 33.78 32.05C15.36 31.01 0 45.04 0 62.75V400.6c0 16.24 13.13 29.78 30.02 30.66c49.49 2.6 149.59 12.11 218.77 46.95c10.62 5.35 23.21-1.94 23.21-13.46V100.63c0-5.29-2.62-10.14-7.27-12.99z" fill="currentColor"></path></svg>
+          <div class="ellipsis">
+            <span>Hexo</span>
+          </div>
+        </a>
+      </li><li class="">
+        <a href="../../../../categories/JAVA%E5%AE%89%E5%85%A8/">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 384 512"><path d="M277.74 312.9c9.8-6.7 23.4-12.5 23.4-12.5s-38.7 7-77.2 10.2c-47.1 3.9-97.7 4.7-123.1 1.3c-60.1-8 33-30.1 33-30.1s-36.1-2.4-80.6 19c-52.5 25.4 130 37 224.5 12.1zm-85.4-32.1c-19-42.7-83.1-80.2 0-145.8C296 53.2 242.84 0 242.84 0c21.5 84.5-75.6 110.1-110.7 162.6c-23.9 35.9 11.7 74.4 60.2 118.2zm114.6-176.2c.1 0-175.2 43.8-91.5 140.2c24.7 28.4-6.5 54-6.5 54s62.7-32.4 33.9-72.9c-26.9-37.8-47.5-56.6 64.1-121.3zm-6.1 270.5a12.19 12.19 0 0 1-2 2.6c128.3-33.7 81.1-118.9 19.8-97.3a17.33 17.33 0 0 0-8.2 6.3a70.45 70.45 0 0 1 11-3c31-6.5 75.5 41.5-20.6 91.4zM348 437.4s14.5 11.9-15.9 21.2c-57.9 17.5-240.8 22.8-291.6.7c-18.3-7.9 16-19 26.8-21.3c11.2-2.4 17.7-2 17.7-2c-20.3-14.3-131.3 28.1-56.4 40.2C232.84 509.4 401 461.3 348 437.4zM124.44 396c-78.7 22 47.9 67.4 148.1 24.5a185.89 185.89 0 0 1-28.2-13.8c-44.7 8.5-65.4 9.1-106 4.5c-33.5-3.8-13.9-15.2-13.9-15.2zm179.8 97.2c-78.7 14.8-175.8 13.1-233.3 3.6c0-.1 11.8 9.7 72.4 13.6c92.2 5.9 233.8-3.3 237.1-46.9c0 0-6.4 16.5-76.2 29.7zM260.64 353c-59.2 11.4-93.5 11.1-136.8 6.6c-33.5-3.5-11.6-19.7-11.6-19.7c-86.8 28.8 48.2 61.4 169.5 25.9a60.37 60.37 0 0 1-21.1-12.8z" fill="currentColor"></path></svg>
+          <div class="ellipsis">
+            <span>JAVA安全</span>
+          </div>
+        </a>
+      </li><li class="">
+        <a href="../../../../categories/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V6a2 2 0 0 1 2-2h2"></path><path d="M4 17v1a2 2 0 0 0 2 2h2"></path><path d="M16 4h2a2 2 0 0 1 2 2v1"></path><path d="M16 20h2a2 2 0 0 0 2-2v-1"></path><path d="M5 12h14"></path></g></svg>
+          <div class="ellipsis">
+            <span>信息收集</span>
+          </div>
+        </a>
+      </li><li class="">
+        <a href="../../../../categories/%E5%B7%A5%E5%85%B7/">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16"><g fill="none"><path d="M4.5 2.001a2.5 2.5 0 0 0-2.5 2.5v6a2.5 2.5 0 0 0 2.5 2.5h4.281c.033-.216.105-.43.221-.63l.214-.37H4.5a1.5 1.5 0 0 1-1.5-1.5V5h9v1.194a2.926 2.926 0 0 1 1-.204V4.5a2.5 2.5 0 0 0-2.5-2.5h-6zM3.084 4a1.5 1.5 0 0 1 1.415-1h6a1.5 1.5 0 0 1 1.414 1H3.084zm7.332 3.71L8.854 6.146a.5.5 0 0 0-.707.707l1.646 1.647l-1.646 1.646a.5.5 0 1 0 .707.707l1.368-1.368a2.898 2.898 0 0 1 .194-1.777zM6.853 6.146a.5.5 0 0 1 0 .707L5.207 8.501l1.646 1.646a.5.5 0 1 1-.707.707l-2-2a.5.5 0 0 1 0-.707l2-2a.5.5 0 0 1 .707 0zM12.52 8.58l.9-1.56a1.91 1.91 0 0 0-1.902 2.992l-1.651 2.86a.796.796 0 0 0 1.378.795l1.655-2.865a1.91 1.91 0 0 0 1.623-3.144l-.9 1.559a.637.637 0 1 1-1.103-.637z" fill="currentColor"></path></g></svg>
+          <div class="ellipsis">
+            <span>工具</span>
+          </div>
+        </a>
+      </li><li class="">
+        <a href="../../../../categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512"><path data-name="XMLID 501 -1" d="M408.67 298.53a21 21 0 1 1 20.9-21a20.85 20.85 0 0 1-20.9 21m-102.17 0a21 21 0 1 1 20.9-21a20.84 20.84 0 0 1-20.9 21m152.09 118.86C491.1 394.08 512 359.13 512 319.51c0-71.08-68.5-129.35-154.41-129.35s-154.42 58.27-154.42 129.35s68.5 129.34 154.42 129.34c17.41 0 34.83-2.33 49.92-7c2.49-.86 3.48-1.17 4.64-1.17a16.67 16.67 0 0 1 8.13 2.34L454 462.83a11.62 11.62 0 0 0 3.48 1.17a5 5 0 0 0 4.65-4.66a14.27 14.27 0 0 0-.77-3.86c-.41-1.46-5-16-7.36-25.27a18.94 18.94 0 0 1-.33-3.47a11.4 11.4 0 0 1 5-9.35" fill="currentColor"></path><path data-name="XMLID 505 -7" d="M246.13 178.51a24.47 24.47 0 0 1 0-48.94c12.77 0 24.38 11.65 24.38 24.47c1.16 12.82-10.45 24.47-24.38 24.47m-123.06 0A24.47 24.47 0 1 1 147.45 154a24.57 24.57 0 0 1-24.38 24.47M184.6 48C82.43 48 0 116.75 0 203c0 46.61 24.38 88.56 63.85 116.53C67.34 321.84 68 327 68 329a11.38 11.38 0 0 1-.66 4.49C63.85 345.14 59.4 364 59.21 365s-1.16 3.5-1.16 4.66a5.49 5.49 0 0 0 5.8 5.83a7.15 7.15 0 0 0 3.49-1.17L108 351c3.49-2.33 5.81-2.33 9.29-2.33a16.33 16.33 0 0 1 5.81 1.16c18.57 5.83 39.47 8.16 60.37 8.16h10.45a133.24 133.24 0 0 1-5.81-38.45c0-78.08 75.47-141 168.35-141h10.45C354.1 105.1 277.48 48 184.6 48" fill="currentColor"></path></svg>
+          <div class="ellipsis">
+            <span>微信小程序</span>
+          </div>
+        </a>
+      </li><li class="active">
+        <a href="../../../../categories/%E6%9D%82/">
+          
+          <div class="ellipsis">
+            <span>杂</span>
+          </div>
+        </a>
+      </li></ul>
+</nav>
+
+
+<script src="../../../../js/066f8989.js"></script>
+
+    </div>
+    <div class="bottom">
+      <cosy-tooltip id="button-preference" placement="right">
+        <span slot="content">
+          <span>偏好</span>
+          <cosy-short-key>⌘</cosy-short-key>
+          <cosy-short-key>p</cosy-short-key>
+        </span>
+        <cosy-icon bordered id="button-about-cosy-theme">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16">
+            <g fill="none">
+              <path d="M8 6a2 2 0 1 0 0 4a2 2 0 0 0 0-4zM7 8a1 1 0 1 1 2 0a1 1 0 0 1-2 0zm3.618-3.602a.708.708 0 0 1-.824-.567l-.26-1.416a.354.354 0 0 0-.275-.282a6.072 6.072 0 0 0-2.519 0a.354.354 0 0 0-.275.282l-.259 1.416a.71.71 0 0 1-.936.538l-1.359-.484a.355.355 0 0 0-.382.095c-.569.627-1 1.367-1.262 2.173a.352.352 0 0 0 .108.378l1.102.931a.704.704 0 0 1 0 1.076l-1.102.931a.352.352 0 0 0-.108.378A5.986 5.986 0 0 0 3.53 12.02a.355.355 0 0 0 .382.095l1.36-.484a.708.708 0 0 1 .936.538l.258 1.416c.026.14.135.252.275.281a6.075 6.075 0 0 0 2.52 0a.353.353 0 0 0 .274-.281l.26-1.416a.71.71 0 0 1 .936-.538l1.359.484c.135.048.286.01.382-.095c.569-.627 1-1.367 1.262-2.173a.352.352 0 0 0-.108-.378l-1.102-.931a.703.703 0 0 1 0-1.076l1.102-.931a.352.352 0 0 0 .108-.378A5.985 5.985 0 0 0 12.47 3.98a.355.355 0 0 0-.382-.095l-1.36.484a.71.71 0 0 1-.111.03zm-6.62.58l.937.333a1.71 1.71 0 0 0 2.255-1.3l.177-.97a5.105 5.105 0 0 1 1.265 0l.178.97a1.708 1.708 0 0 0 2.255 1.3L12 4.977c.255.334.467.698.63 1.084l-.754.637a1.704 1.704 0 0 0 0 2.604l.755.637a4.99 4.99 0 0 1-.63 1.084l-.937-.334a1.71 1.71 0 0 0-2.255 1.3l-.178.97a5.099 5.099 0 0 1-1.265 0l-.177-.97a1.708 1.708 0 0 0-2.255-1.3L4 11.023a4.987 4.987 0 0 1-.63-1.084l.754-.638a1.704 1.704 0 0 0 0-2.603l-.755-.637c.164-.386.376-.75.63-1.084z" fill="currentColor"></path>
+            </g>
+          </svg>
+        </cosy-icon>
+      </cosy-tooltip>
+    </div>
+  </aside>
+  <main>
+    
+<link rel="stylesheet" href="../../../../css/4dbc8f91.css">
+
+
+<div class="post-container">
+  <header>
+    <div class="left">
+      
+<link rel="stylesheet" href="../../../../css/7d333f9e.css">
+
+<nav class="breadcrumb">
+  <section>
+    <cosy-tooltip placement="bottom-left">
+      <span slot="content"><span>首页</span>
+        <cosy-short-key>⌘</cosy-short-key>
+        <cosy-short-key>H</cosy-short-key>
+      </span>
+      <cosy-icon href="/">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+          <g fill="none">
+            <path d="M8.998 2.388a1.5 1.5 0 0 1 2.005 0l5.5 4.942A1.5 1.5 0 0 1 17 8.445V15.5a1.5 1.5 0 0 1-1.5 1.5H13a1.5 1.5 0 0 1-1.5-1.5V12a.5.5 0 0 0-.5-.5H9a.5.5 0 0 0-.5.5v3.5A1.5 1.5 0 0 1 7 17H4.5A1.5 1.5 0 0 1 3 15.5V8.445c0-.425.18-.83.498-1.115l5.5-4.942zm1.336.744a.5.5 0 0 0-.668 0l-5.5 4.942A.5.5 0 0 0 4 8.445V15.5a.5.5 0 0 0 .5.5H7a.5.5 0 0 0 .5-.5V12A1.5 1.5 0 0 1 9 10.5h2a1.5 1.5 0 0 1 1.5 1.5v3.5a.5.5 0 0 0 .5.5h2.5a.5.5 0 0 0 .5-.5V8.445a.5.5 0 0 0-.166-.371l-5.5-4.942z" fill="currentColor"></path>
+          </g>
+        </svg>
+      </cosy-icon>
+    </cosy-tooltip>
+    
+    
+    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+      <g fill="none">
+        <path d="M7.733 4.207a.75.75 0 0 1 1.06.026l5.001 5.25a.75.75 0 0 1 0 1.035l-5 5.25a.75.75 0 1 1-1.087-1.034L12.216 10l-4.51-4.734a.75.75 0 0 1 .027-1.06z" fill="currentColor"></path>
+      </g>
+    </svg>
+    <a class="ellipsis" href="../../../../categories/%E6%9D%82/">
+      杂
+    </a>
+    
+    
+    
+    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+      <g fill="none">
+        <path d="M7.733 4.207a.75.75 0 0 1 1.06.026l5.001 5.25a.75.75 0 0 1 0 1.035l-5 5.25a.75.75 0 1 1-1.087-1.034L12.216 10l-4.51-4.734a.75.75 0 0 1 .027-1.06z" fill="currentColor"></path>
+      </g>
+    </svg>
+    <span class="ellipsis">
+      Github自动编译上传s3发布Rele
+    </span>
+    
+  </section>
+</nav>
+
+
+<script src="../../../../js/31d6cfe0.js"></script>
+
+    </div>
+    <div class="right">
+      
+        <cosy-tooltip id="toc-show-button" placement="left">
+          <span slot="content">
+            <span>显示 / 隐藏 文章目录</span>
+            <cosy-short-key>]</cosy-short-key>
+          </span>
+          <cosy-icon>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+              <g fill="none">
+                <path
+                  d="M4 4c-1.104-.019-2 .896-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4zM3 6a1 1 0 0 1 1-1h2.995v10H4a1 1 0 0 1-1-1V6zm4.995 9V5h8.004a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H7.995z"
+                  fill="currentColor"></path>
+              </g>
+            </svg>
+          </cosy-icon>
+        </cosy-tooltip>
+        
+    </div>
+  </header>
+  <div class="content">
+    <main class="cosy-scrollbar">
+      <div class="article-container">
+        <!-- 渲染文章内容 -->
+        <article>
+          <!-- 文章标题 -->
+          <h1 class="post-title">Github自动编译上传s3发布Release</h1>
+          <div class="last-updated">
+            上次更新: 2025-06-24 16:21:50
+          </div>
+          <!-- 文章 -->
+          <h1 id="使用-GitHub-Actions-自动化-Go-二进制文件构建、S3-上传和-GitHub-Release"><a href="#使用-GitHub-Actions-自动化-Go-二进制文件构建、S3-上传和-GitHub-Release" class="headerlink" title="使用 GitHub Actions 自动化 Go 二进制文件构建、S3 上传和 GitHub Release"></a>使用 GitHub Actions 自动化 Go 二进制文件构建、S3 上传和 GitHub Release</h1><p>在本教程中，我们将详细介绍如何使用 <a target="_blank" rel="noopener" href="https://github.com/features/actions">GitHub Actions</a> 自动化构建 Go 二进制文件，上传到 <a target="_blank" rel="noopener" href="https://www.cloudflare.com/products/r2/">Cloudflare R2</a>（S3 兼容存储），并创建包含这些二进制文件的 GitHub Release。这个自动化流程非常适合需要跨平台分发的 Go 项目，能够节省时间并确保一致性。</p>
+<h2 id="先决条件"><a href="#先决条件" class="headerlink" title="先决条件"></a>先决条件</h2><p>在开始之前，请确保您已准备好以下内容：</p>
+<ol>
+<li><p><strong>GitHub 账户和仓库</strong>：</p>
+<ul>
+<li>您需要一个 GitHub 账户和一个包含 Go 项目的仓库。</li>
+<li>确保仓库中有一个主入口文件，例如 <code>main.go</code>。</li>
+</ul>
+</li>
+<li><p><strong>Go 项目</strong>：</p>
+<ul>
+<li>您的 Go 项目应包含可编译为二进制文件的代码。</li>
+<li>本教程假设主文件名为 <code>main.go</code>，如果不同，请相应调整。</li>
+</ul>
+</li>
+<li><p><strong>Cloudflare R2 账户</strong>：</p>
+<ul>
+<li>注册 <a target="_blank" rel="noopener" href="https://www.cloudflare.com/products/r2/">Cloudflare R2</a> 账户。</li>
+<li>创建一个存储桶（例如 <code>cfrescan</code>）用于存储二进制文件。</li>
+<li>获取 R2 的访问密钥 ID 和秘密访问密钥。</li>
+</ul>
+</li>
+<li><p><strong>GitHub Secrets</strong>：</p>
+<ul>
+<li>在您的 GitHub 仓库中，转到 <strong>Settings</strong> &gt; <strong>Secrets and variables</strong> &gt; <strong>Actions</strong>。</li>
+<li>添加以下 Secrets：<ul>
+<li><code>R2_ACCESS_KEY_ID</code>：您的 R2 访问密钥 ID。</li>
+<li><code>R2_SECRET_ACCESS_KEY</code>：您的 R2 秘密访问密钥。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="设置-GitHub-Actions"><a href="#设置-GitHub-Actions" class="headerlink" title="设置 GitHub Actions"></a>设置 GitHub Actions</h2><p><a target="_blank" rel="noopener" href="https://github.com/features/actions">GitHub Actions</a> 是一个强大的自动化工具，允许您在 GitHub 仓库中定义工作流。我们将创建一个工作流来构建、上传和发布 Go 二进制文件。</p>
+<h3 id="步骤-1：创建工作流文件"><a href="#步骤-1：创建工作流文件" class="headerlink" title="步骤 1：创建工作流文件"></a>步骤 1：创建工作流文件</h3><p>在您的 GitHub 仓库中，创建一个新文件，路径为 <code>.github/workflows/build-and-release.yml</code>。这个文件将包含工作流的 YAML 配置。</p>
+<h3 id="步骤-2：编写工作流-YAML"><a href="#步骤-2：编写工作流-YAML" class="headerlink" title="步骤 2：编写工作流 YAML"></a>步骤 2：编写工作流 YAML</h3><p>以下是完整的工作流 YAML 文件。我们将在后续部分逐一解释每个部分。</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">name</span><span class="token punctuation">:</span> Build and Release Go Binary
+
+<span class="token key atrule">on</span><span class="token punctuation">:</span>
+  <span class="token key atrule">push</span><span class="token punctuation">:</span>
+    <span class="token key atrule">tags</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">'v*'</span>
+
+<span class="token key atrule">jobs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">build-and-release</span><span class="token punctuation">:</span>
+    <span class="token key atrule">permissions</span><span class="token punctuation">:</span>
+      <span class="token key atrule">contents</span><span class="token punctuation">:</span> write
+    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span> s3
+
+    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Checkout code
+        <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/checkout@v4
+
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Setup Go
+        <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/setup<span class="token punctuation">-</span>go@v4
+        <span class="token key atrule">with</span><span class="token punctuation">:</span>
+          <span class="token key atrule">go-version</span><span class="token punctuation">:</span> <span class="token string">'1.21'</span>
+
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Install UPX
+        <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+          sudo apt-get update
+          sudo apt-get install -y upx</span>
+
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Build binaries
+        <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+          export LDFLAGS="-s -w"
+          GOOS=windows GOARCH=amd64 go build -ldflags="$LDFLAGS" -trimpath -o dddd64.exe main.go &amp;&amp; upx -9 dddd64.exe
+          GOOS=windows GOARCH=386 go build -ldflags="$LDFLAGS" -trimpath -o dddd.exe main.go &amp;&amp; upx -9 dddd.exe
+          GOOS=linux GOARCH=amd64 go build -ldflags="$LDFLAGS" -trimpath -o dddd_linux64 main.go &amp;&amp; upx -9 dddd_linux64
+          GOOS=linux GOARCH=arm64 go build -ldflags="$LDFLAGS" -trimpath -o dddd_linux_arm64 main.go &amp;&amp; upx -9 dddd_linux_arm64
+          GOOS=darwin GOARCH=amd64 go build -ldflags="$LDFLAGS" -trimpath -o dddd_darwin64 main.go
+          GOOS=darwin GOARCH=arm64 go build -ldflags="$LDFLAGS" -trimpath -o dddd_darwin_arm64 main.go
+          ls -l  # Log binaries for debugging</span>
+
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Move binaries to dist
+        <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+          mkdir dist
+          mv dddd64.exe dist/
+          mv dddd.exe dist/
+          mv dddd_linux64 dist/
+          mv dddd_linux_arm64 dist/
+          mv dddd_darwin64 dist/
+          mv dddd_darwin_arm64 dist/</span>
+
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Upload to R2
+        <span class="token key atrule">env</span><span class="token punctuation">:</span>
+          <span class="token key atrule">AWS_ACCESS_KEY_ID</span><span class="token punctuation">:</span> $<span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> secrets.R2_ACCESS_KEY_ID <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
+          <span class="token key atrule">AWS_SECRET_ACCESS_KEY</span><span class="token punctuation">:</span> $<span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> secrets.R2_SECRET_ACCESS_KEY <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
+        <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+          aws s3 sync dist/ s3://cfrescan/ --endpoint-url https://2ad876964b531a6f45b6155745233768.r2.cloudflarestorage.com --checksum-algorithm CRC32 --force</span>
+
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Upload to GitHub Release
+        <span class="token key atrule">uses</span><span class="token punctuation">:</span> softprops/action<span class="token punctuation">-</span>gh<span class="token punctuation">-</span>release@v1
+        <span class="token key atrule">with</span><span class="token punctuation">:</span>
+          <span class="token key atrule">tag_name</span><span class="token punctuation">:</span> $<span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> github.ref_name <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
+          <span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token string">"Release $&#123;&#123; github.ref_name &#125;&#125;"</span>
+          <span class="token key atrule">body</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+            Auto-generated release for commit $&#123;&#123; github.sha &#125;&#125;
+            Binaries built for multiple platforms.</span>
+          <span class="token key atrule">draft</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+          <span class="token key atrule">prerelease</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+          <span class="token key atrule">files</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+            dist/dddd.exe
+            dist/dddd64.exe
+            dist/dddd_linux64
+            dist/dddd_linux_arm64
+            dist/dddd_darwin64
+            dist/dddd_darwin_arm64</span>
+        <span class="token key atrule">env</span><span class="token punctuation">:</span>
+          <span class="token key atrule">GITHUB_TOKEN</span><span class="token punctuation">:</span> $<span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> secrets.GITHUB_TOKEN <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="工作流解释"><a href="#工作流解释" class="headerlink" title="工作流解释"></a>工作流解释</h3><p>以下是工作流中每个部分的详细说明：</p>
+<ul>
+<li><strong>name</strong>：工作流名称，设置为“Build and Release Go Binary”。</li>
+<li><strong>on</strong>：定义触发工作流的事件。本例中，工作流在推送新标签（匹配 <code>v*</code>，如 <code>v1.0.0</code>）时触发。要仅在特定分支（如 <code>main</code>）触发，可以修改为：<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">on</span><span class="token punctuation">:</span>
+  <span class="token key atrule">push</span><span class="token punctuation">:</span>
+    <span class="token key atrule">branches</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> main<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><strong>jobs</strong>：定义要运行的任务。本例中有一个名为 <code>build-and-release</code> 的任务。</li>
+<li><strong>permissions</strong>：授予任务写入仓库内容的权限，用于创建 GitHub Release。</li>
+<li><strong>runs-on</strong>：指定运行环境为最新的 Ubuntu 系统（<code>ubuntu-latest</code>）。</li>
+<li><strong>environment</strong>：设置环境为 <code>s3</code>，可用于环境特定的 Secrets。</li>
+<li><strong>steps</strong>：按顺序执行的步骤列表。</li>
+</ul>
+<h4 id="步骤详细说明"><a href="#步骤详细说明" class="headerlink" title="步骤详细说明"></a>步骤详细说明</h4><ol>
+<li><p><strong>检出代码</strong>：</p>
+<ul>
+<li>使用 <a target="_blank" rel="noopener" href="https://github.com/actions/checkout">actions&#x2F;checkout@v4</a> 检出仓库代码。</li>
+</ul>
+</li>
+<li><p><strong>设置 Go 环境</strong>：</p>
+<ul>
+<li>使用 <a target="_blank" rel="noopener" href="https://github.com/actions/setup-go">actions&#x2F;setup-go@v4</a> 设置 Go 环境，指定版本为 1.21。</li>
+<li>您可以根据需要更改 <code>go-version</code>，例如设置为 <code>1.20</code>。</li>
+</ul>
+</li>
+<li><p><strong>安装 UPX</strong>：</p>
+<ul>
+<li>安装 <a target="_blank" rel="noopener" href="https://upx.github.io/">UPX</a>，一个用于压缩可执行文件的工具，以减小二进制文件大小。</li>
+</ul>
+</li>
+<li><p><strong>构建二进制文件</strong>：</p>
+<ul>
+<li>设置链接器标志 <code>-s -w</code> 以剥离调试信息，<code>-trimpath</code> 移除源代码路径，减小二进制文件大小。</li>
+<li>为以下平台和架构构建二进制文件：<ul>
+<li><code>dddd64.exe</code>：Windows 64 位 (amd64)</li>
+<li><code>dddd.exe</code>：Windows 32 位 (386)</li>
+<li><code>dddd_linux64</code>：Linux 64 位 (amd64)</li>
+<li><code>dddd_linux_arm64</code>：Linux ARM64</li>
+<li><code>dddd_darwin64</code>：macOS 64 位 (amd64)</li>
+<li><code>dddd_darwin_arm64</code>：macOS ARM64</li>
+</ul>
+</li>
+<li>使用 UPX 压缩 Windows 和 Linux 二进制文件。macOS 二进制文件未使用 UPX，因为 UPX 对 macOS 的支持有限。</li>
+<li><strong>注意</strong>：确保将 <code>main.go</code> 替换为您项目的实际主文件，并根据需要调整二进制文件名。</li>
+</ul>
+</li>
+<li><p><strong>移动二进制文件到 dist 目录</strong>：</p>
+<ul>
+<li>创建 <code>dist</code> 目录并将所有二进制文件移动到该目录，便于后续上传。</li>
+</ul>
+</li>
+<li><p><strong>上传到 R2</strong>：</p>
+<ul>
+<li>使用 AWS CLI 的 <code>s3 sync</code> 命令将 <code>dist</code> 目录中的文件同步到 R2 存储桶。</li>
+<li>通过 GitHub Secrets 设置 AWS 凭证（<code>R2_ACCESS_KEY_ID</code> 和 <code>R2_SECRET_ACCESS_KEY</code>）。</li>
+<li><strong>注意</strong>：替换 <code>s3://cfrescan/</code> 为您的实际 R2 存储桶名称，并确保 endpoint URL 正确。</li>
+</ul>
+</li>
+<li><p><strong>创建 GitHub Release</strong>：</p>
+<ul>
+<li>使用 <a target="_blank" rel="noopener" href="https://github.com/softprops/action-gh-release">softprops&#x2F;action-gh-release@v1</a> 创建 GitHub Release。</li>
+<li>标签名称设置为 <code>$&#123;&#123; github.ref_name &#125;&#125;</code>，即触发工作流的标签（如 <code>v1.0.0</code>）。</li>
+<li>包含 <code>dist</code> 目录中的所有二进制文件。</li>
+<li><strong>注意</strong>：确保触发工作流的标签符合预期，避免在分支推送时创建不必要的 Release。</li>
+</ul>
+</li>
+</ol>
+<h2 id="测试和验证"><a href="#测试和验证" class="headerlink" title="测试和验证"></a>测试和验证</h2><p>要测试工作流，请按照以下步骤操作：</p>
+<ol>
+<li><p><strong>推送代码</strong>：</p>
+<ul>
+<li>创建一个新标签（例如 <code>git tag v1.0.0</code> 和 <code>git push origin v1.0.0</code>）以触发工作流。</li>
+</ul>
+</li>
+<li><p><strong>监控工作流</strong>：</p>
+<ul>
+<li>转到仓库的 <strong>Actions</strong> 选项卡，查看工作流运行状态。</li>
+</ul>
+</li>
+<li><p><strong>验证 R2 上传</strong>：</p>
+<ul>
+<li>登录 <a target="_blank" rel="noopener" href="https://dash.cloudflare.com/">Cloudflare R2 控制台</a>，检查存储桶中是否包含所有二进制文件。</li>
+</ul>
+</li>
+<li><p><strong>验证 GitHub Release</strong>：</p>
+<ul>
+<li>转到仓库的 <strong>Releases</strong> 部分，确认新 Release 已创建并包含所有二进制文件。</li>
+</ul>
+</li>
+</ol>
+<h2 id="故障排除"><a href="#故障排除" class="headerlink" title="故障排除"></a>故障排除</h2><p>以下是一些常见问题及其解决方法：</p>
+<ul>
+<li><p><strong>二进制文件未找到</strong>：</p>
+<ul>
+<li>确保 <code>go build</code> 命令成功运行，检查 <code>main.go</code> 是否存在。</li>
+<li>在 <code>Build binaries</code> 步骤中添加 <code>ls -l</code> 以记录生成的二进制文件。</li>
+</ul>
+</li>
+<li><p><strong>R2 上传失败</strong>：</p>
+<ul>
+<li>验证 <code>R2_ACCESS_KEY_ID</code> 和 <code>R2_SECRET_ACCESS_KEY</code> 是否正确设置。</li>
+<li>确保存储桶名称和 endpoint URL 正确。</li>
+</ul>
+</li>
+<li><p><strong>Release 未创建</strong>：</p>
+<ul>
+<li>检查 <code>GITHUB_TOKEN</code> 是否正确设置（通常由 GitHub Actions 自动提供）。</li>
+<li>确保触发工作流的标签符合 <code>v*</code> 模式。</li>
+</ul>
+</li>
+<li><p><strong>macOS 二进制文件未压缩</strong>：</p>
+<ul>
+<li>macOS 二进制文件未使用 UPX，因为 UPX 对 macOS 的支持有限。如果需要压缩，可以探索其他工具。</li>
+</ul>
+</li>
+</ul>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>通过本教程，您可以设置一个 GitHub Actions 工作流，自动构建 Go 二进制文件，上传到 Cloudflare R2，并创建 GitHub Release。这个自动化流程可以显著提高开发效率，确保您的二进制文件始终是最新的，并且易于分发。</p>
+
+            <div class="post-tags">
+              <!-- 文章tags -->
+              
+                
+                  <cosy-label href="../../../../tags/Github/" size="sm"># Github</cosy-label>
+                  
+                  <cosy-label href="../../../../tags/s3/" size="sm"># s3</cosy-label>
+                  
+                  <cosy-label href="../../../../tags/Cloudflare/" size="sm"># Cloudflare</cosy-label>
+                  
+                  <cosy-label href="../../../../tags/Github-Action/" size="sm"># Github Action</cosy-label>
+                  
+                  <cosy-label href="../../../../tags/%E4%BB%BB%E6%84%8F%E7%94%A8%E6%88%B7%E7%99%BB%E9%99%86/" size="sm"># 任意用户登陆</cosy-label>
+                  
+                    
+            </div>
+            <p class="motto">RecoveryAshes Blog</p>
+        </article>
+        <!-- 评论 -->
+        <div id="vcomments"></div>
+        <div id="tcomment"></div>
+      </div>
+    </main>
+    <!-- toc -->
+    
+      <cosy-drag-box id="toc-drag-box" trigger="left" min-width="220" uid="toc-box">
+        <div class="meta-container">
+          <div class="toc-wrapper cosy-scrollbar">
+            <cosy-tooltip placement="right">
+              <p class="catalog">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+                  <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6h16"></path>
+                    <path d="M4 12h16"></path>
+                    <path d="M4 18h12"></path>
+                  </g>
+                </svg>
+                <span>目录</span>
+              </p>
+              <span slot="content">
+                <span>隐藏目录</span>
+                <cosy-short-key>]</cosy-short-key>
+              </span>
+            </cosy-tooltip>
+            <!-- 文章toc -->
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-GitHub-Actions-%E8%87%AA%E5%8A%A8%E5%8C%96-Go-%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%E6%9E%84%E5%BB%BA%E3%80%81S3-%E4%B8%8A%E4%BC%A0%E5%92%8C-GitHub-Release"><span class="toc-number">1.</span> <span class="toc-text">使用 GitHub Actions 自动化 Go 二进制文件构建、S3 上传和 GitHub Release</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%88%E5%86%B3%E6%9D%A1%E4%BB%B6"><span class="toc-number">1.1.</span> <span class="toc-text">先决条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE-GitHub-Actions"><span class="toc-number">1.2.</span> <span class="toc-text">设置 GitHub Actions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4-1%EF%BC%9A%E5%88%9B%E5%BB%BA%E5%B7%A5%E4%BD%9C%E6%B5%81%E6%96%87%E4%BB%B6"><span class="toc-number">1.2.1.</span> <span class="toc-text">步骤 1：创建工作流文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4-2%EF%BC%9A%E7%BC%96%E5%86%99%E5%B7%A5%E4%BD%9C%E6%B5%81-YAML"><span class="toc-number">1.2.2.</span> <span class="toc-text">步骤 2：编写工作流 YAML</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E8%A7%A3%E9%87%8A"><span class="toc-number">1.2.3.</span> <span class="toc-text">工作流解释</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E5%92%8C%E9%AA%8C%E8%AF%81"><span class="toc-number">1.3.</span> <span class="toc-text">测试和验证</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4"><span class="toc-number">1.4.</span> <span class="toc-text">故障排除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-number">1.5.</span> <span class="toc-text">结论</span></a></li></ol></li></ol>
+          </div>
+        </div>
+      </cosy-drag-box>
+      
+  </div>
+
+</div>
+
+<script>
+  window.page = {
+    use: 'twikoo'
+  }
+  window.katex = {
+    enable: "",
+    jsCdn: "//cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js",
+    cssCdn: "//cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css"
+  }
+  window.mermaid = {
+    enable: "",
+    theme: "",
+    cdn: "//cdn.jsdelivr.net/npm/mermaid@10.4.0/dist/mermaid.min.js",
+  }
+  window.valine = {
+    enable: "",
+    appId: 'yourValineAppId',
+    appKey: 'yourValineAppKey',
+    avatar: 'monsterid',
+    cdn: '//unpkg.com/valine@latest/dist/Valine.min.js',
+    serverURLs: ''
+  };
+  window.twikoo = {
+    enable: "",
+    envId: "https://twikoo-cloudflare.lehaoxu.workers.dev",
+    cdn: 'https://cdn.staticfile.org/twikoo/1.6.32/twikoo.all.min.js',
+    lang: 'zh-CN',
+  }
+</script>
+
+
+<script src="../../../../js/8f5fa89f.js"></script>
+
+  </main>
+</body>
+
+<script>
+  window.theme = {
+    color: 'hsl(238,50%,56%)'
+  }
+</script>
+
+
+<script src="../../../../js/e5a59732.js"></script>
+
+
+</html>
