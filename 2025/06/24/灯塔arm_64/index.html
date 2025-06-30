@@ -243,16 +243,25 @@
           <!-- 文章标题 -->
           <h1 class="post-title">灯塔Arm_64_centos8</h1>
           <div class="last-updated">
-            上次更新: 2025-06-24 11:05:17
+            上次更新: 2025-06-30 09:42:11
           </div>
           <!-- 文章 -->
           <h1 id="灯塔Arm-64-centos8"><a href="#灯塔Arm-64-centos8" class="headerlink" title="灯塔Arm_64_centos8"></a>灯塔Arm_64_centos8</h1><p><a target="_blank" rel="noopener" href="https://github.com/RecoveryAshes/ARL-ARM64-CentOS8">https://github.com/RecoveryAshes/ARL-ARM64-CentOS8</a></p>
 <p>arm64 架构的 centos8 灯塔，可用于 mac 电脑使用  centos8 虚拟机本地搭建，本地已通过测试</p>
-<p>账户密码admin&#x2F;arlpass</p>
-<h2 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h2><ul>
-<li>修复长时间任务一直扫描卡死问题</li>
-<li>修复 fileleak 报错问题</li>
+<p>账户密码admin&#x2F;arlpass<br><img src="image/%E7%81%AF%E5%A1%94arm_64/1751246958589.png" alt="1751246958589"></p>
+<h2 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h2><ol>
+<li>文件泄露扫描优化</li>
+</ol>
+<ul>
+<li>减少了 read_timeout 和 concurrency_count 的值，提高了效率。</li>
+<li>使用更大的 chunk_size 提高了读取效率。</li>
+<li>增加了重试机制，提高了稳定性。</li>
+<li>更详细地处理了多种异常，包括网络异常和读取超时。</li>
+<li>降低了错误阈值，避免因个别错误导致整个任务失败。</li>
 </ul>
+<ol start="2">
+<li>修复长时间任务一直扫描卡死问题</li>
+</ol>
 <h2 id="源码安装"><a href="#源码安装" class="headerlink" title="源码安装"></a>源码安装</h2><p>centos8,iso文件,随意虚拟机软件安装</p>
 <pre class="line-numbers language-none"><code class="language-none">https:&#x2F;&#x2F;www.123865.com&#x2F;s&#x2F;iYG0Vv-IApD3?提取码:AbSC<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -265,6 +274,7 @@ git clone https:&#x2F;&#x2F;github.com&#x2F;RecoveryAshes&#x2F;ARL-ARM64-CentOS8
 #记得关闭防火墙，或自己做策略
 systemctl stop firewalld
 systemctl disable firewalld<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
 <h2 id="docker（无法使用）"><a href="#docker（无法使用）" class="headerlink" title="docker（无法使用）"></a>docker（无法使用）</h2><p>macos的docker在大批量端口扫描时，docker到mac的端口流量会有阻塞，属于docker本身限制，暂时不知道如何解决</p>
 <pre class="line-numbers language-none"><code class="language-none">docker pull finalhades&#x2F;arl_arm64:latest
