@@ -1,0 +1,2815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    claude_code
+  </title>
+  <meta name="description" content="1">
+  <meta name="keywords" content="">
+  <meta name="author" content="RecoveryAshes">
+  <link rel="canonical" href="https://blog.finalline.net/2026/01/03/AI/claude_code/">
+  
+  
+  <link rel="icon" type="image/svg" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 10l7.383 7.418c.823.82.823 2.148 0 2.967a2.11 2.11 0 0 1-2.976 0L10 13"></path><path d="M6.293 15.293l-2.586-2.586a1 1 0 0 1 0-1.414l7.586-7.586a1 1 0 0 1 1.414 0l2.586 2.586a1 1 0 0 1 0 1.414l-7.586 7.586a1 1 0 0 1-1.414 0z"></path></g></svg>'>
+  
+  
+  
+<link rel="stylesheet" href="../../../../../css/b4c95347.css">
+
+  <script>window.i18n = {"tip-status-done":"完成","tip-status-default":"全部","tip-status-todo":"计划","tip-status-doing":"进行","tip-status-other":"其他","text-select":"选择","text-move":"移动","text-esc":"退出","January":"一月","February":"二月","March":"三月","April":"四月","May":"五月","June":"六月","July":"七月","August":"八月","September":"九月","October":"十月","November":"十一月","December":"十二月"}</script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body id="app">
+  <aside id="aside-box" class="left-aside">
+    <div class="header">
+      
+<link rel="stylesheet" href="../../../../../css/61875ce9.css">
+
+<div class="profile">
+  <a class="badge" href="/">
+    <span>Hi</span>
+    <span>RecoveryAshes</span>
+  </a>
+  <cosy-tooltip id="left-aside-button" placement="right">
+    <span slot="content">
+      <span>显示 / 隐藏 左侧导航</span>
+      <cosy-short-key>[</cosy-short-key>
+    </span>
+    <cosy-icon>
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+        <g fill="none">
+          <path d="M16 4c1.104-.019 2 .896 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12zm1 2a1 1 0 0 0-1-1h-2.995v10H16a1 1 0 0 0 1-1V6zm-4.995 9V5H4.001a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8.004z" fill="currentColor"></path>
+        </g>
+      </svg>
+    </cosy-icon>
+  </cosy-tooltip>
+</div>
+
+<script src="../../../../../js/69622cae.js"></script>
+
+      
+
+
+<cosy-search id="post-search" placeholder="搜索">
+  <div slot="short-key">
+    <cosy-short-key>⌘</cosy-short-key>
+    <cosy-short-key>K</cosy-short-key>
+  </div>
+</cosy-search>
+
+
+<script>
+  window.algolia = {
+    appId: "U8PKLWINA8",
+    SearchOnlyAPIKey: "bb72ea165918eb5f957f8f88ffaf7255"
+  }
+</script>
+
+
+<script src="../../../../../js/0a6f193b.js"></script>
+
+    </div>
+    <div class="aside-category">
+      
+<link rel="stylesheet" href="../../../../../css/db04a759.css">
+
+
+<nav class="category-nav cosy-scrollbar">
+  <ul><li data-path="archives">
+        <a href="/archives">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20"><g fill="none"><path d="M3.5 3A1.5 1.5 0 0 0 2 4.5v4A1.5 1.5 0 0 0 3.5 10h9A1.5 1.5 0 0 0 14 8.5v-4A1.5 1.5 0 0 0 12.5 3h-9zM3 4.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-4zm.5 6.5A1.5 1.5 0 0 0 2 12.5v4A1.5 1.5 0 0 0 3.5 18h9a1.5 1.5 0 0 0 1.5-1.5v-4a1.5 1.5 0 0 0-1.5-1.5h-9zM3 12.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-4zm14-.063a2.003 2.003 0 0 1-2.5-1.937A2 2 0 0 1 16 8.563a2.005 2.005 0 0 1 1 0a2 2 0 0 1 0 3.874zM16.5 3a.5.5 0 0 1 .5.5v4.041a3.02 3.02 0 0 0-1 0V3.5a.5.5 0 0 1 .5-.5zm0 10.5c-.17 0-.337-.014-.5-.041V17.5a.5.5 0 0 0 1 0v-4.041c-.163.027-.33.041-.5.041z" fill="currentColor"></path></g></svg>
+          <div class="ellipsis">归档</div>
+        </a>
+      </li></ul>
+  <ul><li class="active">
+        <a href="../../../../../categories/AI/">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10a2 2 0 0 1 2 2v1l1 1v3l-1 1v3a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3l-1-1v-3l1-1V9a2 2 0 0 1 2-2z"></path><path d="M10 16h4"></path><circle cx="8.5" cy="11.5" r=".5" fill="currentColor"></circle><circle cx="15.5" cy="11.5" r=".5" fill="currentColor"></circle><path d="M9 7L8 3"></path><path d="M15 7l1-4"></path></g></svg>
+          <div class="ellipsis">
+            <span>AI</span>
+          </div>
+        </a>
+      </li><li class="">
+        <a href="../../../../../categories/Hexo/">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 576 512"><path d="M542.22 32.05c-54.8 3.11-163.72 14.43-230.96 55.59c-4.64 2.84-7.27 7.89-7.27 13.17v363.87c0 11.55 12.63 18.85 23.28 13.49c69.18-34.82 169.23-44.32 218.7-46.92c16.89-.89 30.02-14.43 30.02-30.66V62.75c.01-17.71-15.35-31.74-33.77-30.7zM264.73 87.64C197.5 46.48 88.58 35.17 33.78 32.05C15.36 31.01 0 45.04 0 62.75V400.6c0 16.24 13.13 29.78 30.02 30.66c49.49 2.6 149.59 12.11 218.77 46.95c10.62 5.35 23.21-1.94 23.21-13.46V100.63c0-5.29-2.62-10.14-7.27-12.99z" fill="currentColor"></path></svg>
+          <div class="ellipsis">
+            <span>Hexo</span>
+          </div>
+        </a>
+      </li><li class="">
+        <a href="../../../../../categories/JAVA%E5%AE%89%E5%85%A8/">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 384 512"><path d="M277.74 312.9c9.8-6.7 23.4-12.5 23.4-12.5s-38.7 7-77.2 10.2c-47.1 3.9-97.7 4.7-123.1 1.3c-60.1-8 33-30.1 33-30.1s-36.1-2.4-80.6 19c-52.5 25.4 130 37 224.5 12.1zm-85.4-32.1c-19-42.7-83.1-80.2 0-145.8C296 53.2 242.84 0 242.84 0c21.5 84.5-75.6 110.1-110.7 162.6c-23.9 35.9 11.7 74.4 60.2 118.2zm114.6-176.2c.1 0-175.2 43.8-91.5 140.2c24.7 28.4-6.5 54-6.5 54s62.7-32.4 33.9-72.9c-26.9-37.8-47.5-56.6 64.1-121.3zm-6.1 270.5a12.19 12.19 0 0 1-2 2.6c128.3-33.7 81.1-118.9 19.8-97.3a17.33 17.33 0 0 0-8.2 6.3a70.45 70.45 0 0 1 11-3c31-6.5 75.5 41.5-20.6 91.4zM348 437.4s14.5 11.9-15.9 21.2c-57.9 17.5-240.8 22.8-291.6.7c-18.3-7.9 16-19 26.8-21.3c11.2-2.4 17.7-2 17.7-2c-20.3-14.3-131.3 28.1-56.4 40.2C232.84 509.4 401 461.3 348 437.4zM124.44 396c-78.7 22 47.9 67.4 148.1 24.5a185.89 185.89 0 0 1-28.2-13.8c-44.7 8.5-65.4 9.1-106 4.5c-33.5-3.8-13.9-15.2-13.9-15.2zm179.8 97.2c-78.7 14.8-175.8 13.1-233.3 3.6c0-.1 11.8 9.7 72.4 13.6c92.2 5.9 233.8-3.3 237.1-46.9c0 0-6.4 16.5-76.2 29.7zM260.64 353c-59.2 11.4-93.5 11.1-136.8 6.6c-33.5-3.5-11.6-19.7-11.6-19.7c-86.8 28.8 48.2 61.4 169.5 25.9a60.37 60.37 0 0 1-21.1-12.8z" fill="currentColor"></path></svg>
+          <div class="ellipsis">
+            <span>JAVA安全</span>
+          </div>
+        </a>
+      </li><li class="">
+        <a href="../../../../../categories/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V6a2 2 0 0 1 2-2h2"></path><path d="M4 17v1a2 2 0 0 0 2 2h2"></path><path d="M16 4h2a2 2 0 0 1 2 2v1"></path><path d="M16 20h2a2 2 0 0 0 2-2v-1"></path><path d="M5 12h14"></path></g></svg>
+          <div class="ellipsis">
+            <span>信息收集</span>
+          </div>
+        </a>
+      </li><li class="">
+        <a href="../../../../../categories/%E5%B7%A5%E5%85%B7/">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16"><g fill="none"><path d="M4.5 2.001a2.5 2.5 0 0 0-2.5 2.5v6a2.5 2.5 0 0 0 2.5 2.5h4.281c.033-.216.105-.43.221-.63l.214-.37H4.5a1.5 1.5 0 0 1-1.5-1.5V5h9v1.194a2.926 2.926 0 0 1 1-.204V4.5a2.5 2.5 0 0 0-2.5-2.5h-6zM3.084 4a1.5 1.5 0 0 1 1.415-1h6a1.5 1.5 0 0 1 1.414 1H3.084zm7.332 3.71L8.854 6.146a.5.5 0 0 0-.707.707l1.646 1.647l-1.646 1.646a.5.5 0 1 0 .707.707l1.368-1.368a2.898 2.898 0 0 1 .194-1.777zM6.853 6.146a.5.5 0 0 1 0 .707L5.207 8.501l1.646 1.646a.5.5 0 1 1-.707.707l-2-2a.5.5 0 0 1 0-.707l2-2a.5.5 0 0 1 .707 0zM12.52 8.58l.9-1.56a1.91 1.91 0 0 0-1.902 2.992l-1.651 2.86a.796.796 0 0 0 1.378.795l1.655-2.865a1.91 1.91 0 0 0 1.623-3.144l-.9 1.559a.637.637 0 1 1-1.103-.637z" fill="currentColor"></path></g></svg>
+          <div class="ellipsis">
+            <span>工具</span>
+          </div>
+        </a>
+      </li><li class="">
+        <a href="../../../../../categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512"><path data-name="XMLID 501 -1" d="M408.67 298.53a21 21 0 1 1 20.9-21a20.85 20.85 0 0 1-20.9 21m-102.17 0a21 21 0 1 1 20.9-21a20.84 20.84 0 0 1-20.9 21m152.09 118.86C491.1 394.08 512 359.13 512 319.51c0-71.08-68.5-129.35-154.41-129.35s-154.42 58.27-154.42 129.35s68.5 129.34 154.42 129.34c17.41 0 34.83-2.33 49.92-7c2.49-.86 3.48-1.17 4.64-1.17a16.67 16.67 0 0 1 8.13 2.34L454 462.83a11.62 11.62 0 0 0 3.48 1.17a5 5 0 0 0 4.65-4.66a14.27 14.27 0 0 0-.77-3.86c-.41-1.46-5-16-7.36-25.27a18.94 18.94 0 0 1-.33-3.47a11.4 11.4 0 0 1 5-9.35" fill="currentColor"></path><path data-name="XMLID 505 -7" d="M246.13 178.51a24.47 24.47 0 0 1 0-48.94c12.77 0 24.38 11.65 24.38 24.47c1.16 12.82-10.45 24.47-24.38 24.47m-123.06 0A24.47 24.47 0 1 1 147.45 154a24.57 24.57 0 0 1-24.38 24.47M184.6 48C82.43 48 0 116.75 0 203c0 46.61 24.38 88.56 63.85 116.53C67.34 321.84 68 327 68 329a11.38 11.38 0 0 1-.66 4.49C63.85 345.14 59.4 364 59.21 365s-1.16 3.5-1.16 4.66a5.49 5.49 0 0 0 5.8 5.83a7.15 7.15 0 0 0 3.49-1.17L108 351c3.49-2.33 5.81-2.33 9.29-2.33a16.33 16.33 0 0 1 5.81 1.16c18.57 5.83 39.47 8.16 60.37 8.16h10.45a133.24 133.24 0 0 1-5.81-38.45c0-78.08 75.47-141 168.35-141h10.45C354.1 105.1 277.48 48 184.6 48" fill="currentColor"></path></svg>
+          <div class="ellipsis">
+            <span>微信小程序</span>
+          </div>
+        </a>
+      </li><li class="">
+        <a href="../../../../../categories/%E6%9D%82/">
+          
+          <div class="ellipsis">
+            <span>杂</span>
+          </div>
+        </a>
+      </li></ul>
+</nav>
+
+
+<script src="../../../../../js/066f8989.js"></script>
+
+    </div>
+    <div class="bottom">
+      <cosy-tooltip id="button-preference" placement="right">
+        <span slot="content">
+          <span>偏好</span>
+          <cosy-short-key>⌘</cosy-short-key>
+          <cosy-short-key>p</cosy-short-key>
+        </span>
+        <cosy-icon bordered id="button-about-cosy-theme">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16">
+            <g fill="none">
+              <path d="M8 6a2 2 0 1 0 0 4a2 2 0 0 0 0-4zM7 8a1 1 0 1 1 2 0a1 1 0 0 1-2 0zm3.618-3.602a.708.708 0 0 1-.824-.567l-.26-1.416a.354.354 0 0 0-.275-.282a6.072 6.072 0 0 0-2.519 0a.354.354 0 0 0-.275.282l-.259 1.416a.71.71 0 0 1-.936.538l-1.359-.484a.355.355 0 0 0-.382.095c-.569.627-1 1.367-1.262 2.173a.352.352 0 0 0 .108.378l1.102.931a.704.704 0 0 1 0 1.076l-1.102.931a.352.352 0 0 0-.108.378A5.986 5.986 0 0 0 3.53 12.02a.355.355 0 0 0 .382.095l1.36-.484a.708.708 0 0 1 .936.538l.258 1.416c.026.14.135.252.275.281a6.075 6.075 0 0 0 2.52 0a.353.353 0 0 0 .274-.281l.26-1.416a.71.71 0 0 1 .936-.538l1.359.484c.135.048.286.01.382-.095c.569-.627 1-1.367 1.262-2.173a.352.352 0 0 0-.108-.378l-1.102-.931a.703.703 0 0 1 0-1.076l1.102-.931a.352.352 0 0 0 .108-.378A5.985 5.985 0 0 0 12.47 3.98a.355.355 0 0 0-.382-.095l-1.36.484a.71.71 0 0 1-.111.03zm-6.62.58l.937.333a1.71 1.71 0 0 0 2.255-1.3l.177-.97a5.105 5.105 0 0 1 1.265 0l.178.97a1.708 1.708 0 0 0 2.255 1.3L12 4.977c.255.334.467.698.63 1.084l-.754.637a1.704 1.704 0 0 0 0 2.604l.755.637a4.99 4.99 0 0 1-.63 1.084l-.937-.334a1.71 1.71 0 0 0-2.255 1.3l-.178.97a5.099 5.099 0 0 1-1.265 0l-.177-.97a1.708 1.708 0 0 0-2.255-1.3L4 11.023a4.987 4.987 0 0 1-.63-1.084l.754-.638a1.704 1.704 0 0 0 0-2.603l-.755-.637c.164-.386.376-.75.63-1.084z" fill="currentColor"></path>
+            </g>
+          </svg>
+        </cosy-icon>
+      </cosy-tooltip>
+    </div>
+  </aside>
+  <main>
+    
+<link rel="stylesheet" href="../../../../../css/4dbc8f91.css">
+
+
+<div class="post-container">
+  <header>
+    <div class="left">
+      
+<link rel="stylesheet" href="../../../../../css/7d333f9e.css">
+
+<nav class="breadcrumb">
+  <section>
+    <cosy-tooltip placement="bottom-left">
+      <span slot="content"><span>首页</span>
+        <cosy-short-key>⌘</cosy-short-key>
+        <cosy-short-key>H</cosy-short-key>
+      </span>
+      <cosy-icon href="/">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+          <g fill="none">
+            <path d="M8.998 2.388a1.5 1.5 0 0 1 2.005 0l5.5 4.942A1.5 1.5 0 0 1 17 8.445V15.5a1.5 1.5 0 0 1-1.5 1.5H13a1.5 1.5 0 0 1-1.5-1.5V12a.5.5 0 0 0-.5-.5H9a.5.5 0 0 0-.5.5v3.5A1.5 1.5 0 0 1 7 17H4.5A1.5 1.5 0 0 1 3 15.5V8.445c0-.425.18-.83.498-1.115l5.5-4.942zm1.336.744a.5.5 0 0 0-.668 0l-5.5 4.942A.5.5 0 0 0 4 8.445V15.5a.5.5 0 0 0 .5.5H7a.5.5 0 0 0 .5-.5V12A1.5 1.5 0 0 1 9 10.5h2a1.5 1.5 0 0 1 1.5 1.5v3.5a.5.5 0 0 0 .5.5h2.5a.5.5 0 0 0 .5-.5V8.445a.5.5 0 0 0-.166-.371l-5.5-4.942z" fill="currentColor"></path>
+          </g>
+        </svg>
+      </cosy-icon>
+    </cosy-tooltip>
+    
+    
+    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+      <g fill="none">
+        <path d="M7.733 4.207a.75.75 0 0 1 1.06.026l5.001 5.25a.75.75 0 0 1 0 1.035l-5 5.25a.75.75 0 1 1-1.087-1.034L12.216 10l-4.51-4.734a.75.75 0 0 1 .027-1.06z" fill="currentColor"></path>
+      </g>
+    </svg>
+    <a class="ellipsis" href="../../../../../categories/AI/">
+      AI
+    </a>
+    
+    
+    
+    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+      <g fill="none">
+        <path d="M7.733 4.207a.75.75 0 0 1 1.06.026l5.001 5.25a.75.75 0 0 1 0 1.035l-5 5.25a.75.75 0 1 1-1.087-1.034L12.216 10l-4.51-4.734a.75.75 0 0 1 .027-1.06z" fill="currentColor"></path>
+      </g>
+    </svg>
+    <span class="ellipsis">
+      claude_code
+    </span>
+    
+  </section>
+</nav>
+
+
+<script src="../../../../../js/31d6cfe0.js"></script>
+
+    </div>
+    <div class="right">
+      
+        <cosy-tooltip id="toc-show-button" placement="left">
+          <span slot="content">
+            <span>显示 / 隐藏 文章目录</span>
+            <cosy-short-key>]</cosy-short-key>
+          </span>
+          <cosy-icon>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+              <g fill="none">
+                <path
+                  d="M4 4c-1.104-.019-2 .896-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4zM3 6a1 1 0 0 1 1-1h2.995v10H4a1 1 0 0 1-1-1V6zm4.995 9V5h8.004a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H7.995z"
+                  fill="currentColor"></path>
+              </g>
+            </svg>
+          </cosy-icon>
+        </cosy-tooltip>
+        
+    </div>
+  </header>
+  <div class="content">
+    <main class="cosy-scrollbar">
+      <div class="article-container">
+        <!-- 渲染文章内容 -->
+        <article>
+          <!-- 文章标题 -->
+          <h1 class="post-title">claude_code</h1>
+          <div class="last-updated">
+            上次更新: 2026-01-03 05:05:45
+          </div>
+          <!-- 文章 -->
+          <h1 id="claude-code"><a href="#claude-code" class="headerlink" title="claude_code"></a>claude_code</h1><h2 id="1-工具"><a href="#1-工具" class="headerlink" title="1.工具"></a>1.工具</h2><h1 id="Claude-Code-完整功能手册"><a href="#Claude-Code-完整功能手册" class="headerlink" title="Claude Code 完整功能手册"></a>Claude Code 完整功能手册</h1><blockquote>
+<p>Claude Code 是 Anthropic 官方推出的 AI 驱动命令行编程助手</p>
+</blockquote>
+<hr>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ol>
+<li><a href="#1-%E7%AE%80%E4%BB%8B%E4%B8%8E%E5%AE%89%E8%A3%85">简介与安装</a></li>
+<li><a href="#2-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0">命令行参数</a></li>
+<li><a href="#3-%E6%96%9C%E6%9D%A0%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3">斜杠命令详解</a></li>
+<li><a href="#4-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8A%80%E8%83%BD%E7%B3%BB%E7%BB%9F">自定义技能系统</a></li>
+<li><a href="#5-mcp-%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE">MCP 服务器配置</a></li>
+<li><a href="#6-hooks-%E9%92%A9%E5%AD%90%E7%B3%BB%E7%BB%9F">Hooks 钩子系统</a></li>
+<li><a href="#7-%E6%9D%83%E9%99%90%E4%B8%8E%E5%AE%89%E5%85%A8">权限与安全</a></li>
+<li><a href="#8-%E4%BC%9A%E8%AF%9D%E7%AE%A1%E7%90%86">会话管理</a></li>
+<li><a href="#9-%E9%85%8D%E7%BD%AE%E7%B3%BB%E7%BB%9F%E8%AF%A6%E8%A7%A3">配置系统详解</a></li>
+<li><a href="#10-%E6%8F%92%E4%BB%B6%E7%B3%BB%E7%BB%9F">插件系统</a></li>
+<li><a href="#11-ide-%E9%9B%86%E6%88%90">IDE 集成</a></li>
+<li><a href="#12-%E9%94%AE%E7%9B%98%E5%BF%AB%E6%8D%B7%E9%94%AE">键盘快捷键</a></li>
+<li><a href="#13-%E9%AB%98%E7%BA%A7%E5%8A%9F%E8%83%BD">高级功能</a></li>
+<li><a href="#14-%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5">故障排查</a></li>
+<li><a href="#15-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5">最佳实践</a></li>
+</ol>
+<hr>
+<h2 id="1-简介与安装"><a href="#1-简介与安装" class="headerlink" title="1. 简介与安装"></a>1. 简介与安装</h2><h3 id="什么是-Claude-Code？"><a href="#什么是-Claude-Code？" class="headerlink" title="什么是 Claude Code？"></a>什么是 Claude Code？</h3><p>Claude Code 是基于 Claude 大语言模型的智能命令行编程助手，可以帮助你：</p>
+<ul>
+<li>编写、调试、重构代码</li>
+<li>理解和探索代码库</li>
+<li>执行复杂的软件工程任务</li>
+<li>自动化开发工作流</li>
+<li>与 Git、GitHub 深度集成</li>
+<li>通过 MCP 连接外部工具和数据源</li>
+</ul>
+<h3 id="系统要求"><a href="#系统要求" class="headerlink" title="系统要求"></a>系统要求</h3><ul>
+<li>Node.js 18+ 或 Bun</li>
+<li>macOS、Linux 或 Windows (WSL2)</li>
+<li>终端模拟器（推荐支持 24-bit 色彩）</li>
+</ul>
+<h3 id="安装方式"><a href="#安装方式" class="headerlink" title="安装方式"></a>安装方式</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 使用 npm 安装（推荐）</span>
+<span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-g</span> @anthropic-ai/claude-code
+
+<span class="token comment"># 使用 yarn</span>
+<span class="token function">yarn</span> global <span class="token function">add</span> @anthropic-ai/claude-code
+
+<span class="token comment"># 使用 bun</span>
+bun <span class="token function">install</span> <span class="token parameter variable">-g</span> @anthropic-ai/claude-code<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="首次配置"><a href="#首次配置" class="headerlink" title="首次配置"></a>首次配置</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 启动并登录</span>
+claude
+
+<span class="token comment"># 使用 API 密钥</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">ANTHROPIC_API_KEY</span><span class="token operator">=</span><span class="token string">"your-api-key"</span>
+claude<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><pre class="line-numbers language-none"><code class="language-none">~&#x2F;.claude&#x2F;
+├── settings.json          # 全局配置
+├── settings.local.json    # 本地配置（不同步）
+├── CLAUDE.md              # 全局指令文件
+├── commands&#x2F;              # 全局自定义命令
+├── hooks&#x2F;                 # 全局钩子
+└── mcp&#x2F;                   # MCP 服务器日志
+
+.claude&#x2F;                   # 项目级配置
+├── settings.json          # 项目配置
+├── settings.local.json    # 项目本地配置
+├── commands&#x2F;              # 项目自定义命令
+└── hooks&#x2F;                 # 项目钩子<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
+<h2 id="2-命令行参数"><a href="#2-命令行参数" class="headerlink" title="2. 命令行参数"></a>2. 命令行参数</h2><h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">claude <span class="token punctuation">[</span>选项<span class="token punctuation">]</span> <span class="token punctuation">[</span>提示词<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="主要子命令"><a href="#主要子命令" class="headerlink" title="主要子命令"></a>主要子命令</h3><table>
+<thead>
+<tr>
+<th>子命令</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>(无)</code></td>
+<td>启动交互式会话</td>
+<td><code>claude</code></td>
+</tr>
+<tr>
+<td><code>chat</code></td>
+<td>启动聊天会话</td>
+<td><code>claude chat</code></td>
+</tr>
+<tr>
+<td><code>-p, --print</code></td>
+<td>单次执行模式（非交互）</td>
+<td><code>claude -p &quot;解释这段代码&quot;</code></td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>管理配置</td>
+<td><code>claude config</code></td>
+</tr>
+<tr>
+<td><code>mcp</code></td>
+<td>MCP 服务器管理</td>
+<td><code>claude mcp</code></td>
+</tr>
+<tr>
+<td><code>doctor</code></td>
+<td>诊断问题</td>
+<td><code>claude doctor</code></td>
+</tr>
+<tr>
+<td><code>update</code></td>
+<td>更新 Claude Code</td>
+<td><code>claude update</code></td>
+</tr>
+</tbody></table>
+<h3 id="常用选项"><a href="#常用选项" class="headerlink" title="常用选项"></a>常用选项</h3><table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>-p, --print</code></td>
+<td>打印模式，执行后退出</td>
+<td><code>claude -p &quot;重构这个函数&quot;</code></td>
+</tr>
+<tr>
+<td><code>-c, --continue</code></td>
+<td>继续上次会话</td>
+<td><code>claude -c</code></td>
+</tr>
+<tr>
+<td><code>-r, --resume &lt;id&gt;</code></td>
+<td>恢复指定会话</td>
+<td><code>claude -r abc123</code></td>
+</tr>
+<tr>
+<td><code>--model &lt;model&gt;</code></td>
+<td>指定模型</td>
+<td><code>claude --model opus</code></td>
+</tr>
+<tr>
+<td><code>--dangerously-skip-permissions</code></td>
+<td>跳过权限确认</td>
+<td><code>claude --dangerously-skip-permissions</code></td>
+</tr>
+<tr>
+<td><code>--allowedTools &lt;tools&gt;</code></td>
+<td>允许的工具列表</td>
+<td><code>claude --allowedTools &quot;Read,Write&quot;</code></td>
+</tr>
+<tr>
+<td><code>--disallowedTools &lt;tools&gt;</code></td>
+<td>禁用的工具列表</td>
+<td><code>claude --disallowedTools &quot;Bash&quot;</code></td>
+</tr>
+<tr>
+<td><code>--output-format &lt;fmt&gt;</code></td>
+<td>输出格式</td>
+<td><code>claude -p &quot;...&quot; --output-format json</code></td>
+</tr>
+<tr>
+<td><code>--verbose</code></td>
+<td>详细输出</td>
+<td><code>claude --verbose</code></td>
+</tr>
+<tr>
+<td><code>--max-turns &lt;n&gt;</code></td>
+<td>最大对话轮次</td>
+<td><code>claude --max-turns 10</code></td>
+</tr>
+</tbody></table>
+<h3 id="配置子命令"><a href="#配置子命令" class="headerlink" title="配置子命令"></a>配置子命令</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查看所有配置</span>
+claude config list
+
+<span class="token comment"># 获取配置值</span>
+claude config get model
+
+<span class="token comment"># 设置配置值</span>
+claude config <span class="token builtin class-name">set</span> model opus
+
+<span class="token comment"># 重置配置</span>
+claude config reset<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="MCP-子命令"><a href="#MCP-子命令" class="headerlink" title="MCP 子命令"></a>MCP 子命令</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 列出 MCP 服务器</span>
+claude mcp list
+
+<span class="token comment"># 添加 MCP 服务器</span>
+claude mcp <span class="token function">add</span> <span class="token operator">&lt;</span>name<span class="token operator">></span> <span class="token operator">&lt;</span>command<span class="token operator">></span> <span class="token punctuation">[</span>args<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+
+<span class="token comment"># 删除 MCP 服务器</span>
+claude mcp remove <span class="token operator">&lt;</span>name<span class="token operator">></span>
+
+<span class="token comment"># 测试 MCP 服务器</span>
+claude mcp <span class="token builtin class-name">test</span> <span class="token operator">&lt;</span>name<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="会话管理"><a href="#会话管理" class="headerlink" title="会话管理"></a>会话管理</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 列出历史会话</span>
+claude <span class="token parameter variable">--list</span>
+
+<span class="token comment"># 继续上次会话</span>
+claude <span class="token parameter variable">-c</span>
+
+<span class="token comment"># 恢复特定会话</span>
+claude <span class="token parameter variable">-r</span> <span class="token operator">&lt;</span>session-id<span class="token operator">></span>
+
+<span class="token comment"># 清理历史会话</span>
+claude <span class="token parameter variable">--clean</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="输入方式"><a href="#输入方式" class="headerlink" title="输入方式"></a>输入方式</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 从标准输入读取</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"解释这段代码"</span> <span class="token operator">|</span> claude <span class="token parameter variable">-p</span>
+
+<span class="token comment"># 从文件读取</span>
+claude <span class="token parameter variable">-p</span> <span class="token operator">&lt;</span> prompt.txt
+
+<span class="token comment"># 多行输入（heredoc）</span>
+claude <span class="token parameter variable">-p</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF
+请帮我：
+1. 检查代码错误
+2. 优化性能
+EOF</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 文本格式（默认）</span>
+claude <span class="token parameter variable">-p</span> <span class="token string">"..."</span> --output-format text
+
+<span class="token comment"># JSON 格式</span>
+claude <span class="token parameter variable">-p</span> <span class="token string">"..."</span> --output-format json
+
+<span class="token comment"># 流式 JSON</span>
+claude <span class="token parameter variable">-p</span> <span class="token string">"..."</span> --output-format stream-json<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
+<h2 id="3-斜杠命令详解"><a href="#3-斜杠命令详解" class="headerlink" title="3. 斜杠命令详解"></a>3. 斜杠命令详解</h2><h3 id="内置命令"><a href="#内置命令" class="headerlink" title="内置命令"></a>内置命令</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>/help</code></td>
+<td>获取帮助</td>
+<td>显示可用命令和使用说明</td>
+</tr>
+<tr>
+<td><code>/clear</code></td>
+<td>清空对话</td>
+<td>开始新的对话，保留上下文</td>
+</tr>
+<tr>
+<td><code>/compact</code></td>
+<td>压缩上下文</td>
+<td>总结并压缩对话历史</td>
+</tr>
+<tr>
+<td><code>/config</code></td>
+<td>配置管理</td>
+<td>查看或修改配置</td>
+</tr>
+<tr>
+<td><code>/cost</code></td>
+<td>费用统计</td>
+<td>显示当前会话的 token 消耗</td>
+</tr>
+<tr>
+<td><code>/doctor</code></td>
+<td>诊断问题</td>
+<td>检查配置和连接状态</td>
+</tr>
+<tr>
+<td><code>/init</code></td>
+<td>初始化项目</td>
+<td>创建项目 CLAUDE.md 文件</td>
+</tr>
+<tr>
+<td><code>/login</code></td>
+<td>登录账号</td>
+<td>切换或重新登录账号</td>
+</tr>
+<tr>
+<td><code>/logout</code></td>
+<td>登出账号</td>
+<td>退出当前账号</td>
+</tr>
+<tr>
+<td><code>/memory</code></td>
+<td>记忆管理</td>
+<td>管理 Claude 的持久化记忆</td>
+</tr>
+<tr>
+<td><code>/model</code></td>
+<td>切换模型</td>
+<td>切换使用的 Claude 模型</td>
+</tr>
+<tr>
+<td><code>/permissions</code></td>
+<td>权限管理</td>
+<td>查看和修改工具权限</td>
+</tr>
+<tr>
+<td><code>/plugin</code></td>
+<td>插件管理</td>
+<td>安装、启用或禁用插件</td>
+</tr>
+<tr>
+<td><code>/pr-comments</code></td>
+<td>PR 评论</td>
+<td>获取 GitHub PR 的评论</td>
+</tr>
+<tr>
+<td><code>/review</code></td>
+<td>代码审查</td>
+<td>审查当前 PR 的代码变更</td>
+</tr>
+<tr>
+<td><code>/resume</code></td>
+<td>恢复会话</td>
+<td>恢复之前的会话</td>
+</tr>
+<tr>
+<td><code>/security-review</code></td>
+<td>安全审查</td>
+<td>检查代码中的安全漏洞</td>
+</tr>
+<tr>
+<td><code>/statusline</code></td>
+<td>状态栏配置</td>
+<td>配置底部状态栏显示</td>
+</tr>
+<tr>
+<td><code>/tasks</code></td>
+<td>任务管理</td>
+<td>查看后台任务状态</td>
+</tr>
+<tr>
+<td><code>/terminal-setup</code></td>
+<td>终端设置</td>
+<td>配置终端集成</td>
+</tr>
+<tr>
+<td><code>/vim</code></td>
+<td>Vim 模式</td>
+<td>启用&#x2F;禁用 Vim 键绑定</td>
+</tr>
+<tr>
+<td><code>/agent</code></td>
+<td>启动子代理</td>
+<td>委托复杂任务给独立代理</td>
+</tr>
+</tbody></table>
+<h3 id="命令详细说明"><a href="#命令详细说明" class="headerlink" title="命令详细说明"></a>命令详细说明</h3><h4 id="agent-启动子代理"><a href="#agent-启动子代理" class="headerlink" title="/agent - 启动子代理"></a><code>/agent</code> - 启动子代理</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">></span> /agent <span class="token operator">&lt;</span>任务描述<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>启动独立的子代理来处理复杂任务：</p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>任务委托</strong></td>
+<td>将复杂任务分配给独立代理实例</td>
+</tr>
+<tr>
+<td><strong>并行处理</strong></td>
+<td>可同时启动多个子代理处理不同任务</td>
+</tr>
+<tr>
+<td><strong>独立上下文</strong></td>
+<td>子代理在独立会话中运行</td>
+</tr>
+<tr>
+<td><strong>自主执行</strong></td>
+<td>子代理自主规划、执行并返回结果</td>
+</tr>
+</tbody></table>
+<p><strong>示例：</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 代码重构</span>
+<span class="token operator">></span> /agent 重构 src/utils 目录，提高代码可读性
+
+<span class="token comment"># 添加测试</span>
+<span class="token operator">></span> /agent 为 API 模块添加完整的单元测试
+
+<span class="token comment"># 性能分析</span>
+<span class="token operator">></span> /agent 分析项目性能瓶颈并提出优化建议<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>与普通对话的区别：</strong></p>
+<table>
+<thead>
+<tr>
+<th>普通对话</th>
+<th>&#x2F;agent</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>在当前会话中执行</td>
+<td>启动独立子会话</td>
+</tr>
+<tr>
+<td>需要逐步交互</td>
+<td>自主完成整个任务</td>
+</tr>
+<tr>
+<td>共享上下文</td>
+<td>独立上下文</td>
+</tr>
+<tr>
+<td>即时响应</td>
+<td>可能需要较长时间</td>
+</tr>
+</tbody></table>
+<h4 id="init-初始化项目"><a href="#init-初始化项目" class="headerlink" title="/init - 初始化项目"></a><code>/init</code> - 初始化项目</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">></span> /init<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>创建 <code>CLAUDE.md</code> 文件，包含：</p>
+<ul>
+<li>项目简介</li>
+<li>技术栈说明</li>
+<li>目录结构</li>
+<li>开发规范</li>
+<li>常用命令</li>
+</ul>
+<h4 id="review-代码审查"><a href="#review-代码审查" class="headerlink" title="/review - 代码审查"></a><code>/review</code> - 代码审查</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">></span> /review              <span class="token comment"># 审查当前分支变更</span>
+<span class="token operator">></span> /review PR<span class="token comment">#123       # 审查指定 PR</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h4 id="security-review-安全审查"><a href="#security-review-安全审查" class="headerlink" title="/security-review - 安全审查"></a><code>/security-review</code> - 安全审查</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">></span> /security-review     <span class="token comment"># 扫描常见安全问题</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>检查项包括：</p>
+<ul>
+<li>SQL 注入</li>
+<li>XSS 跨站脚本</li>
+<li>命令注入</li>
+<li>敏感信息泄露</li>
+<li>依赖漏洞</li>
+</ul>
+<h4 id="model-模型切换"><a href="#model-模型切换" class="headerlink" title="/model - 模型切换"></a><code>/model</code> - 模型切换</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">></span> /model opus          <span class="token comment"># 切换到 Opus（最强）</span>
+<span class="token operator">></span> /model sonnet        <span class="token comment"># 切换到 Sonnet（平衡）</span>
+<span class="token operator">></span> /model haiku         <span class="token comment"># 切换到 Haiku（快速）</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="compact-上下文压缩"><a href="#compact-上下文压缩" class="headerlink" title="/compact - 上下文压缩"></a><code>/compact</code> - 上下文压缩</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">></span> /compact             <span class="token comment"># 压缩当前对话上下文</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>当对话过长时使用，保留关键信息，减少 token 消耗。</p>
+<h4 id="memory-记忆管理"><a href="#memory-记忆管理" class="headerlink" title="/memory - 记忆管理"></a><code>/memory</code> - 记忆管理</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">></span> /memory              <span class="token comment"># 查看记忆</span>
+<span class="token operator">></span> /memory <span class="token function">add</span> <span class="token string">"..."</span>    <span class="token comment"># 添加记忆</span>
+<span class="token operator">></span> /memory <span class="token function">clear</span>        <span class="token comment"># 清除记忆</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<hr>
+<h2 id="4-自定义技能系统"><a href="#4-自定义技能系统" class="headerlink" title="4. 自定义技能系统"></a>4. 自定义技能系统</h2><h3 id="技能（Skills）概述"><a href="#技能（Skills）概述" class="headerlink" title="技能（Skills）概述"></a>技能（Skills）概述</h3><p>技能是可复用的提示词模板，通过 <code>.claude/commands/</code> 目录定义。</p>
+<h3 id="目录结构-1"><a href="#目录结构-1" class="headerlink" title="目录结构"></a>目录结构</h3><pre class="line-numbers language-none"><code class="language-none">.claude&#x2F;
+└── commands&#x2F;
+    ├── my-skill.md           # 调用方式: &#x2F;my-skill
+    └── folder&#x2F;
+        └── nested.md         # 调用方式: &#x2F;folder:nested<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="技能文件格式"><a href="#技能文件格式" class="headerlink" title="技能文件格式"></a>技能文件格式</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml">description: 技能的简短描述（可选）</span>
+<span class="token punctuation">---</span></span>
+
+<span class="token title important"><span class="token punctuation">#</span> 技能提示词内容</span>
+
+你的提示词指令...
+
+<span class="token title important"><span class="token punctuation">##</span> 可用变量</span>
+
+$ARGUMENTS - 用户传入的参数
+$SELECTION - 用户选中的代码（IDE 集成时）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="变量系统"><a href="#变量系统" class="headerlink" title="变量系统"></a>变量系统</h3><table>
+<thead>
+<tr>
+<th>变量</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>$ARGUMENTS</code></td>
+<td>命令后的参数</td>
+</tr>
+<tr>
+<td><code>$SELECTION</code></td>
+<td>选中的代码</td>
+</tr>
+<tr>
+<td><code>$FILE</code></td>
+<td>当前文件路径</td>
+</tr>
+<tr>
+<td><code>$DIRECTORY</code></td>
+<td>当前目录</td>
+</tr>
+<tr>
+<td><code>$PROJECT</code></td>
+<td>项目根目录</td>
+</tr>
+</tbody></table>
+<h3 id="示例技能"><a href="#示例技能" class="headerlink" title="示例技能"></a>示例技能</h3><h4 id="代码重构技能"><a href="#代码重构技能" class="headerlink" title="代码重构技能"></a>代码重构技能</h4><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml">description: 重构选中的代码</span>
+<span class="token punctuation">---</span></span>
+
+请重构以下代码，遵循以下原则：
+<span class="token list punctuation">1.</span> 提高可读性
+<span class="token list punctuation">2.</span> 减少重复
+<span class="token list punctuation">3.</span> 优化性能
+<span class="token list punctuation">4.</span> 添加必要注释
+
+代码：
+$SELECTION
+
+用户要求：
+$ARGUMENTS<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="Git-提交技能"><a href="#Git-提交技能" class="headerlink" title="Git 提交技能"></a>Git 提交技能</h4><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml">description: 生成规范的 Git 提交信息</span>
+<span class="token punctuation">---</span></span>
+
+请根据以下变更生成 Git 提交信息：
+
+<span class="token list punctuation">1.</span> 使用 Conventional Commits 格式
+<span class="token list punctuation">2.</span> 标题不超过 50 字符
+<span class="token list punctuation">3.</span> 包含简短说明
+
+变更说明：
+$ARGUMENTS<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="技能交接（Handoff）"><a href="#技能交接（Handoff）" class="headerlink" title="技能交接（Handoff）"></a>技能交接（Handoff）</h3><p>技能可以交接给另一个技能：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml">description: 分析并修复 bug
+handoff: /fix-code</span>
+<span class="token punctuation">---</span></span>
+
+分析以下 bug 并准备修复方案：
+$ARGUMENTS
+
+分析完成后，交接给修复技能。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Speckit-工作流与-agent-联动"><a href="#Speckit-工作流与-agent-联动" class="headerlink" title="Speckit 工作流与 &#x2F;agent 联动"></a>Speckit 工作流与 &#x2F;agent 联动</h3><p>Speckit 是一套完整的规范驱动开发工作流，通过 <strong>Handoffs 机制</strong> 实现技能间的自动联动。</p>
+<h4 id="Speckit-命令概览"><a href="#Speckit-命令概览" class="headerlink" title="Speckit 命令概览"></a>Speckit 命令概览</h4><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+<th>输出产物</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>/speckit.specify</code></td>
+<td>创建功能规范</td>
+<td><code>spec.md</code></td>
+</tr>
+<tr>
+<td><code>/speckit.clarify</code></td>
+<td>澄清需求</td>
+<td>更新 <code>spec.md</code></td>
+</tr>
+<tr>
+<td><code>/speckit.plan</code></td>
+<td>创建技术计划</td>
+<td><code>plan.md</code>, <code>research.md</code>, <code>data-model.md</code></td>
+</tr>
+<tr>
+<td><code>/speckit.tasks</code></td>
+<td>生成任务列表</td>
+<td><code>tasks.md</code></td>
+</tr>
+<tr>
+<td><code>/speckit.implement</code></td>
+<td>执行实现</td>
+<td>代码文件</td>
+</tr>
+<tr>
+<td><code>/speckit.analyze</code></td>
+<td>一致性分析</td>
+<td>分析报告</td>
+</tr>
+<tr>
+<td><code>/speckit.checklist</code></td>
+<td>生成检查清单</td>
+<td><code>checklists/*.md</code></td>
+</tr>
+</tbody></table>
+<h4 id="完整工作流程"><a href="#完整工作流程" class="headerlink" title="完整工作流程"></a>完整工作流程</h4><pre class="line-numbers language-none"><code class="language-none">┌─────────────────────────────────────────────────────────────────┐
+│                     Speckit 工作流程                             │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  &#x2F;speckit.specify &quot;实现用户认证功能&quot;                              │
+│         │                                                       │
+│         ▼                                                       │
+│  ┌─────────────┐                                                │
+│  │  spec.md    │ ← 功能规范（WHAT &amp; WHY）                        │
+│  └──────┬──────┘                                                │
+│         │ handoff                                               │
+│         ▼                                                       │
+│  &#x2F;speckit.plan                                                  │
+│         │                                                       │
+│         ▼                                                       │
+│  ┌─────────────┐  ┌──────────────┐  ┌─────────────────┐         │
+│  │  plan.md    │  │ research.md  │  │ data-model.md   │         │
+│  │  技术计划    │  │ 技术调研      │  │ 数据模型        │         │
+│  └──────┬──────┘  └──────────────┘  └─────────────────┘         │
+│         │ handoff                                               │
+│         ▼                                                       │
+│  &#x2F;speckit.tasks                                                 │
+│         │                                                       │
+│         ▼                                                       │
+│  ┌─────────────┐                                                │
+│  │  tasks.md   │ ← 可执行任务列表                                 │
+│  └──────┬──────┘                                                │
+│         │ handoff                                               │
+│         ▼                                                       │
+│  &#x2F;speckit.implement                                             │
+│         │                                                       │
+│         ▼                                                       │
+│  ┌─────────────┐                                                │
+│  │  代码实现    │ ← 按任务顺序执行                                │
+│  └─────────────┘                                                │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="Handoffs-机制详解"><a href="#Handoffs-机制详解" class="headerlink" title="Handoffs 机制详解"></a>Handoffs 机制详解</h4><p>Handoffs 是技能间的自动交接机制，在技能文件头部定义：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token punctuation">---</span>
+<span class="token key atrule">description</span><span class="token punctuation">:</span> 创建功能规范
+<span class="token key atrule">handoffs</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">label</span><span class="token punctuation">:</span> Build Technical Plan      <span class="token comment"># 按钮显示文本</span>
+    <span class="token key atrule">agent</span><span class="token punctuation">:</span> speckit.plan              <span class="token comment"># 交接目标技能</span>
+    <span class="token key atrule">prompt</span><span class="token punctuation">:</span> Create a plan for spec   <span class="token comment"># 交接时的提示</span>
+    <span class="token key atrule">send</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>                       <span class="token comment"># 自动发送</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">label</span><span class="token punctuation">:</span> Clarify Requirements
+    <span class="token key atrule">agent</span><span class="token punctuation">:</span> speckit.clarify
+    <span class="token key atrule">prompt</span><span class="token punctuation">:</span> Clarify specification
+<span class="token punctuation">---</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>工作原理：</strong></p>
+<ol>
+<li>当前技能执行完成后，Claude 会显示 Handoff 选项</li>
+<li>用户选择一个选项（如 “Build Technical Plan”）</li>
+<li>自动启动目标技能（speckit.plan）</li>
+<li>传递上下文和提示词给新技能</li>
+</ol>
+<h4 id="agent-与-Speckit-联动"><a href="#agent-与-Speckit-联动" class="headerlink" title="&#x2F;agent 与 Speckit 联动"></a>&#x2F;agent 与 Speckit 联动</h4><p><code>/agent</code> 命令可以在 Speckit 工作流中启动子代理，实现并行处理：</p>
+<p><strong>场景 1：并行研究</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 在 /speckit.plan 阶段，启动多个研究代理</span>
+<span class="token operator">></span> /agent 研究 OAuth2 最佳实践
+<span class="token operator">></span> /agent 研究 JWT vs Session 认证对比
+<span class="token operator">></span> /agent 研究数据库索引优化策略<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>场景 2：并行实现</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 在 /speckit.implement 阶段，并行实现独立模块</span>
+<span class="token operator">></span> /agent 实现用户模型和数据库迁移
+<span class="token operator">></span> /agent 实现认证中间件
+<span class="token operator">></span> /agent 实现 API 端点<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>场景 3：并行测试</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 并行运行不同类型的测试</span>
+<span class="token operator">></span> /agent 运行单元测试并修复失败
+<span class="token operator">></span> /agent 运行集成测试
+<span class="token operator">></span> /agent 进行安全审查<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="实战示例：完整功能开发"><a href="#实战示例：完整功能开发" class="headerlink" title="实战示例：完整功能开发"></a>实战示例：完整功能开发</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 步骤 1: 创建规范</span>
+<span class="token operator">></span> /speckit.specify 实现用户注册和登录功能，支持邮箱和手机号
+
+<span class="token comment"># Claude 生成 spec.md 后，点击 "Build Technical Plan" 按钮</span>
+<span class="token comment"># 或手动执行：</span>
+<span class="token operator">></span> /speckit.plan
+
+<span class="token comment"># 步骤 2: 并行研究（使用 /agent）</span>
+<span class="token operator">></span> /agent 研究密码加密最佳实践（bcrypt vs argon2）
+<span class="token operator">></span> /agent 研究短信验证码服务商对比
+
+<span class="token comment"># 步骤 3: 生成任务</span>
+<span class="token operator">></span> /speckit.tasks
+
+<span class="token comment"># 步骤 4: 并行实现（使用 /agent）</span>
+<span class="token operator">></span> /agent 实现 Phase <span class="token number">1</span> 的所有 Setup 任务
+<span class="token operator">></span> /agent 实现 User 模型和数据库迁移
+
+<span class="token comment"># 步骤 5: 执行实现</span>
+<span class="token operator">></span> /speckit.implement
+
+<span class="token comment"># 步骤 6: 验证和分析</span>
+<span class="token operator">></span> /speckit.analyze<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="目录结构-2"><a href="#目录结构-2" class="headerlink" title="目录结构"></a>目录结构</h4><p>Speckit 会在项目中创建以下结构：</p>
+<pre class="line-numbers language-none"><code class="language-none">specs&#x2F;
+└── 1-user-auth&#x2F;              # 功能目录（自动创建分支）
+    ├── spec.md               # 功能规范
+    ├── plan.md               # 技术计划
+    ├── tasks.md              # 任务列表
+    ├── research.md           # 研究记录
+    ├── data-model.md         # 数据模型
+    ├── contracts&#x2F;            # API 契约
+    │   └── api.yaml
+    └── checklists&#x2F;           # 检查清单
+        ├── requirements.md
+        └── security.md
+
+.specify&#x2F;
+├── memory&#x2F;
+│   └── constitution.md       # 项目宪法（编码规范）
+├── templates&#x2F;                # 模板文件
+│   ├── spec-template.md
+│   ├── plan-template.md
+│   └── tasks-template.md
+└── scripts&#x2F;                  # 辅助脚本
+    └── bash&#x2F;
+        ├── create-new-feature.sh
+        └── setup-plan.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="更多配合功能"><a href="#更多配合功能" class="headerlink" title="更多配合功能"></a>更多配合功能</h4><h5 id="1-speckit-constitution-项目宪法"><a href="#1-speckit-constitution-项目宪法" class="headerlink" title="1. /speckit.constitution - 项目宪法"></a>1. <code>/speckit.constitution</code> - 项目宪法</h5><p>在开始任何功能前，先定义项目的核心原则和规范：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 创建/更新项目宪法</span>
+<span class="token operator">></span> /speckit.constitution 这是一个 Go 项目，要求：
+  - <span class="token number">100</span>% 测试覆盖率
+  - 所有 API 需要文档
+  - 使用 Clean Architecture<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>宪法内容包括：</strong></p>
+<ul>
+<li>编码规范（必须遵守的原则）</li>
+<li>架构约束</li>
+<li>测试要求</li>
+<li>文档标准</li>
+</ul>
+<p><strong>与其他命令联动：</strong></p>
+<ul>
+<li><code>speckit.plan</code> 会检查计划是否违反宪法</li>
+<li><code>speckit.analyze</code> 会验证所有产物符合宪法</li>
+</ul>
+<h5 id="2-speckit-clarify-智能需求澄清"><a href="#2-speckit-clarify-智能需求澄清" class="headerlink" title="2. /speckit.clarify - 智能需求澄清"></a>2. <code>/speckit.clarify</code> - 智能需求澄清</h5><p>在 specify 后、plan 前运行，减少歧义：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 澄清规范中的模糊点</span>
+<span class="token operator">></span> /speckit.clarify<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>功能特点：</strong></p>
+<ul>
+<li>自动扫描 spec.md 中的模糊点</li>
+<li>最多问 5 个高优先级问题</li>
+<li>每个问题提供推荐答案</li>
+<li>答案自动写回 spec.md</li>
+</ul>
+<p><strong>示例交互：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">Q1: 用户认证应该使用哪种方式？
+
+**推荐:** Option B - JWT（无状态，易于扩展）
+
+| Option | Description |
+|--------|-------------|
+| A | Session-based（传统方式）|
+| B | JWT（无状态）|
+| C | OAuth2（第三方登录）|
+
+回复 &quot;yes&quot; 接受推荐，或选择 A&#x2F;B&#x2F;C<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="3-speckit-checklist-需求质量检查清单"><a href="#3-speckit-checklist-需求质量检查清单" class="headerlink" title="3. /speckit.checklist - 需求质量检查清单"></a>3. <code>/speckit.checklist</code> - 需求质量检查清单</h5><p>生成”需求的单元测试”，验证规范质量：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 生成 UX 需求质量检查清单</span>
+<span class="token operator">></span> /speckit.checklist UX 相关的需求检查
+
+<span class="token comment"># 生成安全需求检查清单</span>
+<span class="token operator">></span> /speckit.checklist 安全相关的需求
+
+<span class="token comment"># 生成 API 需求检查清单</span>
+<span class="token operator">></span> /speckit.checklist API 设计质量<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>检查清单类型：</strong></p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>文件</th>
+<th>检查内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>UX</td>
+<td><code>ux.md</code></td>
+<td>交互状态、无障碍、响应式</td>
+</tr>
+<tr>
+<td>API</td>
+<td><code>api.md</code></td>
+<td>错误处理、限流、版本控制</td>
+</tr>
+<tr>
+<td>Security</td>
+<td><code>security.md</code></td>
+<td>认证、数据保护、威胁模型</td>
+</tr>
+<tr>
+<td>Performance</td>
+<td><code>performance.md</code></td>
+<td>性能指标、负载测试</td>
+</tr>
+</tbody></table>
+<p><strong>关键概念：检查的是需求质量，不是实现</strong></p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">❌ 错误: "验证按钮点击后跳转正确"
+✅ 正确: "按钮点击后的跳转目标是否在需求中明确定义？"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h5 id="4-speckit-analyze-一致性分析"><a href="#4-speckit-analyze-一致性分析" class="headerlink" title="4. /speckit.analyze - 一致性分析"></a>4. <code>/speckit.analyze</code> - 一致性分析</h5><p>在 tasks 生成后运行，检查所有文档的一致性：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">></span> /speckit.analyze<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>检查内容：</strong></p>
+<ul>
+<li>需求是否都有对应任务</li>
+<li>任务是否都有需求来源</li>
+<li>术语是否一致</li>
+<li>是否违反项目宪法</li>
+<li>是否有冲突的需求</li>
+</ul>
+<p><strong>输出报告：</strong></p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token table"><span class="token table-header-row"><span class="token punctuation">|</span><span class="token table-header important"> ID </span><span class="token punctuation">|</span><span class="token table-header important"> Category </span><span class="token punctuation">|</span><span class="token table-header important"> Severity </span><span class="token punctuation">|</span><span class="token table-header important"> Location </span><span class="token punctuation">|</span><span class="token table-header important"> Summary </span><span class="token punctuation">|</span>
+</span><span class="token table-line"><span class="token punctuation">|</span><span class="token punctuation">----</span><span class="token punctuation">|</span><span class="token punctuation">----------</span><span class="token punctuation">|</span><span class="token punctuation">----------</span><span class="token punctuation">|</span><span class="token punctuation">----------</span><span class="token punctuation">|</span><span class="token punctuation">---------</span><span class="token punctuation">|</span>
+</span><span class="token table-data-rows"><span class="token punctuation">|</span><span class="token table-data"> A1 </span><span class="token punctuation">|</span><span class="token table-data"> Gap </span><span class="token punctuation">|</span><span class="token table-data"> HIGH </span><span class="token punctuation">|</span><span class="token table-data"> spec.md </span><span class="token punctuation">|</span><span class="token table-data"> 需求 FR-5 没有对应任务 </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> C1 </span><span class="token punctuation">|</span><span class="token table-data"> Conflict </span><span class="token punctuation">|</span><span class="token table-data"> CRITICAL </span><span class="token punctuation">|</span><span class="token table-data"> plan.md </span><span class="token punctuation">|</span><span class="token table-data"> 与宪法原则冲突 </span><span class="token punctuation">|</span></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="5-speckit-taskstoissues-任务转-GitHub-Issues"><a href="#5-speckit-taskstoissues-任务转-GitHub-Issues" class="headerlink" title="5. /speckit.taskstoissues - 任务转 GitHub Issues"></a>5. <code>/speckit.taskstoissues</code> - 任务转 GitHub Issues</h5><p>将 tasks.md 中的任务自动创建为 GitHub Issues：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">></span> /speckit.taskstoissues<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>功能：</strong></p>
+<ul>
+<li>自动检测 Git 远程仓库</li>
+<li>为每个任务创建 Issue</li>
+<li>保留依赖关系</li>
+<li>添加适当的 Labels</li>
+</ul>
+<h5 id="6-与-GitHub-MCP-深度集成"><a href="#6-与-GitHub-MCP-深度集成" class="headerlink" title="6. 与 GitHub MCP 深度集成"></a>6. 与 GitHub MCP 深度集成</h5><p>结合 GitHub MCP 服务器实现完整的项目管理：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 创建功能分支（speckit.specify 自动执行）</span>
+<span class="token comment"># 创建 PR</span>
+<span class="token operator">></span> 为当前功能分支创建 PR
+
+<span class="token comment"># 请求代码审查</span>
+<span class="token operator">></span> /review
+
+<span class="token comment"># 安全审查</span>
+<span class="token operator">></span> /security-review
+
+<span class="token comment"># 分配 Copilot 处理 Issue</span>
+<span class="token operator">></span> 让 Copilot 处理 Issue <span class="token comment">#123</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="7-与-Memory-MCP-集成"><a href="#7-与-Memory-MCP-集成" class="headerlink" title="7. 与 Memory MCP 集成"></a>7. 与 Memory MCP 集成</h5><p>使用知识图谱存储项目知识：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 存储架构决策</span>
+<span class="token operator">></span> 记住：我们选择 PostgreSQL 是因为需要复杂查询和事务支持
+
+<span class="token comment"># 存储技术债务</span>
+<span class="token operator">></span> 记住：auth 模块需要重构，当前实现不支持 SSO
+
+<span class="token comment"># 查询历史决策</span>
+<span class="token operator">></span> 我们为什么选择 PostgreSQL？<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="完整工作流示例（含所有配合功能）"><a href="#完整工作流示例（含所有配合功能）" class="headerlink" title="完整工作流示例（含所有配合功能）"></a>完整工作流示例（含所有配合功能）</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 1. 定义项目宪法（首次）</span>
+<span class="token operator">></span> /speckit.constitution 定义 Go 项目的编码规范和架构原则
+
+<span class="token comment"># 2. 创建功能规范</span>
+<span class="token operator">></span> /speckit.specify 实现用户认证系统，支持邮箱登录和 OAuth2
+
+<span class="token comment"># 3. 澄清需求（减少歧义）</span>
+<span class="token operator">></span> /speckit.clarify
+
+<span class="token comment"># 4. 生成检查清单</span>
+<span class="token operator">></span> /speckit.checklist 安全相关需求
+<span class="token operator">></span> /speckit.checklist API 设计质量
+
+<span class="token comment"># 5. 创建技术计划</span>
+<span class="token operator">></span> /speckit.plan
+
+<span class="token comment"># 6. 并行研究（使用 /agent）</span>
+<span class="token operator">></span> /agent 研究 Go 中 OAuth2 最佳实践
+<span class="token operator">></span> /agent 研究 JWT 刷新令牌策略
+
+<span class="token comment"># 7. 生成任务</span>
+<span class="token operator">></span> /speckit.tasks
+
+<span class="token comment"># 8. 一致性分析</span>
+<span class="token operator">></span> /speckit.analyze
+
+<span class="token comment"># 9. 创建 GitHub Issues（可选）</span>
+<span class="token operator">></span> /speckit.taskstoissues
+
+<span class="token comment"># 10. 执行实现</span>
+<span class="token operator">></span> /speckit.implement
+
+<span class="token comment"># 11. 代码审查</span>
+<span class="token operator">></span> /review
+<span class="token operator">></span> /security-review
+
+<span class="token comment"># 12. 创建 PR</span>
+<span class="token operator">></span> 创建 PR 并请求审查<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="配合功能速查表"><a href="#配合功能速查表" class="headerlink" title="配合功能速查表"></a>配合功能速查表</h4><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>命令</th>
+<th>使用时机</th>
+<th>配合 &#x2F;agent</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>项目宪法</td>
+<td><code>/speckit.constitution</code></td>
+<td>项目初始化</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>创建规范</td>
+<td><code>/speckit.specify</code></td>
+<td>功能开始</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>需求澄清</td>
+<td><code>/speckit.clarify</code></td>
+<td>specify 后</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>检查清单</td>
+<td><code>/speckit.checklist</code></td>
+<td>clarify 后</td>
+<td>✅ 并行生成多个</td>
+</tr>
+<tr>
+<td>技术计划</td>
+<td><code>/speckit.plan</code></td>
+<td>clarify 后</td>
+<td>✅ 并行研究</td>
+</tr>
+<tr>
+<td>生成任务</td>
+<td><code>/speckit.tasks</code></td>
+<td>plan 后</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>一致性分析</td>
+<td><code>/speckit.analyze</code></td>
+<td>tasks 后</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>转 Issues</td>
+<td><code>/speckit.taskstoissues</code></td>
+<td>analyze 后</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>执行实现</td>
+<td><code>/speckit.implement</code></td>
+<td>分析通过后</td>
+<td>✅ 并行实现</td>
+</tr>
+<tr>
+<td>代码审查</td>
+<td><code>/review</code></td>
+<td>实现后</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>安全审查</td>
+<td><code>/security-review</code></td>
+<td>实现后</td>
+<td>❌</td>
+</tr>
+</tbody></table>
+<h4 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h4><ol>
+<li><strong>遵循工作流顺序</strong>：constitution → specify → clarify → checklist → plan → tasks → analyze → implement</li>
+<li><strong>利用 Handoffs</strong>：让系统自动引导下一步</li>
+<li><strong>使用 &#x2F;agent 并行化</strong>：在研究和实现阶段启动多个代理</li>
+<li><strong>定期运行 &#x2F;speckit.analyze</strong>：确保各产物一致性</li>
+<li><strong>善用 &#x2F;speckit.clarify</strong>：在 specify 后澄清不明确的需求</li>
+<li><strong>生成多维度检查清单</strong>：UX、API、安全、性能分别检查</li>
+<li><strong>结合 GitHub MCP</strong>：实现完整的项目管理闭环</li>
+<li><strong>记录决策到 Memory</strong>：保留架构决策的上下文</li>
+</ol>
+<h4 id="Hooks-与-Speckit-Agent-配合"><a href="#Hooks-与-Speckit-Agent-配合" class="headerlink" title="Hooks 与 Speckit&#x2F;Agent 配合"></a>Hooks 与 Speckit&#x2F;Agent 配合</h4><p>Hooks 可以在 Speckit 工作流的关键节点自动触发，实现工作流自动化。</p>
+<h5 id="配置位置"><a href="#配置位置" class="headerlink" title="配置位置"></a>配置位置</h5><pre class="line-numbers language-none"><code class="language-none">.claude&#x2F;
+└── settings.json    # 项目级 hooks 配置<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h5 id="实用-Hooks-示例"><a href="#实用-Hooks-示例" class="headerlink" title="实用 Hooks 示例"></a>实用 Hooks 示例</h5><p><strong>1. 实现前验证检查清单</strong></p>
+<p>在 <code>speckit.implement</code> 执行前，确保所有检查清单已完成：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"hooks"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"PreToolUse"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">&#123;</span>
+        <span class="token property">"matcher"</span><span class="token operator">:</span> <span class="token string">"Skill"</span><span class="token punctuation">,</span>
+        <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"/path/to/verify-checklists.sh"</span><span class="token punctuation">,</span>
+        <span class="token property">"timeout"</span><span class="token operator">:</span> <span class="token number">10000</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># verify-checklists.sh - 检查清单验证</span>
+
+<span class="token assign-left variable">TOOL_INPUT</span><span class="token operator">=</span><span class="token string">"<span class="token variable">$CLAUDE_TOOL_INPUT</span>"</span>
+<span class="token assign-left variable">SKILL_NAME</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">$TOOL_INPUT</span>"</span> <span class="token operator">|</span> jq <span class="token parameter variable">-r</span> <span class="token string">'.skill // empty'</span><span class="token variable">)</span></span>
+
+<span class="token comment"># 只在 speckit.implement 时检查</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$SKILL_NAME</span>"</span> <span class="token operator">==</span> <span class="token string">"speckit.implement"</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+  <span class="token assign-left variable">CHECKLISTS_DIR</span><span class="token operator">=</span><span class="token string">"specs/*/checklists"</span>
+
+  <span class="token comment"># 查找未完成的检查项</span>
+  <span class="token assign-left variable">INCOMPLETE</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">grep</span> <span class="token parameter variable">-r</span> <span class="token string">"^\- \[ \]"</span> $CHECKLISTS_DIR <span class="token operator"><span class="token file-descriptor important">2</span>></span>/dev/null <span class="token operator">|</span> <span class="token function">wc</span> <span class="token parameter variable">-l</span><span class="token variable">)</span></span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$INCOMPLETE</span>"</span> <span class="token parameter variable">-gt</span> <span class="token number">0</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"⚠️ 发现 <span class="token variable">$INCOMPLETE</span> 个未完成的检查项"</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"请先完成所有检查清单，或输入 'yes' 强制继续"</span>
+    <span class="token builtin class-name">exit</span> <span class="token number">1</span>  <span class="token comment"># 阻止执行</span>
+  <span class="token keyword">fi</span>
+
+  <span class="token builtin class-name">echo</span> <span class="token string">"✅ 所有检查清单已完成"</span>
+<span class="token keyword">fi</span>
+<span class="token builtin class-name">exit</span> <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>2. 任务完成后自动运行分析</strong></p>
+<p>在 <code>speckit.tasks</code> 完成后自动运行一致性分析：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"hooks"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"PostToolUse"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">&#123;</span>
+        <span class="token property">"matcher"</span><span class="token operator">:</span> <span class="token string">"Skill"</span><span class="token punctuation">,</span>
+        <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"/path/to/auto-analyze.sh"</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># auto-analyze.sh - 自动分析</span>
+
+<span class="token assign-left variable">TOOL_INPUT</span><span class="token operator">=</span><span class="token string">"<span class="token variable">$CLAUDE_TOOL_INPUT</span>"</span>
+<span class="token assign-left variable">SKILL_NAME</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">$TOOL_INPUT</span>"</span> <span class="token operator">|</span> jq <span class="token parameter variable">-r</span> <span class="token string">'.skill // empty'</span><span class="token variable">)</span></span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$SKILL_NAME</span>"</span> <span class="token operator">==</span> <span class="token string">"speckit.tasks"</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">"📊 任务生成完成，建议运行 /speckit.analyze 进行一致性检查"</span>
+<span class="token keyword">fi</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>3. 提交前运行测试</strong></p>
+<p>在 git commit 前确保测试通过：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"hooks"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"PreToolUse"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">&#123;</span>
+        <span class="token property">"matcher"</span><span class="token operator">:</span> <span class="token string">"Bash"</span><span class="token punctuation">,</span>
+        <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"/path/to/pre-commit.sh"</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># pre-commit.sh - 提交前检查</span>
+
+<span class="token assign-left variable">CMD</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">$CLAUDE_TOOL_INPUT</span>"</span> <span class="token operator">|</span> jq <span class="token parameter variable">-r</span> <span class="token string">'.command // empty'</span><span class="token variable">)</span></span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$CMD</span>"</span> <span class="token operator">==</span> *<span class="token string">"git commit"</span>* <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">"🧪 运行测试..."</span>
+
+  <span class="token comment"># 检测项目类型并运行测试</span>
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-f</span> <span class="token string">"go.mod"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    go <span class="token builtin class-name">test</span> ./<span class="token punctuation">..</span>.
+  <span class="token keyword">elif</span> <span class="token punctuation">[</span> <span class="token parameter variable">-f</span> <span class="token string">"package.json"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token function">npm</span> <span class="token builtin class-name">test</span>
+  <span class="token keyword">elif</span> <span class="token punctuation">[</span> <span class="token parameter variable">-f</span> <span class="token string">"Cargo.toml"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token function">cargo</span> <span class="token builtin class-name">test</span>
+  <span class="token keyword">fi</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> <span class="token parameter variable">-ne</span> <span class="token number">0</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"❌ 测试失败，阻止提交"</span>
+    <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+  <span class="token keyword">fi</span>
+
+  <span class="token builtin class-name">echo</span> <span class="token string">"✅ 测试通过"</span>
+<span class="token keyword">fi</span>
+<span class="token builtin class-name">exit</span> <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>4. 长任务完成通知</strong></p>
+<p>当 &#x2F;agent 或 speckit.implement 完成时发送通知：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"hooks"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"PostToolUse"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">&#123;</span>
+        <span class="token property">"matcher"</span><span class="token operator">:</span> <span class="token string">"Task"</span><span class="token punctuation">,</span>
+        <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"/path/to/notify-complete.sh"</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"Notification"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">&#123;</span>
+        <span class="token property">"matcher"</span><span class="token operator">:</span> <span class="token string">"*"</span><span class="token punctuation">,</span>
+        <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"/path/to/desktop-notify.sh"</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># notify-complete.sh - 任务完成通知</span>
+
+<span class="token comment"># macOS 通知</span>
+osascript <span class="token parameter variable">-e</span> <span class="token string">'display notification "子代理任务已完成" with title "Claude Code" sound name "Glass"'</span>
+
+<span class="token comment"># 可选：发送到 Slack</span>
+<span class="token comment"># curl -X POST -H 'Content-type: application/json' \</span>
+<span class="token comment">#   --data '&#123;"text":"Claude Code 任务完成"&#125;' \</span>
+<span class="token comment">#   $SLACK_WEBHOOK_URL</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>5. 危险操作审计日志</strong></p>
+<p>记录所有写操作和 Bash 命令：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"hooks"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"PostToolUse"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">&#123;</span>
+        <span class="token property">"matcher"</span><span class="token operator">:</span> <span class="token string">"Write|Edit|Bash"</span><span class="token punctuation">,</span>
+        <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"/path/to/audit-log.sh"</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># audit-log.sh - 审计日志</span>
+
+<span class="token assign-left variable">LOG_FILE</span><span class="token operator">=</span><span class="token string">"<span class="token environment constant">$HOME</span>/.claude/speckit-audit.log"</span>
+<span class="token assign-left variable">TIMESTAMP</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> +<span class="token string">"%Y-%m-%d %H:%M:%S"</span><span class="token variable">)</span></span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">"[<span class="token variable">$TIMESTAMP</span>] Tool: <span class="token variable">$CLAUDE_TOOL_NAME</span>"</span> <span class="token operator">>></span> <span class="token string">"<span class="token variable">$LOG_FILE</span>"</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"  Session: <span class="token variable">$CLAUDE_SESSION_ID</span>"</span> <span class="token operator">>></span> <span class="token string">"<span class="token variable">$LOG_FILE</span>"</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"  Input: <span class="token variable">$CLAUDE_TOOL_INPUT</span>"</span> <span class="token operator">>></span> <span class="token string">"<span class="token variable">$LOG_FILE</span>"</span>
+<span class="token builtin class-name">echo</span> <span class="token string">""</span> <span class="token operator">>></span> <span class="token string">"<span class="token variable">$LOG_FILE</span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>6. 实现阶段自动备份</strong></p>
+<p>在 speckit.implement 开始前创建备份：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># backup-before-implement.sh</span>
+
+<span class="token assign-left variable">SKILL_NAME</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">$CLAUDE_TOOL_INPUT</span>"</span> <span class="token operator">|</span> jq <span class="token parameter variable">-r</span> <span class="token string">'.skill // empty'</span><span class="token variable">)</span></span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$SKILL_NAME</span>"</span> <span class="token operator">==</span> <span class="token string">"speckit.implement"</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+  <span class="token assign-left variable">BACKUP_DIR</span><span class="token operator">=</span><span class="token string">"<span class="token environment constant">$HOME</span>/.claude/backups/<span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> +%Y%m%d_%H%M%S<span class="token variable">)</span></span>"</span>
+  <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> <span class="token string">"<span class="token variable">$BACKUP_DIR</span>"</span>
+
+  <span class="token comment"># 备份源代码目录</span>
+  <span class="token function">cp</span> <span class="token parameter variable">-r</span> src <span class="token string">"<span class="token variable">$BACKUP_DIR</span>/"</span> <span class="token operator"><span class="token file-descriptor important">2</span>></span>/dev/null
+  <span class="token function">cp</span> <span class="token parameter variable">-r</span> lib <span class="token string">"<span class="token variable">$BACKUP_DIR</span>/"</span> <span class="token operator"><span class="token file-descriptor important">2</span>></span>/dev/null
+
+  <span class="token builtin class-name">echo</span> <span class="token string">"📦 已创建备份: <span class="token variable">$BACKUP_DIR</span>"</span>
+<span class="token keyword">fi</span>
+<span class="token builtin class-name">exit</span> <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="Hooks-与工作流对应表"><a href="#Hooks-与工作流对应表" class="headerlink" title="Hooks 与工作流对应表"></a>Hooks 与工作流对应表</h5><table>
+<thead>
+<tr>
+<th>工作流阶段</th>
+<th>Hook 类型</th>
+<th>触发条件</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>specify</td>
+<td>PostToolUse</td>
+<td><code>Skill(speckit.specify)</code></td>
+<td>自动提示运行 clarify</td>
+</tr>
+<tr>
+<td>clarify</td>
+<td>PostToolUse</td>
+<td><code>Skill(speckit.clarify)</code></td>
+<td>记录澄清历史</td>
+</tr>
+<tr>
+<td>plan</td>
+<td>PreToolUse</td>
+<td><code>Skill(speckit.plan)</code></td>
+<td>验证 spec 完整性</td>
+</tr>
+<tr>
+<td>tasks</td>
+<td>PostToolUse</td>
+<td><code>Skill(speckit.tasks)</code></td>
+<td>自动运行 analyze</td>
+</tr>
+<tr>
+<td>implement</td>
+<td>PreToolUse</td>
+<td><code>Skill(speckit.implement)</code></td>
+<td>验证检查清单</td>
+</tr>
+<tr>
+<td>implement</td>
+<td>PostToolUse</td>
+<td><code>Skill(speckit.implement)</code></td>
+<td>运行测试</td>
+</tr>
+<tr>
+<td>&#x2F;agent</td>
+<td>PostToolUse</td>
+<td><code>Task</code></td>
+<td>任务完成通知</td>
+</tr>
+<tr>
+<td>commit</td>
+<td>PreToolUse</td>
+<td><code>Bash(git commit*)</code></td>
+<td>运行测试</td>
+</tr>
+<tr>
+<td>所有写操作</td>
+<td>PostToolUse</td>
+<td><code>Write|Edit</code></td>
+<td>审计日志</td>
+</tr>
+</tbody></table>
+<h5 id="完整-Hooks-配置示例"><a href="#完整-Hooks-配置示例" class="headerlink" title="完整 Hooks 配置示例"></a>完整 Hooks 配置示例</h5><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"hooks"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"PreToolUse"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">&#123;</span>
+        <span class="token property">"matcher"</span><span class="token operator">:</span> <span class="token string">"Skill"</span><span class="token punctuation">,</span>
+        <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">".claude/hooks/pre-skill.sh"</span><span class="token punctuation">,</span>
+        <span class="token property">"timeout"</span><span class="token operator">:</span> <span class="token number">30000</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#123;</span>
+        <span class="token property">"matcher"</span><span class="token operator">:</span> <span class="token string">"Bash"</span><span class="token punctuation">,</span>
+        <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">".claude/hooks/pre-bash.sh"</span><span class="token punctuation">,</span>
+        <span class="token property">"timeout"</span><span class="token operator">:</span> <span class="token number">60000</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"PostToolUse"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">&#123;</span>
+        <span class="token property">"matcher"</span><span class="token operator">:</span> <span class="token string">"Skill"</span><span class="token punctuation">,</span>
+        <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">".claude/hooks/post-skill.sh"</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#123;</span>
+        <span class="token property">"matcher"</span><span class="token operator">:</span> <span class="token string">"Task"</span><span class="token punctuation">,</span>
+        <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">".claude/hooks/notify-agent-complete.sh"</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#123;</span>
+        <span class="token property">"matcher"</span><span class="token operator">:</span> <span class="token string">"Write|Edit|Bash"</span><span class="token punctuation">,</span>
+        <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">".claude/hooks/audit-log.sh"</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"Notification"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">&#123;</span>
+        <span class="token property">"matcher"</span><span class="token operator">:</span> <span class="token string">"*"</span><span class="token punctuation">,</span>
+        <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">".claude/hooks/desktop-notify.sh"</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="Hooks-最佳实践"><a href="#Hooks-最佳实践" class="headerlink" title="Hooks 最佳实践"></a>Hooks 最佳实践</h5><ol>
+<li><strong>快速执行</strong>：Hooks 应该快速完成（&lt;5秒），避免阻塞工作流</li>
+<li><strong>优雅失败</strong>：非关键 hooks 应该 <code>exit 0</code>，只有关键验证才 <code>exit 1</code></li>
+<li><strong>清晰反馈</strong>：输出简短的状态消息，帮助用户理解发生了什么</li>
+<li><strong>条件触发</strong>：使用 <code>matcher</code> 精确匹配，避免不必要的执行</li>
+<li><strong>日志记录</strong>：重要操作写入日志文件，便于事后审计</li>
+<li><strong>备份策略</strong>：在破坏性操作前自动备份</li>
+</ol>
+<hr>
+<h2 id="5-MCP-服务器配置"><a href="#5-MCP-服务器配置" class="headerlink" title="5. MCP 服务器配置"></a>5. MCP 服务器配置</h2><h3 id="MCP-协议简介"><a href="#MCP-协议简介" class="headerlink" title="MCP 协议简介"></a>MCP 协议简介</h3><p>Model Context Protocol (MCP) 是开放协议，让 Claude 连接外部工具和数据源。</p>
+<h3 id="配置文件位置"><a href="#配置文件位置" class="headerlink" title="配置文件位置"></a>配置文件位置</h3><ul>
+<li><strong>全局配置</strong>: <code>~/.claude/settings.json</code></li>
+<li><strong>项目配置</strong>: <code>.claude/settings.json</code></li>
+</ul>
+<h3 id="基本配置格式"><a href="#基本配置格式" class="headerlink" title="基本配置格式"></a>基本配置格式</h3><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"mcpServers"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"server-name"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"node"</span><span class="token punctuation">,</span>
+      <span class="token property">"args"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"/path/to/server.js"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">"env"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token property">"API_KEY"</span><span class="token operator">:</span> <span class="token string">"your-key"</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token property">"timeout"</span><span class="token operator">:</span> <span class="token number">30000</span><span class="token punctuation">,</span>
+      <span class="token property">"disabled"</span><span class="token operator">:</span> <span class="token boolean">false</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="官方-MCP-服务器"><a href="#官方-MCP-服务器" class="headerlink" title="官方 MCP 服务器"></a>官方 MCP 服务器</h3><h4 id="GitHub-服务器"><a href="#GitHub-服务器" class="headerlink" title="GitHub 服务器"></a>GitHub 服务器</h4><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"mcpServers"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"github"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"npx"</span><span class="token punctuation">,</span>
+      <span class="token property">"args"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"-y"</span><span class="token punctuation">,</span> <span class="token string">"@modelcontextprotocol/server-github"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">"env"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token property">"GITHUB_TOKEN"</span><span class="token operator">:</span> <span class="token string">"ghp_xxxxxxxxxxxx"</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>功能：</p>
+<ul>
+<li>仓库管理（创建、克隆、分支）</li>
+<li>Issue 和 PR 操作</li>
+<li>代码搜索</li>
+<li>Actions 管理</li>
+</ul>
+<h4 id="文件系统服务器"><a href="#文件系统服务器" class="headerlink" title="文件系统服务器"></a>文件系统服务器</h4><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"mcpServers"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"filesystem"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"npx"</span><span class="token punctuation">,</span>
+      <span class="token property">"args"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"-y"</span><span class="token punctuation">,</span> <span class="token string">"@modelcontextprotocol/server-filesystem"</span><span class="token punctuation">,</span> <span class="token string">"/allowed/path1"</span><span class="token punctuation">,</span> <span class="token string">"/allowed/path2"</span><span class="token punctuation">]</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="PostgreSQL-服务器"><a href="#PostgreSQL-服务器" class="headerlink" title="PostgreSQL 服务器"></a>PostgreSQL 服务器</h4><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"mcpServers"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"postgres"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"npx"</span><span class="token punctuation">,</span>
+      <span class="token property">"args"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"-y"</span><span class="token punctuation">,</span> <span class="token string">"@modelcontextprotocol/server-postgres"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">"env"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token property">"DATABASE_URL"</span><span class="token operator">:</span> <span class="token string">"postgresql://user:pass@host:5432/db"</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="Brave-Search-服务器"><a href="#Brave-Search-服务器" class="headerlink" title="Brave Search 服务器"></a>Brave Search 服务器</h4><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"mcpServers"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"brave-search"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"npx"</span><span class="token punctuation">,</span>
+      <span class="token property">"args"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"-y"</span><span class="token punctuation">,</span> <span class="token string">"@modelcontextprotocol/server-brave-search"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">"env"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token property">"BRAVE_API_KEY"</span><span class="token operator">:</span> <span class="token string">"your-brave-api-key"</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="Puppeteer-服务器"><a href="#Puppeteer-服务器" class="headerlink" title="Puppeteer 服务器"></a>Puppeteer 服务器</h4><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"mcpServers"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"puppeteer"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"npx"</span><span class="token punctuation">,</span>
+      <span class="token property">"args"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"-y"</span><span class="token punctuation">,</span> <span class="token string">"@modelcontextprotocol/server-puppeteer"</span><span class="token punctuation">]</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>功能：</p>
+<ul>
+<li>网页截图</li>
+<li>PDF 生成</li>
+<li>网页自动化</li>
+<li>表单填写</li>
+</ul>
+<h4 id="Memory-服务器"><a href="#Memory-服务器" class="headerlink" title="Memory 服务器"></a>Memory 服务器</h4><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"mcpServers"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"memory"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"npx"</span><span class="token punctuation">,</span>
+      <span class="token property">"args"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"-y"</span><span class="token punctuation">,</span> <span class="token string">"@modelcontextprotocol/server-memory"</span><span class="token punctuation">]</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>功能：</p>
+<ul>
+<li>持久化知识存储</li>
+<li>实体和关系管理</li>
+<li>知识图谱查询</li>
+</ul>
+<h4 id="Slack-服务器"><a href="#Slack-服务器" class="headerlink" title="Slack 服务器"></a>Slack 服务器</h4><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"mcpServers"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"slack"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"npx"</span><span class="token punctuation">,</span>
+      <span class="token property">"args"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"-y"</span><span class="token punctuation">,</span> <span class="token string">"@modelcontextprotocol/server-slack"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">"env"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token property">"SLACK_TOKEN"</span><span class="token operator">:</span> <span class="token string">"xoxb-your-token"</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="社区-MCP-服务器"><a href="#社区-MCP-服务器" class="headerlink" title="社区 MCP 服务器"></a>社区 MCP 服务器</h3><table>
+<thead>
+<tr>
+<th>服务器</th>
+<th>功能</th>
+<th>安装命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>mcp-server-sqlite</code></td>
+<td>SQLite 操作</td>
+<td><code>npx mcp-server-sqlite</code></td>
+</tr>
+<tr>
+<td><code>mcp-server-docker</code></td>
+<td>Docker 管理</td>
+<td><code>npx mcp-server-docker</code></td>
+</tr>
+<tr>
+<td><code>mcp-server-kubernetes</code></td>
+<td>K8s 操作</td>
+<td><code>npx mcp-server-kubernetes</code></td>
+</tr>
+<tr>
+<td><code>mcp-server-notion</code></td>
+<td>Notion 集成</td>
+<td><code>npx mcp-server-notion</code></td>
+</tr>
+<tr>
+<td><code>mcp-server-linear</code></td>
+<td>Linear 项目管理</td>
+<td><code>npx mcp-server-linear</code></td>
+</tr>
+<tr>
+<td><code>mcp-server-obsidian</code></td>
+<td>Obsidian 笔记</td>
+<td><code>npx mcp-server-obsidian</code></td>
+</tr>
+<tr>
+<td><code>mcp-server-google-drive</code></td>
+<td>Google Drive</td>
+<td><code>npx mcp-server-google-drive</code></td>
+</tr>
+</tbody></table>
+<h3 id="MCP-服务器管理"><a href="#MCP-服务器管理" class="headerlink" title="MCP 服务器管理"></a>MCP 服务器管理</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 列出已配置的服务器</span>
+claude mcp list
+
+<span class="token comment"># 添加新服务器</span>
+claude mcp <span class="token function">add</span> github npx <span class="token parameter variable">-y</span> @modelcontextprotocol/server-github
+
+<span class="token comment"># 删除服务器</span>
+claude mcp remove github
+
+<span class="token comment"># 测试服务器连接</span>
+claude mcp <span class="token builtin class-name">test</span> github<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
+<h2 id="6-Hooks-钩子系统"><a href="#6-Hooks-钩子系统" class="headerlink" title="6. Hooks 钩子系统"></a>6. Hooks 钩子系统</h2><h3 id="钩子概述"><a href="#钩子概述" class="headerlink" title="钩子概述"></a>钩子概述</h3><p>钩子允许在特定事件发生时执行自定义脚本。</p>
+<h3 id="钩子类型"><a href="#钩子类型" class="headerlink" title="钩子类型"></a>钩子类型</h3><table>
+<thead>
+<tr>
+<th>钩子</th>
+<th>触发时机</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>PreToolUse</code></td>
+<td>工具执行前</td>
+<td>验证、拦截、修改</td>
+</tr>
+<tr>
+<td><code>PostToolUse</code></td>
+<td>工具执行后</td>
+<td>日志、通知、后处理</td>
+</tr>
+<tr>
+<td><code>Notification</code></td>
+<td>通知事件</td>
+<td>推送通知</td>
+</tr>
+<tr>
+<td><code>Stop</code></td>
+<td>会话结束</td>
+<td>清理、报告</td>
+</tr>
+</tbody></table>
+<h3 id="配置格式"><a href="#配置格式" class="headerlink" title="配置格式"></a>配置格式</h3><p>在 <code>settings.json</code> 中配置：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"hooks"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"PreToolUse"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">&#123;</span>
+        <span class="token property">"matcher"</span><span class="token operator">:</span> <span class="token string">"Bash"</span><span class="token punctuation">,</span>
+        <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"/path/to/pre-bash-hook.sh"</span><span class="token punctuation">,</span>
+        <span class="token property">"timeout"</span><span class="token operator">:</span> <span class="token number">5000</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"PostToolUse"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">&#123;</span>
+        <span class="token property">"matcher"</span><span class="token operator">:</span> <span class="token string">"*"</span><span class="token punctuation">,</span>
+        <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"/path/to/log-hook.sh"</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"Notification"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">&#123;</span>
+        <span class="token property">"matcher"</span><span class="token operator">:</span> <span class="token string">"*"</span><span class="token punctuation">,</span>
+        <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"/path/to/notify.sh"</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h3><p>钩子脚本可访问的环境变量：</p>
+<table>
+<thead>
+<tr>
+<th>变量</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>CLAUDE_TOOL_NAME</code></td>
+<td>当前工具名称</td>
+</tr>
+<tr>
+<td><code>CLAUDE_TOOL_INPUT</code></td>
+<td>工具输入（JSON）</td>
+</tr>
+<tr>
+<td><code>CLAUDE_TOOL_OUTPUT</code></td>
+<td>工具输出（PostToolUse）</td>
+</tr>
+<tr>
+<td><code>CLAUDE_SESSION_ID</code></td>
+<td>会话 ID</td>
+</tr>
+<tr>
+<td><code>CLAUDE_WORKING_DIR</code></td>
+<td>工作目录</td>
+</tr>
+</tbody></table>
+<h3 id="示例钩子"><a href="#示例钩子" class="headerlink" title="示例钩子"></a>示例钩子</h3><h4 id="提交前验证"><a href="#提交前验证" class="headerlink" title="提交前验证"></a>提交前验证</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># pre-commit-check.sh</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$CLAUDE_TOOL_NAME</span>"</span> <span class="token operator">==</span> <span class="token string">"Bash"</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+  <span class="token assign-left variable">INPUT</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">$CLAUDE_TOOL_INPUT</span>"</span> <span class="token operator">|</span> jq <span class="token parameter variable">-r</span> <span class="token string">'.command'</span><span class="token variable">)</span></span>
+  <span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$INPUT</span>"</span> <span class="token operator">==</span> *<span class="token string">"git commit"</span>* <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"Running pre-commit checks..."</span>
+    <span class="token function">npm</span> <span class="token builtin class-name">test</span>
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> <span class="token parameter variable">-ne</span> <span class="token number">0</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+      <span class="token builtin class-name">echo</span> <span class="token string">"❌ Tests failed! Blocking commit."</span>
+      <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+    <span class="token keyword">fi</span>
+  <span class="token keyword">fi</span>
+<span class="token keyword">fi</span>
+<span class="token builtin class-name">exit</span> <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="操作日志记录"><a href="#操作日志记录" class="headerlink" title="操作日志记录"></a>操作日志记录</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># log-operations.sh</span>
+
+<span class="token assign-left variable">LOG_FILE</span><span class="token operator">=</span><span class="token string">"<span class="token environment constant">$HOME</span>/.claude/audit.log"</span>
+<span class="token assign-left variable">TIMESTAMP</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> +<span class="token string">"%Y-%m-%d %H:%M:%S"</span><span class="token variable">)</span></span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">"[<span class="token variable">$TIMESTAMP</span>] Tool: <span class="token variable">$CLAUDE_TOOL_NAME</span>"</span> <span class="token operator">>></span> <span class="token string">"<span class="token variable">$LOG_FILE</span>"</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"  Input: <span class="token variable">$CLAUDE_TOOL_INPUT</span>"</span> <span class="token operator">>></span> <span class="token string">"<span class="token variable">$LOG_FILE</span>"</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-n</span> <span class="token string">"<span class="token variable">$CLAUDE_TOOL_OUTPUT</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">"  Output: <span class="token variable">$CLAUDE_TOOL_OUTPUT</span>"</span> <span class="token operator">>></span> <span class="token string">"<span class="token variable">$LOG_FILE</span>"</span>
+<span class="token keyword">fi</span>
+<span class="token builtin class-name">echo</span> <span class="token string">""</span> <span class="token operator">>></span> <span class="token string">"<span class="token variable">$LOG_FILE</span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="桌面通知"><a href="#桌面通知" class="headerlink" title="桌面通知"></a>桌面通知</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># notify-completion.sh</span>
+
+<span class="token comment"># macOS 通知</span>
+osascript <span class="token parameter variable">-e</span> <span class="token string">'display notification "任务完成" with title "Claude Code"'</span>
+
+<span class="token comment"># Linux 通知（需要 notify-send）</span>
+<span class="token comment"># notify-send "Claude Code" "任务完成"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="危险命令拦截"><a href="#危险命令拦截" class="headerlink" title="危险命令拦截"></a>危险命令拦截</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># block-dangerous.sh</span>
+
+<span class="token assign-left variable">DANGEROUS_PATTERNS</span><span class="token operator">=</span><span class="token punctuation">(</span>
+  <span class="token string">"rm -rf /"</span>
+  <span class="token string">"rm -rf ~"</span>
+  <span class="token string">"rm -rf \*"</span>
+  <span class="token string">"> /dev/sda"</span>
+  <span class="token string">"mkfs"</span>
+  <span class="token string">"dd if="</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$CLAUDE_TOOL_NAME</span>"</span> <span class="token operator">==</span> <span class="token string">"Bash"</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+  <span class="token assign-left variable">CMD</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">$CLAUDE_TOOL_INPUT</span>"</span> <span class="token operator">|</span> jq <span class="token parameter variable">-r</span> <span class="token string">'.command'</span><span class="token variable">)</span></span>
+  <span class="token keyword">for</span> <span class="token for-or-select variable">pattern</span> <span class="token keyword">in</span> <span class="token string">"<span class="token variable">$&#123;DANGEROUS_PATTERNS<span class="token punctuation">[</span>@<span class="token punctuation">]</span>&#125;</span>"</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+    <span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$CMD</span>"</span> <span class="token operator">==</span> *<span class="token string">"<span class="token variable">$pattern</span>"</span>* <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+      <span class="token builtin class-name">echo</span> <span class="token string">"❌ BLOCKED: Dangerous command detected: <span class="token variable">$pattern</span>"</span>
+      <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+    <span class="token keyword">fi</span>
+  <span class="token keyword">done</span>
+<span class="token keyword">fi</span>
+<span class="token builtin class-name">exit</span> <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="钩子返回值"><a href="#钩子返回值" class="headerlink" title="钩子返回值"></a>钩子返回值</h3><ul>
+<li><code>exit 0</code> - 继续执行</li>
+<li><code>exit 1</code> - 阻止操作（PreToolUse）</li>
+<li>标准输出会显示给用户</li>
+</ul>
+<hr>
+<h2 id="7-权限与安全"><a href="#7-权限与安全" class="headerlink" title="7. 权限与安全"></a>7. 权限与安全</h2><h3 id="权限系统概述"><a href="#权限系统概述" class="headerlink" title="权限系统概述"></a>权限系统概述</h3><p>Claude Code 采用细粒度权限控制，确保操作安全。</p>
+<h3 id="工具权限"><a href="#工具权限" class="headerlink" title="工具权限"></a>工具权限</h3><table>
+<thead>
+<tr>
+<th>工具</th>
+<th>风险级别</th>
+<th>默认权限</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Read</code></td>
+<td>低</td>
+<td>允许</td>
+</tr>
+<tr>
+<td><code>Glob</code></td>
+<td>低</td>
+<td>允许</td>
+</tr>
+<tr>
+<td><code>Grep</code></td>
+<td>低</td>
+<td>允许</td>
+</tr>
+<tr>
+<td><code>Write</code></td>
+<td>中</td>
+<td>需确认</td>
+</tr>
+<tr>
+<td><code>Edit</code></td>
+<td>中</td>
+<td>需确认</td>
+</tr>
+<tr>
+<td><code>Bash</code></td>
+<td>高</td>
+<td>需确认</td>
+</tr>
+<tr>
+<td><code>Task</code></td>
+<td>中</td>
+<td>需确认</td>
+</tr>
+<tr>
+<td><code>WebFetch</code></td>
+<td>低</td>
+<td>允许</td>
+</tr>
+</tbody></table>
+<h3 id="配置权限规则"><a href="#配置权限规则" class="headerlink" title="配置权限规则"></a>配置权限规则</h3><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"permissions"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"allow"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">"Read"</span><span class="token punctuation">,</span>
+      <span class="token string">"Glob"</span><span class="token punctuation">,</span>
+      <span class="token string">"Grep"</span><span class="token punctuation">,</span>
+      <span class="token string">"WebFetch"</span><span class="token punctuation">,</span>
+      <span class="token string">"Bash(npm run *)"</span><span class="token punctuation">,</span>
+      <span class="token string">"Bash(git status)"</span><span class="token punctuation">,</span>
+      <span class="token string">"Bash(git diff)"</span><span class="token punctuation">,</span>
+      <span class="token string">"Write(*.md)"</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"deny"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">"Bash(rm -rf *)"</span><span class="token punctuation">,</span>
+      <span class="token string">"Bash(sudo *)"</span><span class="token punctuation">,</span>
+      <span class="token string">"Write(/etc/*)"</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="权限模式"><a href="#权限模式" class="headerlink" title="权限模式"></a>权限模式</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 交互模式（默认）- 危险操作需确认</span>
+claude
+
+<span class="token comment"># 跳过权限确认（危险）</span>
+claude --dangerously-skip-permissions
+
+<span class="token comment"># 限制工具</span>
+claude <span class="token parameter variable">--allowedTools</span> <span class="token string">"Read,Grep,Glob"</span>
+
+<span class="token comment"># 禁用特定工具</span>
+claude <span class="token parameter variable">--disallowedTools</span> <span class="token string">"Bash,Write"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="沙箱模式"><a href="#沙箱模式" class="headerlink" title="沙箱模式"></a>沙箱模式</h3><p>Claude Code 默认在沙箱中运行 Bash 命令：</p>
+<ul>
+<li>限制文件系统访问</li>
+<li>限制网络访问</li>
+<li>限制系统调用</li>
+</ul>
+<p>禁用沙箱（不推荐）：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"sandbox"</span><span class="token operator">:</span> <span class="token boolean">false</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="审计日志"><a href="#审计日志" class="headerlink" title="审计日志"></a>审计日志</h3><p>启用审计日志：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"auditLog"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"enabled"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"path"</span><span class="token operator">:</span> <span class="token string">"~/.claude/audit.log"</span><span class="token punctuation">,</span>
+    <span class="token property">"level"</span><span class="token operator">:</span> <span class="token string">"all"</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>日志级别：</p>
+<ul>
+<li><code>all</code> - 记录所有操作</li>
+<li><code>write</code> - 只记录写操作</li>
+<li><code>dangerous</code> - 只记录危险操作</li>
+</ul>
+<h3 id="安全最佳实践"><a href="#安全最佳实践" class="headerlink" title="安全最佳实践"></a>安全最佳实践</h3><ol>
+<li><strong>不要禁用沙箱</strong> - 除非完全信任代码</li>
+<li><strong>使用环境变量</strong> - 不要在配置中明文存储密钥</li>
+<li><strong>限制文件访问</strong> - 使用 MCP 文件系统服务器限制目录</li>
+<li><strong>启用审计日志</strong> - 记录所有操作供审查</li>
+<li><strong>定期审查权限</strong> - 移除不需要的权限</li>
+</ol>
+<hr>
+<h2 id="8-会话管理"><a href="#8-会话管理" class="headerlink" title="8. 会话管理"></a>8. 会话管理</h2><h3 id="会话概述"><a href="#会话概述" class="headerlink" title="会话概述"></a>会话概述</h3><p>Claude Code 会自动保存会话历史，支持恢复和继续对话。</p>
+<h3 id="会话操作"><a href="#会话操作" class="headerlink" title="会话操作"></a>会话操作</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 启动新会话</span>
+claude
+
+<span class="token comment"># 继续上次会话</span>
+claude <span class="token parameter variable">-c</span>
+claude <span class="token parameter variable">--continue</span>
+
+<span class="token comment"># 列出历史会话</span>
+claude <span class="token parameter variable">--list</span>
+
+<span class="token comment"># 恢复特定会话</span>
+claude <span class="token parameter variable">-r</span> <span class="token operator">&lt;</span>session-id<span class="token operator">></span>
+claude <span class="token parameter variable">--resume</span> <span class="token operator">&lt;</span>session-id<span class="token operator">></span>
+
+<span class="token comment"># 清理历史会话</span>
+claude <span class="token parameter variable">--clean</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="会话命令"><a href="#会话命令" class="headerlink" title="会话命令"></a>会话命令</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 在会话中查看信息</span>
+<span class="token operator">></span> /cost                <span class="token comment"># 查看 token 消耗</span>
+<span class="token operator">></span> /compact             <span class="token comment"># 压缩上下文</span>
+<span class="token operator">></span> /clear               <span class="token comment"># 清空对话</span>
+<span class="token operator">></span> /resume              <span class="token comment"># 选择历史会话恢复</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="会话存储"><a href="#会话存储" class="headerlink" title="会话存储"></a>会话存储</h3><p>会话存储位置：<code>~/.claude/sessions/</code></p>
+<p>每个会话包含：</p>
+<ul>
+<li>对话历史</li>
+<li>上下文信息</li>
+<li>Token 使用统计</li>
+<li>时间戳</li>
+</ul>
+<h3 id="上下文管理"><a href="#上下文管理" class="headerlink" title="上下文管理"></a>上下文管理</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查看上下文状态</span>
+<span class="token operator">></span> /context
+
+<span class="token comment"># 手动压缩上下文</span>
+<span class="token operator">></span> /compact
+
+<span class="token comment"># 清空并保留记忆</span>
+<span class="token operator">></span> /clear<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="后台任务"><a href="#后台任务" class="headerlink" title="后台任务"></a>后台任务</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查看后台任务</span>
+<span class="token operator">></span> /tasks
+
+<span class="token comment"># 获取任务输出</span>
+<span class="token comment"># 使用 TaskOutput 工具</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
+<h2 id="9-配置系统详解"><a href="#9-配置系统详解" class="headerlink" title="9. 配置系统详解"></a>9. 配置系统详解</h2><h3 id="配置层级"><a href="#配置层级" class="headerlink" title="配置层级"></a>配置层级</h3><p>配置按优先级从高到低：</p>
+<ol>
+<li>命令行参数</li>
+<li>环境变量</li>
+<li>项目本地配置 (<code>.claude/settings.local.json</code>)</li>
+<li>项目配置 (<code>.claude/settings.json</code>)</li>
+<li>用户本地配置 (<code>~/.claude/settings.local.json</code>)</li>
+<li>用户配置 (<code>~/.claude/settings.json</code>)</li>
+<li>默认配置</li>
+</ol>
+<h3 id="完整配置选项"><a href="#完整配置选项" class="headerlink" title="完整配置选项"></a>完整配置选项</h3><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token comment">// 基础配置</span>
+  <span class="token property">"model"</span><span class="token operator">:</span> <span class="token string">"opus"</span><span class="token punctuation">,</span>                          <span class="token comment">// 默认模型: opus, sonnet, haiku</span>
+  <span class="token property">"alwaysThinkingEnabled"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>            <span class="token comment">// 启用扩展思考</span>
+  <span class="token property">"maxThinkingTokens"</span><span class="token operator">:</span> <span class="token number">10000</span><span class="token punctuation">,</span>               <span class="token comment">// 最大思考 token</span>
+
+  <span class="token comment">// 环境变量</span>
+  <span class="token property">"env"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"ANTHROPIC_API_KEY"</span><span class="token operator">:</span> <span class="token string">"sk-ant-xxx"</span><span class="token punctuation">,</span>
+    <span class="token property">"ANTHROPIC_BASE_URL"</span><span class="token operator">:</span> <span class="token string">"https://api.anthropic.com"</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 权限配置</span>
+  <span class="token property">"permissions"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"allow"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"Read"</span><span class="token punctuation">,</span> <span class="token string">"Glob"</span><span class="token punctuation">,</span> <span class="token string">"Grep"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"deny"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"Bash(rm -rf *)"</span><span class="token punctuation">]</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// MCP 服务器</span>
+  <span class="token property">"mcpServers"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"github"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"npx"</span><span class="token punctuation">,</span>
+      <span class="token property">"args"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"-y"</span><span class="token punctuation">,</span> <span class="token string">"@modelcontextprotocol/server-github"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">"env"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token property">"GITHUB_TOKEN"</span><span class="token operator">:</span> <span class="token string">"xxx"</span> <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 钩子</span>
+  <span class="token property">"hooks"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"PreToolUse"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"PostToolUse"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"Notification"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 插件</span>
+  <span class="token property">"enabledPlugins"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"gopls-lsp@claude-plugins-official"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"typescript-lsp@claude-plugins-official"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// UI 配置</span>
+  <span class="token property">"theme"</span><span class="token operator">:</span> <span class="token string">"dark"</span><span class="token punctuation">,</span>                          <span class="token comment">// 主题: dark, light, auto</span>
+  <span class="token property">"statusLine"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>                       <span class="token comment">// 显示状态栏</span>
+  <span class="token property">"showTokenCount"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>                   <span class="token comment">// 显示 token 计数</span>
+
+  <span class="token comment">// 行为配置</span>
+  <span class="token property">"autoCompact"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>                      <span class="token comment">// 自动压缩上下文</span>
+  <span class="token property">"autoCompactThreshold"</span><span class="token operator">:</span> <span class="token number">100000</span><span class="token punctuation">,</span>           <span class="token comment">// 自动压缩阈值</span>
+  <span class="token property">"sandbox"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>                          <span class="token comment">// 沙箱模式</span>
+
+  <span class="token comment">// 审计配置</span>
+  <span class="token property">"auditLog"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"enabled"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token property">"path"</span><span class="token operator">:</span> <span class="token string">"~/.claude/audit.log"</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="配置命令"><a href="#配置命令" class="headerlink" title="配置命令"></a>配置命令</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查看所有配置</span>
+claude config list
+
+<span class="token comment"># 查看特定配置</span>
+claude config get model
+claude config get permissions.allow
+
+<span class="token comment"># 设置配置</span>
+claude config <span class="token builtin class-name">set</span> model opus
+claude config <span class="token builtin class-name">set</span> permissions.allow <span class="token string">'["Read", "Write"]'</span>
+
+<span class="token comment"># 重置配置</span>
+claude config reset
+claude config reset model<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="环境变量-1"><a href="#环境变量-1" class="headerlink" title="环境变量"></a>环境变量</h3><table>
+<thead>
+<tr>
+<th>变量</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>ANTHROPIC_API_KEY</code></td>
+<td>API 密钥</td>
+</tr>
+<tr>
+<td><code>ANTHROPIC_BASE_URL</code></td>
+<td>API 基础 URL</td>
+</tr>
+<tr>
+<td><code>ANTHROPIC_MODEL</code></td>
+<td>默认模型</td>
+</tr>
+<tr>
+<td><code>CLAUDE_CODE_CONFIG</code></td>
+<td>配置文件路径</td>
+</tr>
+<tr>
+<td><code>CLAUDE_CODE_DEBUG</code></td>
+<td>启用调试模式</td>
+</tr>
+<tr>
+<td><code>NO_COLOR</code></td>
+<td>禁用彩色输出</td>
+</tr>
+</tbody></table>
+<h3 id="CLAUDE-md-文件"><a href="#CLAUDE-md-文件" class="headerlink" title="CLAUDE.md 文件"></a>CLAUDE.md 文件</h3><p>项目级指令文件，提供项目上下文：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> 项目名称</span>
+
+项目简介...
+
+<span class="token title important"><span class="token punctuation">##</span> 技术栈</span>
+<span class="token list punctuation">-</span> 语言：TypeScript
+<span class="token list punctuation">-</span> 框架：React, Node.js
+<span class="token list punctuation">-</span> 数据库：PostgreSQL
+
+<span class="token title important"><span class="token punctuation">##</span> 目录结构</span>
+<span class="token list punctuation">-</span> src/components/ - React 组件
+<span class="token list punctuation">-</span> src/api/ - API 接口
+<span class="token list punctuation">-</span> src/utils/ - 工具函数
+
+<span class="token title important"><span class="token punctuation">##</span> 代码规范</span>
+<span class="token list punctuation">-</span> 使用 ESLint 和 Prettier
+<span class="token list punctuation">-</span> 提交信息遵循 Conventional Commits
+<span class="token list punctuation">-</span> 所有函数需要类型注解
+
+<span class="token title important"><span class="token punctuation">##</span> 常用命令</span>
+<span class="token list punctuation">-</span> npm run dev - 启动开发服务器
+<span class="token list punctuation">-</span> npm test - 运行测试
+<span class="token list punctuation">-</span> npm run build - 构建生产版本
+
+<span class="token title important"><span class="token punctuation">##</span> 注意事项</span>
+<span class="token list punctuation">-</span> 不要修改 generated/ 目录
+<span class="token list punctuation">-</span> API 密钥存储在 .env 中<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
+<h2 id="10-插件系统"><a href="#10-插件系统" class="headerlink" title="10. 插件系统"></a>10. 插件系统</h2><h3 id="插件类型"><a href="#插件类型" class="headerlink" title="插件类型"></a>插件类型</h3><ol>
+<li><strong>LSP 插件</strong> - 语言服务器协议插件，提供代码智能</li>
+<li><strong>功能插件</strong> - 扩展 Claude Code 功能</li>
+</ol>
+<h3 id="LSP-插件"><a href="#LSP-插件" class="headerlink" title="LSP 插件"></a>LSP 插件</h3><p>LSP 是 Language Server Protocol（语言服务器协议），它把“代码智能能力”从编辑器里拆出来，变成一个独立的 Language Server，通过标准协议给各种编辑器&#x2F;IDE 提供能力。</p>
+<p>你在写代码时常用的这些功能，大多就是 LSP 提供的：</p>
+<ul>
+<li>语法&#x2F;类型诊断（报错、warning）</li>
+<li>跳转定义&#x2F;查找引用（Go to Definition &#x2F; Find References）</li>
+<li>自动补全与参数提示（Completion &#x2F; Signature Help）</li>
+<li>重命名符号、代码格式化、代码动作（Rename &#x2F; Format &#x2F; Code Action）</li>
+<li>悬浮提示（Hover，看类型、注释、文档）</li>
+</ul>
+<p>Claude Code 里提到的 “LSP” 一般就是指它能利用项目的 Language Server（或编辑器已经连接的 LSP）拿到更准确的语义信息，比如：某个函数到底定义在哪里、类型是什么、引用链路有哪些、当前文件有哪些诊断错误等，从而让改代码&#x2F;修 bug 的结果更可靠。</p>
+<table>
+<thead>
+<tr>
+<th>插件</th>
+<th>语言</th>
+<th>安装命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>gopls-lsp</code></td>
+<td>Go</td>
+<td><code>/plugin gopls-lsp@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><code>typescript-lsp</code></td>
+<td>TypeScript&#x2F;JS</td>
+<td><code>/plugin typescript-lsp@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><code>rust-analyzer-lsp</code></td>
+<td>Rust</td>
+<td><code>/plugin rust-analyzer-lsp@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><code>pyright-lsp</code></td>
+<td>Python</td>
+<td><code>/plugin pyright-lsp@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><code>clangd-lsp</code></td>
+<td>C&#x2F;C++</td>
+<td><code>/plugin clangd-lsp@claude-plugins-official</code></td>
+</tr>
+</tbody></table>
+<iframe width="1128" height="635" src="https://www.youtube.com/embed/lffYEu5MhSQ" title="Claude Code Just Got The Ultimate Dev Shortcut (LSP Explained)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+<h3 id="插件管理"><a href="#插件管理" class="headerlink" title="插件管理"></a>插件管理</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 安装插件</span>
+<span class="token operator">></span> /plugin gopls-lsp@claude-plugins-official
+
+<span class="token comment"># 查看已安装插件</span>
+<span class="token operator">></span> /plugin list
+
+<span class="token comment"># 禁用插件</span>
+<span class="token operator">></span> /plugin disable gopls-lsp
+
+<span class="token comment"># 启用插件</span>
+<span class="token operator">></span> /plugin <span class="token builtin class-name">enable</span> gopls-lsp
+
+<span class="token comment"># 卸载插件</span>
+<span class="token operator">></span> /plugin remove gopls-lsp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="配置插件"><a href="#配置插件" class="headerlink" title="配置插件"></a>配置插件</h3><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"enabledPlugins"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"gopls-lsp@claude-plugins-official"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"typescript-lsp@claude-plugins-official"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token property">"pluginSettings"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"gopls-lsp"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token property">"formatting"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">"diagnostics"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="LSP-功能"><a href="#LSP-功能" class="headerlink" title="LSP 功能"></a>LSP 功能</h3><p>启用 LSP 后可用的功能：</p>
+<ul>
+<li><strong>跳转定义</strong> - 跳转到符号定义</li>
+<li><strong>查找引用</strong> - 查找所有引用</li>
+<li><strong>悬停信息</strong> - 显示类型和文档</li>
+<li><strong>自动补全</strong> - 智能代码补全</li>
+<li><strong>诊断</strong> - 实时错误检测</li>
+<li><strong>格式化</strong> - 代码格式化</li>
+<li><strong>重命名</strong> - 安全重命名符号</li>
+</ul>
+<hr>
+<h2 id="11-IDE-集成"><a href="#11-IDE-集成" class="headerlink" title="11. IDE 集成"></a>11. IDE 集成</h2><h3 id="VS-Code-集成"><a href="#VS-Code-集成" class="headerlink" title="VS Code 集成"></a>VS Code 集成</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><ol>
+<li>打开 VS Code</li>
+<li>进入扩展市场（Cmd&#x2F;Ctrl + Shift + X）</li>
+<li>搜索 “Claude Code”</li>
+<li>点击安装</li>
+</ol>
+<h4 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h4><ul>
+<li><strong>侧边栏聊天</strong> - 在侧边栏与 Claude 对话</li>
+<li><strong>内联代码操作</strong> - 选中代码直接与 Claude 交互</li>
+<li><strong>快速修复</strong> - Claude 提供的代码修复建议</li>
+<li><strong>代码解释</strong> - 解释选中的代码</li>
+<li><strong>终端集成</strong> - 在终端中使用 Claude</li>
+</ul>
+<h4 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h4><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Cmd/Ctrl + Shift + P</code></td>
+<td>打开命令面板</td>
+</tr>
+<tr>
+<td><code>Cmd/Ctrl + K, Cmd/Ctrl + I</code></td>
+<td>打开内联助手</td>
+</tr>
+<tr>
+<td><code>Cmd/Ctrl + L</code></td>
+<td>打开侧边栏聊天</td>
+</tr>
+</tbody></table>
+<h4 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h4><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"claudeCode.model"</span><span class="token operator">:</span> <span class="token string">"opus"</span><span class="token punctuation">,</span>
+  <span class="token property">"claudeCode.autoSuggest"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">"claudeCode.inlineEnabled"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="JetBrains-IDE-集成"><a href="#JetBrains-IDE-集成" class="headerlink" title="JetBrains IDE 集成"></a>JetBrains IDE 集成</h3><p>支持的 IDE：</p>
+<ul>
+<li>IntelliJ IDEA</li>
+<li>PyCharm</li>
+<li>WebStorm</li>
+<li>GoLand</li>
+<li>PhpStorm</li>
+<li>Rider</li>
+<li>RubyMine</li>
+<li>CLion</li>
+</ul>
+<h4 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h4><ol>
+<li>打开 Settings&#x2F;Preferences</li>
+<li>进入 Plugins</li>
+<li>搜索 “Claude Code”</li>
+<li>点击 Install</li>
+<li>重启 IDE</li>
+</ol>
+<h4 id="功能-1"><a href="#功能-1" class="headerlink" title="功能"></a>功能</h4><ul>
+<li>工具窗口聊天</li>
+<li>代码选择交互</li>
+<li>快速操作菜单</li>
+<li>终端集成</li>
+</ul>
+<h3 id="终端集成"><a href="#终端集成" class="headerlink" title="终端集成"></a>终端集成</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 设置终端集成</span>
+claude terminal-setup
+
+<span class="token comment"># 在 VS Code 终端中启动</span>
+code <span class="token builtin class-name">.</span> <span class="token operator">&amp;&amp;</span> claude
+
+<span class="token comment"># 在 IDE 终端中启动</span>
+claude<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
+<h2 id="12-键盘快捷键"><a href="#12-键盘快捷键" class="headerlink" title="12. 键盘快捷键"></a>12. 键盘快捷键</h2><h3 id="CLI-模式快捷键"><a href="#CLI-模式快捷键" class="headerlink" title="CLI 模式快捷键"></a>CLI 模式快捷键</h3><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Enter</code></td>
+<td>发送消息</td>
+</tr>
+<tr>
+<td><code>Shift + Enter</code></td>
+<td>换行（多行输入）</td>
+</tr>
+<tr>
+<td><code>Option + Enter</code></td>
+<td>换行（备选）</td>
+</tr>
+<tr>
+<td><code>Ctrl + C</code></td>
+<td>中断当前操作</td>
+</tr>
+<tr>
+<td><code>Ctrl + D</code></td>
+<td>退出会话</td>
+</tr>
+<tr>
+<td><code>↑</code> &#x2F; <code>↓</code></td>
+<td>浏览历史记录</td>
+</tr>
+<tr>
+<td><code>Tab</code></td>
+<td>自动补全命令</td>
+</tr>
+<tr>
+<td><code>Ctrl + L</code></td>
+<td>清屏</td>
+</tr>
+<tr>
+<td><code>Ctrl + U</code></td>
+<td>清除当前输入</td>
+</tr>
+<tr>
+<td><code>Ctrl + W</code></td>
+<td>删除前一个单词</td>
+</tr>
+<tr>
+<td><code>Ctrl + A</code></td>
+<td>移动到行首</td>
+</tr>
+<tr>
+<td><code>Ctrl + E</code></td>
+<td>移动到行尾</td>
+</tr>
+<tr>
+<td><code>Ctrl + R</code></td>
+<td>搜索历史</td>
+</tr>
+<tr>
+<td><code>Ctrl + Z</code></td>
+<td>撤销（如支持）</td>
+</tr>
+</tbody></table>
+<h3 id="Vim-模式快捷键"><a href="#Vim-模式快捷键" class="headerlink" title="Vim 模式快捷键"></a>Vim 模式快捷键</h3><p>启用 Vim 模式：<code>/vim</code></p>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Normal</td>
+<td><code>i</code></td>
+<td>进入插入模式</td>
+</tr>
+<tr>
+<td>Normal</td>
+<td><code>a</code></td>
+<td>在光标后插入</td>
+</tr>
+<tr>
+<td>Normal</td>
+<td><code>o</code></td>
+<td>新行插入</td>
+</tr>
+<tr>
+<td>Normal</td>
+<td><code>dd</code></td>
+<td>删除行</td>
+</tr>
+<tr>
+<td>Normal</td>
+<td><code>yy</code></td>
+<td>复制行</td>
+</tr>
+<tr>
+<td>Normal</td>
+<td><code>p</code></td>
+<td>粘贴</td>
+</tr>
+<tr>
+<td>Normal</td>
+<td><code>/</code></td>
+<td>搜索</td>
+</tr>
+<tr>
+<td>Normal</td>
+<td><code>u</code></td>
+<td>撤销</td>
+</tr>
+<tr>
+<td>Normal</td>
+<td><code>Ctrl + R</code></td>
+<td>重做</td>
+</tr>
+<tr>
+<td>Insert</td>
+<td><code>Esc</code></td>
+<td>返回 Normal</td>
+</tr>
+<tr>
+<td>Insert</td>
+<td><code>jj</code></td>
+<td>快速返回 Normal</td>
+</tr>
+</tbody></table>
+<h3 id="工具确认快捷键"><a href="#工具确认快捷键" class="headerlink" title="工具确认快捷键"></a>工具确认快捷键</h3><p>当工具需要确认时：</p>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>y</code></td>
+<td>允许此次</td>
+</tr>
+<tr>
+<td><code>n</code></td>
+<td>拒绝此次</td>
+</tr>
+<tr>
+<td><code>a</code></td>
+<td>始终允许此类操作</td>
+</tr>
+<tr>
+<td><code>r</code></td>
+<td>拒绝并停止</td>
+</tr>
+<tr>
+<td><code>e</code></td>
+<td>编辑后执行</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="13-高级功能"><a href="#13-高级功能" class="headerlink" title="13. 高级功能"></a>13. 高级功能</h2><h3 id="批处理模式"><a href="#批处理模式" class="headerlink" title="批处理模式"></a>批处理模式</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 单次执行并退出</span>
+claude <span class="token parameter variable">-p</span> <span class="token string">"重构 src/utils.ts 中的函数"</span>
+
+<span class="token comment"># 批量处理多个文件</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">file</span> <span class="token keyword">in</span> src/*.ts<span class="token punctuation">;</span> <span class="token keyword">do</span>
+  claude <span class="token parameter variable">-p</span> <span class="token string">"检查 <span class="token variable">$file</span> 中的问题"</span> --output-format json <span class="token operator">>></span> results.json
+<span class="token keyword">done</span>
+
+<span class="token comment"># 管道输入</span>
+<span class="token function">cat</span> error.log <span class="token operator">|</span> claude <span class="token parameter variable">-p</span> <span class="token string">"分析这些错误日志"</span>
+
+<span class="token comment"># JSON 输出</span>
+claude <span class="token parameter variable">-p</span> <span class="token string">"列出所有 TODO 注释"</span> --output-format json<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="模板系统"><a href="#模板系统" class="headerlink" title="模板系统"></a>模板系统</h3><p>创建命令模板：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># ~/.claude/templates/fix-bug.txt</span>
+请修复以下 bug：
+
+文件：<span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>file<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
+问题描述：<span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>description<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
+重现步骤：<span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>steps<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
+
+请：
+<span class="token number">1</span>. 定位问题根因
+<span class="token number">2</span>. 提供修复方案
+<span class="token number">3</span>. 添加相关测试<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>使用模板：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">claude <span class="token parameter variable">-p</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">cat</span> ~/.claude/templates/fix-bug.txt<span class="token variable">)</span></span>"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">--var</span> <span class="token assign-left variable">file</span><span class="token operator">=</span>src/api.ts <span class="token punctuation">\</span>
+  <span class="token parameter variable">--var</span> <span class="token assign-left variable">description</span><span class="token operator">=</span><span class="token string">"API 返回 500"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">--var</span> <span class="token assign-left variable">steps</span><span class="token operator">=</span><span class="token string">"调用 /users 接口"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="并行执行"><a href="#并行执行" class="headerlink" title="并行执行"></a>并行执行</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 并行分析多个文件</span>
+claude <span class="token parameter variable">-p</span> <span class="token string">"同时分析以下文件的代码质量：
+- src/api/users.ts
+- src/api/posts.ts
+- src/api/comments.ts
+"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="上下文注入"><a href="#上下文注入" class="headerlink" title="上下文注入"></a>上下文注入</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 注入额外上下文</span>
+claude <span class="token parameter variable">--context</span> <span class="token string">"这是一个遗留系统，需要保持向后兼容"</span>
+
+<span class="token comment"># 从文件注入</span>
+claude --context-file context.md<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="模型切换"><a href="#模型切换" class="headerlink" title="模型切换"></a>模型切换</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 会话中切换</span>
+<span class="token operator">></span> /model sonnet
+
+<span class="token comment"># 临时使用其他模型</span>
+<span class="token operator">></span> @haiku 这是一个简单的问题
+
+<span class="token comment"># 命令行指定</span>
+claude <span class="token parameter variable">--model</span> opus<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="代理任务"><a href="#代理任务" class="headerlink" title="代理任务"></a>代理任务</h3><p>Claude Code 可以启动子代理处理复杂任务：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 探索代码库</span>
+<span class="token operator">></span> 探索项目中的认证实现
+
+<span class="token comment"># 实现功能</span>
+<span class="token operator">></span> 实现用户注册功能，包括验证和数据库操作
+
+<span class="token comment"># 审查代码</span>
+<span class="token operator">></span> 审查 PR <span class="token comment">#123 的所有变更</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="后台执行"><a href="#后台执行" class="headerlink" title="后台执行"></a>后台执行</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 后台运行长任务</span>
+<span class="token operator">></span> 在后台运行完整的测试套件
+
+<span class="token comment"># 查看后台任务</span>
+<span class="token operator">></span> /tasks
+
+<span class="token comment"># 获取任务结果</span>
+<span class="token comment"># 任务完成后会自动显示结果</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
+<h2 id="14-故障排查"><a href="#14-故障排查" class="headerlink" title="14. 故障排查"></a>14. 故障排查</h2><h3 id="诊断命令"><a href="#诊断命令" class="headerlink" title="诊断命令"></a>诊断命令</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 运行诊断</span>
+claude doctor
+
+<span class="token comment"># 详细诊断</span>
+claude doctor <span class="token parameter variable">--verbose</span>
+
+<span class="token comment"># 检查特定问题</span>
+claude doctor <span class="token parameter variable">--check</span> mcp
+claude doctor <span class="token parameter variable">--check</span> permissions<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><h4 id="MCP-服务器无法连接"><a href="#MCP-服务器无法连接" class="headerlink" title="MCP 服务器无法连接"></a>MCP 服务器无法连接</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 测试 MCP 服务器</span>
+claude mcp <span class="token builtin class-name">test</span> github
+
+<span class="token comment"># 检查日志</span>
+<span class="token function">cat</span> ~/.claude/mcp/github.log
+
+<span class="token comment"># 解决方案</span>
+<span class="token number">1</span>. 检查 <span class="token builtin class-name">command</span> 路径是否正确
+<span class="token number">2</span>. 检查环境变量是否设置
+<span class="token number">3</span>. 手动运行命令测试<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="API-连接失败"><a href="#API-连接失败" class="headerlink" title="API 连接失败"></a>API 连接失败</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 检查 API 配置</span>
+claude config get env.ANTHROPIC_API_KEY
+claude config get env.ANTHROPIC_BASE_URL
+
+<span class="token comment"># 测试连接</span>
+<span class="token function">curl</span> <span class="token parameter variable">-H</span> <span class="token string">"x-api-key: <span class="token variable">$ANTHROPIC_API_KEY</span>"</span> <span class="token punctuation">\</span>
+  https://api.anthropic.com/v1/models
+
+<span class="token comment"># 解决方案</span>
+<span class="token number">1</span>. 验证 API 密钥有效性
+<span class="token number">2</span>. 检查网络代理设置
+<span class="token number">3</span>. 确认 API 配额<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="权限被拒绝"><a href="#权限被拒绝" class="headerlink" title="权限被拒绝"></a>权限被拒绝</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 检查权限配置</span>
+claude config get permissions
+
+<span class="token comment"># 临时跳过权限</span>
+claude --dangerously-skip-permissions
+
+<span class="token comment"># 解决方案</span>
+<span class="token number">1</span>. 添加到 allow 列表
+<span class="token number">2</span>. 使用钩子验证后允许<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="上下文过长"><a href="#上下文过长" class="headerlink" title="上下文过长"></a>上下文过长</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 压缩上下文</span>
+<span class="token operator">></span> /compact
+
+<span class="token comment"># 清空对话</span>
+<span class="token operator">></span> /clear
+
+<span class="token comment"># 解决方案</span>
+<span class="token number">1</span>. 使用 /compact 定期压缩
+<span class="token number">2</span>. 分拆大任务为小任务
+<span class="token number">3</span>. 启用 autoCompact<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="插件不生效"><a href="#插件不生效" class="headerlink" title="插件不生效"></a>插件不生效</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 检查插件状态</span>
+<span class="token operator">></span> /plugin list
+
+<span class="token comment"># 重新安装</span>
+<span class="token operator">></span> /plugin remove gopls-lsp
+<span class="token operator">></span> /plugin gopls-lsp@claude-plugins-official
+
+<span class="token comment"># 解决方案</span>
+<span class="token number">1</span>. 确认插件名称正确
+<span class="token number">2</span>. 重启 Claude Code
+<span class="token number">3</span>. 检查语言服务器是否安装<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="日志位置"><a href="#日志位置" class="headerlink" title="日志位置"></a>日志位置</h3><table>
+<thead>
+<tr>
+<th>日志</th>
+<th>位置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Claude Code 日志</td>
+<td><code>~/.claude/logs/</code></td>
+</tr>
+<tr>
+<td>MCP 服务器日志</td>
+<td><code>~/.claude/mcp/</code></td>
+</tr>
+<tr>
+<td>审计日志</td>
+<td><code>~/.claude/audit.log</code></td>
+</tr>
+<tr>
+<td>会话数据</td>
+<td><code>~/.claude/sessions/</code></td>
+</tr>
+</tbody></table>
+<h3 id="重置-Claude-Code"><a href="#重置-Claude-Code" class="headerlink" title="重置 Claude Code"></a>重置 Claude Code</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 重置配置</span>
+claude config reset
+
+<span class="token comment"># 清理缓存</span>
+<span class="token function">rm</span> <span class="token parameter variable">-rf</span> ~/.claude/cache
+
+<span class="token comment"># 完全重置（保留配置）</span>
+<span class="token function">rm</span> <span class="token parameter variable">-rf</span> ~/.claude/sessions ~/.claude/cache
+
+<span class="token comment"># 完全重新安装</span>
+<span class="token function">npm</span> uninstall <span class="token parameter variable">-g</span> @anthropic-ai/claude-code
+<span class="token function">rm</span> <span class="token parameter variable">-rf</span> ~/.claude
+<span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-g</span> @anthropic-ai/claude-code<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
+<h2 id="15-最佳实践"><a href="#15-最佳实践" class="headerlink" title="15. 最佳实践"></a>15. 最佳实践</h2><h3 id="项目初始化清单"><a href="#项目初始化清单" class="headerlink" title="项目初始化清单"></a>项目初始化清单</h3><ul>
+<li><input disabled="" type="checkbox"> 运行 <code>/init</code> 创建 CLAUDE.md</li>
+<li><input disabled="" type="checkbox"> 配置项目特定的 MCP 服务器</li>
+<li><input disabled="" type="checkbox"> 设置必要的 Hooks</li>
+<li><input disabled="" type="checkbox"> 启用相关的 LSP 插件</li>
+<li><input disabled="" type="checkbox"> 配置权限规则</li>
+<li><input disabled="" type="checkbox"> 将 <code>.claude/</code> 目录加入版本控制（排除敏感信息）</li>
+</ul>
+<h3 id="高效使用技巧"><a href="#高效使用技巧" class="headerlink" title="高效使用技巧"></a>高效使用技巧</h3><h4 id="1-提供清晰上下文"><a href="#1-提供清晰上下文" class="headerlink" title="1. 提供清晰上下文"></a>1. 提供清晰上下文</h4><pre class="line-numbers language-none"><code class="language-none"># 好的提问
+&gt; 在 src&#x2F;components&#x2F;Button.tsx 中添加一个 loading 状态，
+&gt; 参考现有的 disabled 状态实现方式
+
+# 不好的提问
+&gt; 添加 loading<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2-利用项目探索"><a href="#2-利用项目探索" class="headerlink" title="2. 利用项目探索"></a>2. 利用项目探索</h4><pre class="line-numbers language-none"><code class="language-none">&gt; 这个项目的架构是什么？
+&gt; 用户认证是如何实现的？
+&gt; 找出所有使用了 deprecated API 的代码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="3-分步骤处理复杂任务"><a href="#3-分步骤处理复杂任务" class="headerlink" title="3. 分步骤处理复杂任务"></a>3. 分步骤处理复杂任务</h4><pre class="line-numbers language-none"><code class="language-none">&gt; 先帮我分析这个 bug 的原因
+&gt; 现在帮我修复它
+&gt; 最后添加相关测试<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="4-善用代码审查"><a href="#4-善用代码审查" class="headerlink" title="4. 善用代码审查"></a>4. 善用代码审查</h4><pre class="line-numbers language-none"><code class="language-none">&gt; &#x2F;review
+&gt; &#x2F;security-review<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h4 id="5-使用自定义技能"><a href="#5-使用自定义技能" class="headerlink" title="5. 使用自定义技能"></a>5. 使用自定义技能</h4><p>创建常用工作流为技能，一键执行：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token title important"># .claude/commands/deploy.md
+<span class="token punctuation">---</span></span>
+<span class="token title important">description: 部署到生产环境
+<span class="token punctuation">---</span></span>
+
+执行以下部署步骤：
+<span class="token list punctuation">1.</span> 运行测试确保通过
+<span class="token list punctuation">2.</span> 构建生产版本
+<span class="token list punctuation">3.</span> 检查构建产物
+<span class="token list punctuation">4.</span> 提示用户确认后执行部署命令<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="安全注意事项"><a href="#安全注意事项" class="headerlink" title="安全注意事项"></a>安全注意事项</h3><ol>
+<li><strong>不要在配置中明文存储密钥</strong> - 使用环境变量</li>
+<li><strong>启用审计日志</strong> - 记录所有操作</li>
+<li><strong>限制权限</strong> - 只授予必要权限</li>
+<li><strong>定期审查</strong> - 检查配置和权限设置</li>
+<li><strong>使用沙箱</strong> - 保持沙箱模式开启</li>
+<li><strong>验证输出</strong> - 审查生成的代码</li>
+</ol>
+<h3 id="推荐工作流"><a href="#推荐工作流" class="headerlink" title="推荐工作流"></a>推荐工作流</h3><h4 id="日常开发"><a href="#日常开发" class="headerlink" title="日常开发"></a>日常开发</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 开始工作</span>
+<span class="token builtin class-name">cd</span> project
+claude <span class="token parameter variable">-c</span>  <span class="token comment"># 继续上次会话</span>
+
+<span class="token comment"># 探索代码</span>
+<span class="token operator">></span> 帮我理解这个模块的实现
+
+<span class="token comment"># 实现功能</span>
+<span class="token operator">></span> 实现用户头像上传功能
+
+<span class="token comment"># 审查代码</span>
+<span class="token operator">></span> /review
+
+<span class="token comment"># 提交代码</span>
+<span class="token operator">></span> 帮我生成提交信息<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="Bug-修复"><a href="#Bug-修复" class="headerlink" title="Bug 修复"></a>Bug 修复</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">claude
+
+<span class="token operator">></span> 这个错误是什么原因：<span class="token punctuation">[</span>粘贴错误信息<span class="token punctuation">]</span>
+<span class="token operator">></span> 帮我定位问题
+<span class="token operator">></span> 修复这个问题
+<span class="token operator">></span> 添加测试防止回归<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="代码重构"><a href="#代码重构" class="headerlink" title="代码重构"></a>代码重构</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">claude
+
+<span class="token operator">></span> 分析 src/utils/ 目录的代码质量
+<span class="token operator">></span> 重构 parseData 函数，提高可读性
+<span class="token operator">></span> 确保测试仍然通过<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h3><ul>
+<li><strong>官方文档</strong>: <a target="_blank" rel="noopener" href="https://docs.anthropic.com/claude-code">https://docs.anthropic.com/claude-code</a></li>
+<li><strong>GitHub</strong>: <a target="_blank" rel="noopener" href="https://github.com/anthropics/claude-code">https://github.com/anthropics/claude-code</a></li>
+<li><strong>MCP 规范</strong>: <a target="_blank" rel="noopener" href="https://modelcontextprotocol.io/">https://modelcontextprotocol.io</a></li>
+<li><strong>问题反馈</strong>: <a target="_blank" rel="noopener" href="https://github.com/anthropics/claude-code/issues">https://github.com/anthropics/claude-code/issues</a></li>
+</ul>
+<hr>
+<p><em>最后更新: 2026-01-03</em></p>
+
+            <div class="post-tags">
+              <!-- 文章tags -->
+              
+                
+                  <cosy-label href="../../../../../tags/ai/" size="sm"># ai</cosy-label>
+                  
+                  <cosy-label href="../../../../../tags/%E5%BC%80%E5%8F%91/" size="sm"># 开发</cosy-label>
+                  
+                  <cosy-label href="../../../../../tags/%E5%B7%A5%E5%85%B7/" size="sm"># 工具</cosy-label>
+                  
+                    
+            </div>
+            <p class="motto">RecoveryAshes Blog</p>
+        </article>
+        <!-- 评论 -->
+        <div id="vcomments"></div>
+        <div id="tcomment"></div>
+      </div>
+    </main>
+    <!-- toc -->
+    
+      <cosy-drag-box id="toc-drag-box" trigger="left" min-width="220" uid="toc-box">
+        <div class="meta-container">
+          <div class="toc-wrapper cosy-scrollbar">
+            <cosy-tooltip placement="right">
+              <p class="catalog">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+                  <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6h16"></path>
+                    <path d="M4 12h16"></path>
+                    <path d="M4 18h12"></path>
+                  </g>
+                </svg>
+                <span>目录</span>
+              </p>
+              <span slot="content">
+                <span>隐藏目录</span>
+                <cosy-short-key>]</cosy-short-key>
+              </span>
+            </cosy-tooltip>
+            <!-- 文章toc -->
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#claude-code"><span class="toc-number">1.</span> <span class="toc-text">claude_code</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%B7%A5%E5%85%B7"><span class="toc-number">1.1.</span> <span class="toc-text">1.工具</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Claude-Code-%E5%AE%8C%E6%95%B4%E5%8A%9F%E8%83%BD%E6%89%8B%E5%86%8C"><span class="toc-number">2.</span> <span class="toc-text">Claude Code 完整功能手册</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-number">2.1.</span> <span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%AE%80%E4%BB%8B%E4%B8%8E%E5%AE%89%E8%A3%85"><span class="toc-number">2.2.</span> <span class="toc-text">1. 简介与安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Claude-Code%EF%BC%9F"><span class="toc-number">2.2.1.</span> <span class="toc-text">什么是 Claude Code？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E8%A6%81%E6%B1%82"><span class="toc-number">2.2.2.</span> <span class="toc-text">系统要求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F"><span class="toc-number">2.2.3.</span> <span class="toc-text">安装方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A6%96%E6%AC%A1%E9%85%8D%E7%BD%AE"><span class="toc-number">2.2.4.</span> <span class="toc-text">首次配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-number">2.2.5.</span> <span class="toc-text">目录结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0"><span class="toc-number">2.3.</span> <span class="toc-text">2. 命令行参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="toc-number">2.3.1.</span> <span class="toc-text">基本用法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%AD%90%E5%91%BD%E4%BB%A4"><span class="toc-number">2.3.2.</span> <span class="toc-text">主要子命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E9%80%89%E9%A1%B9"><span class="toc-number">2.3.3.</span> <span class="toc-text">常用选项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%AD%90%E5%91%BD%E4%BB%A4"><span class="toc-number">2.3.4.</span> <span class="toc-text">配置子命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MCP-%E5%AD%90%E5%91%BD%E4%BB%A4"><span class="toc-number">2.3.5.</span> <span class="toc-text">MCP 子命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%9A%E8%AF%9D%E7%AE%A1%E7%90%86"><span class="toc-number">2.3.6.</span> <span class="toc-text">会话管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%96%B9%E5%BC%8F"><span class="toc-number">2.3.7.</span> <span class="toc-text">输入方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="toc-number">2.3.8.</span> <span class="toc-text">输出格式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%96%9C%E6%9D%A0%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3"><span class="toc-number">2.4.</span> <span class="toc-text">3. 斜杠命令详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E7%BD%AE%E5%91%BD%E4%BB%A4"><span class="toc-number">2.4.1.</span> <span class="toc-text">内置命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E"><span class="toc-number">2.4.2.</span> <span class="toc-text">命令详细说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8A%80%E8%83%BD%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.5.</span> <span class="toc-text">4. 自定义技能系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%80%E8%83%BD%EF%BC%88Skills%EF%BC%89%E6%A6%82%E8%BF%B0"><span class="toc-number">2.5.1.</span> <span class="toc-text">技能（Skills）概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84-1"><span class="toc-number">2.5.2.</span> <span class="toc-text">目录结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%80%E8%83%BD%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F"><span class="toc-number">2.5.3.</span> <span class="toc-text">技能文件格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.5.4.</span> <span class="toc-text">变量系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%E6%8A%80%E8%83%BD"><span class="toc-number">2.5.5.</span> <span class="toc-text">示例技能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%80%E8%83%BD%E4%BA%A4%E6%8E%A5%EF%BC%88Handoff%EF%BC%89"><span class="toc-number">2.5.6.</span> <span class="toc-text">技能交接（Handoff）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Speckit-%E5%B7%A5%E4%BD%9C%E6%B5%81%E4%B8%8E-agent-%E8%81%94%E5%8A%A8"><span class="toc-number">2.5.7.</span> <span class="toc-text">Speckit 工作流与 &#x2F;agent 联动</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-MCP-%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE"><span class="toc-number">2.6.</span> <span class="toc-text">5. MCP 服务器配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MCP-%E5%8D%8F%E8%AE%AE%E7%AE%80%E4%BB%8B"><span class="toc-number">2.6.1.</span> <span class="toc-text">MCP 协议简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE"><span class="toc-number">2.6.2.</span> <span class="toc-text">配置文件位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E6%A0%BC%E5%BC%8F"><span class="toc-number">2.6.3.</span> <span class="toc-text">基本配置格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%98%E6%96%B9-MCP-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">2.6.4.</span> <span class="toc-text">官方 MCP 服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BE%E5%8C%BA-MCP-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">2.6.5.</span> <span class="toc-text">社区 MCP 服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MCP-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86"><span class="toc-number">2.6.6.</span> <span class="toc-text">MCP 服务器管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Hooks-%E9%92%A9%E5%AD%90%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.7.</span> <span class="toc-text">6. Hooks 钩子系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%92%A9%E5%AD%90%E6%A6%82%E8%BF%B0"><span class="toc-number">2.7.1.</span> <span class="toc-text">钩子概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%92%A9%E5%AD%90%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.7.2.</span> <span class="toc-text">钩子类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%A0%BC%E5%BC%8F"><span class="toc-number">2.7.3.</span> <span class="toc-text">配置格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">2.7.4.</span> <span class="toc-text">环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%E9%92%A9%E5%AD%90"><span class="toc-number">2.7.5.</span> <span class="toc-text">示例钩子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%92%A9%E5%AD%90%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-number">2.7.6.</span> <span class="toc-text">钩子返回值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E6%9D%83%E9%99%90%E4%B8%8E%E5%AE%89%E5%85%A8"><span class="toc-number">2.8.</span> <span class="toc-text">7. 权限与安全</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0"><span class="toc-number">2.8.1.</span> <span class="toc-text">权限系统概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E5%85%B7%E6%9D%83%E9%99%90"><span class="toc-number">2.8.2.</span> <span class="toc-text">工具权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%9D%83%E9%99%90%E8%A7%84%E5%88%99"><span class="toc-number">2.8.3.</span> <span class="toc-text">配置权限规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.8.4.</span> <span class="toc-text">权限模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B2%99%E7%AE%B1%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.8.5.</span> <span class="toc-text">沙箱模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%A1%E8%AE%A1%E6%97%A5%E5%BF%97"><span class="toc-number">2.8.6.</span> <span class="toc-text">审计日志</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="toc-number">2.8.7.</span> <span class="toc-text">安全最佳实践</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E4%BC%9A%E8%AF%9D%E7%AE%A1%E7%90%86"><span class="toc-number">2.9.</span> <span class="toc-text">8. 会话管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%9A%E8%AF%9D%E6%A6%82%E8%BF%B0"><span class="toc-number">2.9.1.</span> <span class="toc-text">会话概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%9A%E8%AF%9D%E6%93%8D%E4%BD%9C"><span class="toc-number">2.9.2.</span> <span class="toc-text">会话操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%9A%E8%AF%9D%E5%91%BD%E4%BB%A4"><span class="toc-number">2.9.3.</span> <span class="toc-text">会话命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%9A%E8%AF%9D%E5%AD%98%E5%82%A8"><span class="toc-number">2.9.4.</span> <span class="toc-text">会话存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AE%A1%E7%90%86"><span class="toc-number">2.9.5.</span> <span class="toc-text">上下文管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E5%8F%B0%E4%BB%BB%E5%8A%A1"><span class="toc-number">2.9.6.</span> <span class="toc-text">后台任务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E9%85%8D%E7%BD%AE%E7%B3%BB%E7%BB%9F%E8%AF%A6%E8%A7%A3"><span class="toc-number">2.10.</span> <span class="toc-text">9. 配置系统详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%B1%82%E7%BA%A7"><span class="toc-number">2.10.1.</span> <span class="toc-text">配置层级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8C%E6%95%B4%E9%85%8D%E7%BD%AE%E9%80%89%E9%A1%B9"><span class="toc-number">2.10.2.</span> <span class="toc-text">完整配置选项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%91%BD%E4%BB%A4"><span class="toc-number">2.10.3.</span> <span class="toc-text">配置命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F-1"><span class="toc-number">2.10.4.</span> <span class="toc-text">环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CLAUDE-md-%E6%96%87%E4%BB%B6"><span class="toc-number">2.10.5.</span> <span class="toc-text">CLAUDE.md 文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E6%8F%92%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.11.</span> <span class="toc-text">10. 插件系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.11.1.</span> <span class="toc-text">插件类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LSP-%E6%8F%92%E4%BB%B6"><span class="toc-number">2.11.2.</span> <span class="toc-text">LSP 插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="toc-number">2.11.3.</span> <span class="toc-text">插件管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%8F%92%E4%BB%B6"><span class="toc-number">2.11.4.</span> <span class="toc-text">配置插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LSP-%E5%8A%9F%E8%83%BD"><span class="toc-number">2.11.5.</span> <span class="toc-text">LSP 功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-IDE-%E9%9B%86%E6%88%90"><span class="toc-number">2.12.</span> <span class="toc-text">11. IDE 集成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#VS-Code-%E9%9B%86%E6%88%90"><span class="toc-number">2.12.1.</span> <span class="toc-text">VS Code 集成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JetBrains-IDE-%E9%9B%86%E6%88%90"><span class="toc-number">2.12.2.</span> <span class="toc-text">JetBrains IDE 集成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%88%E7%AB%AF%E9%9B%86%E6%88%90"><span class="toc-number">2.12.3.</span> <span class="toc-text">终端集成</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E9%94%AE%E7%9B%98%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-number">2.13.</span> <span class="toc-text">12. 键盘快捷键</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CLI-%E6%A8%A1%E5%BC%8F%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-number">2.13.1.</span> <span class="toc-text">CLI 模式快捷键</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vim-%E6%A8%A1%E5%BC%8F%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-number">2.13.2.</span> <span class="toc-text">Vim 模式快捷键</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E5%85%B7%E7%A1%AE%E8%AE%A4%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-number">2.13.3.</span> <span class="toc-text">工具确认快捷键</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-%E9%AB%98%E7%BA%A7%E5%8A%9F%E8%83%BD"><span class="toc-number">2.14.</span> <span class="toc-text">13. 高级功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%B9%E5%A4%84%E7%90%86%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.14.1.</span> <span class="toc-text">批处理模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.14.2.</span> <span class="toc-text">模板系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B6%E8%A1%8C%E6%89%A7%E8%A1%8C"><span class="toc-number">2.14.3.</span> <span class="toc-text">并行执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E4%B8%8B%E6%96%87%E6%B3%A8%E5%85%A5"><span class="toc-number">2.14.4.</span> <span class="toc-text">上下文注入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E5%88%87%E6%8D%A2"><span class="toc-number">2.14.5.</span> <span class="toc-text">模型切换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%90%86%E4%BB%BB%E5%8A%A1"><span class="toc-number">2.14.6.</span> <span class="toc-text">代理任务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E5%8F%B0%E6%89%A7%E8%A1%8C"><span class="toc-number">2.14.7.</span> <span class="toc-text">后台执行</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5"><span class="toc-number">2.15.</span> <span class="toc-text">14. 故障排查</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%8A%E6%96%AD%E5%91%BD%E4%BB%A4"><span class="toc-number">2.15.1.</span> <span class="toc-text">诊断命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="toc-number">2.15.2.</span> <span class="toc-text">常见问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E5%BF%97%E4%BD%8D%E7%BD%AE"><span class="toc-number">2.15.3.</span> <span class="toc-text">日志位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E7%BD%AE-Claude-Code"><span class="toc-number">2.15.4.</span> <span class="toc-text">重置 Claude Code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="toc-number">2.16.</span> <span class="toc-text">15. 最佳实践</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%A7%8B%E5%8C%96%E6%B8%85%E5%8D%95"><span class="toc-number">2.16.1.</span> <span class="toc-text">项目初始化清单</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E6%95%88%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7"><span class="toc-number">2.16.2.</span> <span class="toc-text">高效使用技巧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">2.16.3.</span> <span class="toc-text">安全注意事项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E8%8D%90%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="toc-number">2.16.4.</span> <span class="toc-text">推荐工作流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E9%93%BE%E6%8E%A5"><span class="toc-number">2.16.5.</span> <span class="toc-text">资源链接</span></a></li></ol></li></ol></li></ol>
+          </div>
+        </div>
+      </cosy-drag-box>
+      
+  </div>
+
+</div>
+
+<script>
+  window.page = {
+    use: 'twikoo'
+  }
+  window.katex = {
+    enable: "",
+    jsCdn: "//cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js",
+    cssCdn: "//cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css"
+  }
+  window.mermaid = {
+    enable: "",
+    theme: "",
+    cdn: "//cdn.jsdelivr.net/npm/mermaid@10.4.0/dist/mermaid.min.js",
+  }
+  window.valine = {
+    enable: "",
+    appId: 'yourValineAppId',
+    appKey: 'yourValineAppKey',
+    avatar: 'monsterid',
+    cdn: '//unpkg.com/valine@latest/dist/Valine.min.js',
+    serverURLs: ''
+  };
+  window.twikoo = {
+    enable: "",
+    envId: "https://twikoo-cloudflare.lehaoxu.workers.dev",
+    cdn: 'https://cdn.staticfile.org/twikoo/1.6.32/twikoo.all.min.js',
+    lang: 'zh-CN',
+  }
+</script>
+
+
+<script src="../../../../../js/8f5fa89f.js"></script>
+
+  </main>
+</body>
+
+<script>
+  window.theme = {
+    color: 'hsl(238,50%,56%)'
+  }
+</script>
+
+
+<script src="../../../../../js/e5a59732.js"></script>
+
+
+</html>

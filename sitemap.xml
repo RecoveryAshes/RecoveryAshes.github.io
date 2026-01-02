@@ -2,7 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.finalline.net/2025/06/24/%E7%81%AF%E5%A1%94arm_64/</loc>
+    <loc>https://blog.finalline.net/2026/01/03/AI/claude_code/</loc>
+    
+    <lastmod>2026-01-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.finalline.net/2024/07/06/Hexo/HexoStart/</loc>
+    
+    <lastmod>2026-01-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.finalline.net/2025/06/24/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/%E7%81%AF%E5%A1%94arm_64/</loc>
     
     <lastmod>2025-06-30</lastmod>
     
@@ -11,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://blog.finalline.net/2025/06/24/Github%E8%87%AA%E5%8A%A8%E7%BC%96%E8%AF%91%E4%B8%8A%E4%BC%A0s3%E5%8F%91%E5%B8%83Release/</loc>
+    <loc>https://blog.finalline.net/2025/06/24/%E6%9D%82/Github%E8%87%AA%E5%8A%A8%E7%BC%96%E8%AF%91%E4%B8%8A%E4%BC%A0s3%E5%8F%91%E5%B8%83Release/</loc>
     
     <lastmod>2025-06-24</lastmod>
     
@@ -20,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://blog.finalline.net/2024/08/04/java%E5%AE%89%E5%85%A8-01%E5%8F%8D%E5%B0%84/</loc>
+    <loc>https://blog.finalline.net/2024/08/04/JAVA%E5%AE%89%E5%85%A8/java%E5%AE%89%E5%85%A8-01%E5%8F%8D%E5%B0%84/</loc>
     
     <lastmod>2024-08-05</lastmod>
     
@@ -29,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://blog.finalline.net/2024/07/20/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BB%BB%E6%84%8F%E6%89%8B%E6%9C%BA%E5%8F%B7%E5%BF%AB%E6%8D%B7%E7%99%BB%E9%99%86/</loc>
+    <loc>https://blog.finalline.net/2024/07/20/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BB%BB%E6%84%8F%E6%89%8B%E6%9C%BA%E5%8F%B7%E5%BF%AB%E6%8D%B7%E7%99%BB%E9%99%86/</loc>
     
     <lastmod>2024-07-22</lastmod>
     
@@ -38,7 +56,7 @@
   </url>
   
   <url>
-    <loc>https://blog.finalline.net/2024/07/08/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%A7%A3%E5%8C%85/</loc>
+    <loc>https://blog.finalline.net/2024/07/08/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%A7%A3%E5%8C%85/</loc>
     
     <lastmod>2024-07-20</lastmod>
     
@@ -47,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://blog.finalline.net/2024/07/14/selenium-mitmproxy-python%E5%AE%9E%E7%8E%B0%E5%8A%A0%E5%AF%86%E7%88%86%E7%A0%B4%E8%B4%A6%E6%88%B7%E5%AF%86%E7%A0%81/</loc>
+    <loc>https://blog.finalline.net/2024/07/14/%E5%B7%A5%E5%85%B7/selenium-mitmproxy-python%E5%AE%9E%E7%8E%B0%E5%8A%A0%E5%AF%86%E7%88%86%E7%A0%B4%E8%B4%A6%E6%88%B7%E5%AF%86%E7%A0%81/</loc>
     
     <lastmod>2024-07-14</lastmod>
     
@@ -56,25 +74,7 @@
   </url>
   
   <url>
-    <loc>https://blog.finalline.net/cosy-roadmap/</loc>
-    
-    <lastmod>2024-07-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.finalline.net/2024/07/06/HexoStart/</loc>
-    
-    <lastmod>2024-07-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.finalline.net/2024/07/06/nacos/</loc>
+    <loc>https://blog.finalline.net/2024/07/06/%E6%9D%82/nacos/</loc>
     
     <lastmod>2024-07-06</lastmod>
     
@@ -94,176 +94,197 @@
 
   <url>
     <loc>https://blog.finalline.net/</loc>
-    <lastmod>2025-12-29</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://blog.finalline.net/tags/Github/</loc>
-    <lastmod>2025-12-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.finalline.net/tags/s3/</loc>
-    <lastmod>2025-12-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.finalline.net/tags/Cloudflare/</loc>
-    <lastmod>2025-12-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.finalline.net/tags/Github-Action/</loc>
-    <lastmod>2025-12-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.finalline.net/tags/Hexo/</loc>
-    <lastmod>2025-12-29</lastmod>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.finalline.net/tags/ai/</loc>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.finalline.net/tags/%E5%BC%80%E5%8F%91/</loc>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.finalline.net/tags/%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.finalline.net/tags/java/</loc>
-    <lastmod>2025-12-29</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.finalline.net/tags/%E5%8F%8D%E5%B0%84/</loc>
-    <lastmod>2025-12-29</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.finalline.net/tags/java%E5%AE%89%E5%85%A8/</loc>
-    <lastmod>2025-12-29</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.finalline.net/tags/Mac/</loc>
-    <lastmod>2025-12-29</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.finalline.net/tags/forName/</loc>
-    <lastmod>2025-12-29</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.finalline.net/tags/exec/</loc>
-    <lastmod>2025-12-29</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.finalline.net/tags/selenium/</loc>
-    <lastmod>2025-12-29</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.finalline.net/tags/mitmproxy/</loc>
-    <lastmod>2025-12-29</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.finalline.net/tags/python/</loc>
-    <lastmod>2025-12-29</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.finalline.net/tags/%E5%AF%86%E7%A0%81%E7%88%86%E7%A0%B4/</loc>
-    <lastmod>2025-12-29</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.finalline.net/tags/wx/</loc>
-    <lastmod>2025-12-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.finalline.net/tags/%E5%8F%8D%E7%BC%96%E8%AF%91/</loc>
-    <lastmod>2025-12-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.finalline.net/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
-    <lastmod>2025-12-29</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.finalline.net/tags/SessionKey/</loc>
-    <lastmod>2025-12-29</lastmod>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.finalline.net/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.finalline.net/tags/%E4%BB%BB%E6%84%8F%E7%94%A8%E6%88%B7%E7%99%BB%E9%99%86/</loc>
-    <lastmod>2025-12-29</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.finalline.net/tags/%E7%81%AF%E5%A1%94/</loc>
-    <lastmod>2025-12-29</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.finalline.net/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/</loc>
-    <lastmod>2025-12-29</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.finalline.net/tags/Arm-64/</loc>
-    <lastmod>2025-12-29</lastmod>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.finalline.net/tags/%E5%8F%8D%E7%BC%96%E8%AF%91/</loc>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.finalline.net/tags/Github/</loc>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.finalline.net/tags/s3/</loc>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.finalline.net/tags/Cloudflare/</loc>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.finalline.net/tags/Github-Action/</loc>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.finalline.net/tags/nacos/</loc>
-    <lastmod>2025-12-29</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -271,43 +292,50 @@
 
   
   <url>
-    <loc>https://blog.finalline.net/categories/%E6%9D%82/</loc>
-    <lastmod>2025-12-29</lastmod>
+    <loc>https://blog.finalline.net/categories/Hexo/</loc>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.finalline.net/categories/Hexo/</loc>
-    <lastmod>2025-12-29</lastmod>
+    <loc>https://blog.finalline.net/categories/AI/</loc>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.finalline.net/categories/JAVA%E5%AE%89%E5%85%A8/</loc>
-    <lastmod>2025-12-29</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.finalline.net/categories/%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2025-12-29</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.finalline.net/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
-    <lastmod>2025-12-29</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.finalline.net/categories/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/</loc>
-    <lastmod>2025-12-29</lastmod>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.finalline.net/categories/%E6%9D%82/</loc>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
